@@ -8,9 +8,51 @@
 		<title> My Accountant </title>
 	</head>
 <body>
+<h1> My Accountant </h1>
+<fieldset>
+<legend>
+	<strong> Add a New Entry </strong>
+</legend>
 <form>
-First name: <input type="text" name= "firstname">
+Name of Entry: <input type="text" name= "Entry">
+</form>
+<br>
+<form>
+Amount: <input type="numbers" name= "number" value="$ 0.00">
+</form>
+<br>
+<form>
+Date: <input type=""name= "" value="mm/dd/yyyy">
+</form>
+<br>
+<form>
+ 	Payment Type:
+ 	<ul><li>
+ 	<input type="radio" name="Payment" value="debit"> Debit </li><li> <input type="radio" name="Type of Payment" value="cash"> Cash</li> </ul> 
 </form>
 
+<label for="Importance"> Importance </label>
+<br>
+<input id="priority" type="range" default="0" step="1" max="5" min="1" name="Importance">
+<br>
+<label for="Purchase Type">Purchase Type</label>
+<select id="Purchase Type">
+	<optgroup label="Type of Purchase">
+	<option value="Bill">Bill</option>
+	<option value="Fun">Fun</option>
+</optgroup>
+</select>	
+<br>
+<br> 
+Comments:
+<br>
+<textarea id="Comments" style="width: 100px; height: 40px;"></textarea> 
+</fieldset>
+<br>
+<button> Submit Entry</button>
+<br>
+<a href=""> Clear Stored Data</a>
+<a href=""> Display Data</a>
+ 
 </body>
 </html>

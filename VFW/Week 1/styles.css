@@ -1,6 +1,7 @@
 h1 {
 	color: #00a6da;
 	font-weight: bold;
+	text-decoration: underline;
 }
 
 p {
@@ -20,3 +21,28 @@ a {
 a:hover {
 	color: #1228d7;
 }
+
+body{
+	overflow: scroll;
+	color: #140f38;
+}
+
+fieldset{
+	color: #140f38;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	text-align: left;
+	white-space: normal;
+	background-color: #e5f8fe;
+	opacity: 1;
+	border-color: #181ce9;
+	border-style: solid;
+	overflow: auto;
+	padding-left: 11px;
+}
+
+legend{
+	font-style: italic;
+	font-size: 18px;
+	color: #4bc2eb;
+}
+

@@ -1,0 +1,22 @@
+h1 {
+	color: #00a6da;
+	font-weight: bold;
+}
+
+p {
+	color: #140f38;
+	font-weight: bold;
+	font-style: italic;
+}
+
+h2 {
+	color: #099cea;
+}
+
+a {
+	color: #3bc0eb;
+}
+
+a:hover {
+	color: #1228d7;
+}

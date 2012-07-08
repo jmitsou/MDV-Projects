@@ -16,7 +16,7 @@ h2 {
 
 a {
 	color: #3bc0eb;
-	display: block;
+	text-indent: 20px;
 }
 
 a:hover {
@@ -47,7 +47,7 @@ fieldset {
 
 legend {
 	font-style: italic;
-	font-size: 18px;
+	font-size: 28px;
 	color: #4bc2eb;
 }
 

@@ -5,9 +5,10 @@ h1 {
 }
 
 p {
-	color: #140f38;
+	color: #0d65b8;
 	font-weight: bold;
 	font-style: italic;
+	text-align: center;
 }
 
 h2 {
@@ -16,6 +17,7 @@ h2 {
 
 a {
 	color: #3bc0eb;
+	display: block;
 }
 
 a:hover {
@@ -24,25 +26,35 @@ a:hover {
 
 body{
 	overflow: scroll;
-	color: #140f38;
+	color: #00b4e4;
+	background-color: #e0fafd;
+	font-size: 19px;
+	text-transform: capitalize;
+	opacity: 1;
 }
 
-fieldset{
-	color: #140f38;
+fieldset {
+	color: #0d65b8;
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 	text-align: left;
 	white-space: normal;
 	background-color: #e5f8fe;
 	opacity: 1;
-	border-color: #181ce9;
+	border-color: #2023a7;
 	border-style: solid;
 	overflow: auto;
 	padding-left: 11px;
+	font-style: italic;
 }
 
-legend{
+legend {
 	font-style: italic;
 	font-size: 18px;
 	color: #4bc2eb;
 }
+
+li{
+	line-height: 28px;
+}
+
 

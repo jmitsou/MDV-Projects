@@ -4,6 +4,7 @@ h1 {
 	color: #00a6da;
 	font-weight: bold;
 	text-decoration: underline;
+	margin-bottom: 25px;
 }
 
 p {
@@ -16,12 +17,13 @@ h2 {
 	color: #099cea;
 }
 
-a {
+a:link {
 	color: #3bc0eb;
 }
 
 a:hover {
 	color: #1228d7;
+
 }
 
 body {
@@ -40,19 +42,24 @@ fieldset {
 	border-style: solid;
 	font-style: italic;
 	line-height: 20px;
+	width: 300px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+li {
+	list-style: none;
 }
 
 legend {
 	font-style: italic;
 	font-size: 28px;
 	color: #4bc2eb;
-	
 }
 
 label.formInputs {
 	display: block;
 	height: 25px;
-	
 }
 
 input.formInputs {
@@ -61,4 +68,11 @@ input.formInputs {
 
 button{ 
 	font-size: 15px;
+	margin-bottom: 20px;
+	display: block;
+}
+
+input#submit{
+	margin: 20px;
+	display: block;
 }

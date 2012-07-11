@@ -1,3 +1,5 @@
+// Jeff Mitsou, VFW,12/07
+
 window.addEventListener("DOMContentLoaded", function() {
 
 	//getElementById Function

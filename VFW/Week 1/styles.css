@@ -1,3 +1,5 @@
+/*Jeff Mitsou/VFW/1207 */
+
 h1 {
 	color: #00a6da;
 	font-weight: bold;
@@ -22,7 +24,7 @@ a:hover {
 	color: #1228d7;
 }
 
-body{
+body {
 	color: #00b4e4;
 	background-color: #e0fafd;
 	font-size: 19px;
@@ -47,12 +49,16 @@ legend {
 	
 }
 
-label.formInputs{
+label.formInputs {
 	display: block;
 	height: 25px;
 	
 }
 
-input.formInputs{
+input.formInputs {
 	margin-bottom: 10px;
+}
+
+button{ 
+	font-size: 15px;
 }

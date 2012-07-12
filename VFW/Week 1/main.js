@@ -12,29 +12,109 @@ window.addEventListener("DOMContentLoaded", function() {
 	// Create select feild element and populate with options.
 	function makeCats() {
 		var formTag = document.getElementsByTagName("form"); //formTag is an array of all the form tags
-			  selectLi = $('select')
+			  selectLi = $('select');
 			  makeSelect = document.createElement('select');
-			  makeSelect.setAttribute("id", "groups")
+			  makeSelect.setAttribute("id", "groups");
 		for (var i=0, j=holderType.length; i<j; i++){
-			var makeOption = document.createElement('option')
+			var makeOption = document.createElement('option');
 			var optText = holderType [i];
 			makeOption.setAttribute("value", optText);
-			makeOption.innerHTML = optText:
+			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
 		}
 		selectLi.appendChild(makeSelect);
 	}
 	
+	//Find value of selected radio button.
+	function getSelectedRadio() {
+		var radios = document.forms(0).read
+		for(var i = 0; i<radios.length; i++){
+			if radios[i].checked{
+				readValue = radios[i].value;
+			}
+		}
+	}
+	
+	function getCheckboxValue(){
+		if($('fav').checked){
+			favValue = $('fav').value;
+		}else {
+			favValue = "No"
+		}
+	}
+
+		
+	function storeData() {
+			var id 			 			= Math.floor(Math.random()*1000001);
+			getSelectedRadio();
+			getCheckboxValue();
+			var item						= {};
+				 item.group			= ["Group: " , $('groups').value];
+				 item.date				= ["Date: " , $('date').value];
+				 item.title				= ["Title: " , $('title').value];
+				 item.chap				= ["Chapter: " , $('chap').value];
+				 item.page				= ["Page: " , $('page').value];
+				 item.para				= ["Paragraph: " , $('para').value];
+				 item.line				= ["Line: " , $('line').value];
+				 item.time				= ["Time: " , $('time').value];
+				 item.note				= ["Note: " , $('notes').value];
+				 item.read				= ["Type of Reading: " , readValue];
+				 item.fav				= ["Save as Favorite: " , favValue];
+			//Save data into Local Storage: Use stringify to convert our object to a string.
+			localStorage.setItem(id, JSON.stringify(item)); 
+			alert("Contact Saved!");		 
+	}
+	
+	function getData(){
+		toggleControls("on");
+		var makeDiv = document.createElement("div");
+		makeDiv.setAttribute("id", "items");
+		var makeList = document.createElement("ul");
+		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv);
+		$("items").style.display = "block";
+		for(var i =0, j=localStorage.length; i<j; i++ ){
+			var makeLi = document.createElement("li");
+			makeList.appendChild(makeLi);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			//Convert string from loc stor val back to an object using JSON.parse()
+			var object = JSON.parse(value);
+			var makeSubList = document.createElement("ul");
+			makeLi.appendChild(makeSubList);
+			for( var n in object){
+				var makeSubLi = document.createElement("li");
+				makeSubList.appendChild(makeSubLi);
+				var optSubText = object[n][0] +" " + object[n][1];
+				makeSubLi.innerHTML = optSubText;
+			}
+		}
+	};	
+	
+	function clearLocal(){
+		if(localStorage.length === 0){
+		alert("There is no data to clear!");	
+		} else {
+		localStorage.clear();
+		alert("All data clear")
+		window.location.reload();
+		return false;
+		}
+	}; 
+	
+	
 	//Variable defaults
-	var holderType = ["-- Entry Type --", "Video", "Book"];
+	var holderType = ["-- Entry Type --", "Video", "Book"]
+		  readValue,
+		  favValue = "No"	
+	;
 	makeCats();
-	/*
+
 	//Set Link & Submit Click Events
 	var displayLink = $ ('displayLink');
 	displayLink.addEventListener("click", getData);
 	var clearLink = $ ('clear');
 	clearLink.addEventListener("click", clearLocal);
 	var save = $ ('submit');
-	save.addEventListener("click", storeData);
-*/	
+	save.addEventListener("click", storeData);	
 });

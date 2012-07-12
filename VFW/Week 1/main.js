@@ -26,14 +26,14 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 	
 	//Find value of selected radio button.
-	function getSelectedRadio() {
-		var radios = document.forms(0).read
-		for(var i = 0; i<radios.length; i++){
-			if radios[i].checked{
-				readValue = radios[i].value;
-			}
-		}
-	}
+//	function getSelectedRadio() {
+//		var radios = document.forms(0).sex
+//		for(var i = 0; i<radios.length; i++){
+//			if radios[i].checked{
+//				sexValue = radios[i].value;
+//			}
+//		}
+//	}
 	
 	function getCheckboxValue(){
 		if($('fav').checked){
@@ -42,11 +42,11 @@ window.addEventListener("DOMContentLoaded", function() {
 			favValue = "No"
 		}
 	}
-
 		
 	function storeData() {
+		console.log("storeData fires");
 			var id 			 			= Math.floor(Math.random()*1000001);
-			getSelectedRadio();
+//			getSelectedRadio();
 			getCheckboxValue();
 			var item						= {};
 				 item.group			= ["Group: " , $('groups').value];
@@ -58,13 +58,14 @@ window.addEventListener("DOMContentLoaded", function() {
 				 item.line				= ["Line: " , $('line').value];
 				 item.time				= ["Time: " , $('time').value];
 				 item.note				= ["Note: " , $('notes').value];
-				 item.read				= ["Type of Reading: " , readValue];
+//				 item.read				= ["Type of Reading: " , readValue];
 				 item.fav				= ["Save as Favorite: " , favValue];
 			//Save data into Local Storage: Use stringify to convert our object to a string.
 			localStorage.setItem(id, JSON.stringify(item)); 
 			alert("Contact Saved!");		 
 	}
 	
+	// Write date from the local storage to the browser
 	function getData(){
 		toggleControls("on");
 		var makeDiv = document.createElement("div");
@@ -96,7 +97,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		alert("There is no data to clear!");	
 		} else {
 		localStorage.clear();
-		alert("All data clear")
+		alert("All contact deleted!")
 		window.location.reload();
 		return false;
 		}
@@ -105,16 +106,16 @@ window.addEventListener("DOMContentLoaded", function() {
 	
 	//Variable defaults
 	var holderType = ["-- Entry Type --", "Video", "Book"]
-		  readValue,
+//		  sexValue,
 		  favValue = "No"	
 	;
 	makeCats();
-
-	//Set Link & Submit Click Events
-	var displayLink = $ ('displayLink');
-	displayLink.addEventListener("click", getData);
+	
+//	Set Link & Submit Click Events
+//	var displayLink = $ ('displayLink');
+//		displayLink.addEventListener("click", getData);
 	var clearLink = $ ('clear');
 	clearLink.addEventListener("click", clearLocal);
-	var save = $ ('submit');
+	var save = $('submit');
 	save.addEventListener("click", storeData);	
 });

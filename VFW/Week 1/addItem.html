@@ -20,10 +20,10 @@
 		</nav>
 			<ul id="errors"></ul>
 			<ul id="questions">
-				<li id="select"><label for="group"> Holder:</label><br /></li>
 			</ul>
 				<fieldset>
 					<legend><strong> Add Marker</strong></legend>
+						<li id="select"><label for="group"> Holder:</label><br /></li>
 						<li><label for="date" class="formInputs">Date:</label><input type="date" id="date" value="mm/dd/yyyy" class="formInputs"/></li>
 						<li><label for="title" class="formInputs">Title:</label><input type="text" id="title" placeholder="title" class="formInputs"/></li>
 						<li><label for="chap" class="formInputs">Chapter:</label><input type="text" id="chap" value=""class="formInputs" /></li>
@@ -35,10 +35,10 @@
 						
 						<li><label for="notes">Notes:<br> </label><textarea id="notes"></textarea>
 						</ul>
-						Type of Reading:
+							<label for="rType" id="read">Type of Reading:</label>
 						<ul class="radio">
-							<li><input type="radio" id="bookType" value="Book" name="readType"/><label for="readType"> Book</label></li>
-							<li><input type="radio" id="mangaType" value="Manga" name="readType" /><label for="readType"> Manga</label></li>
+							<li><input type="radio" id="bookType" value="Book" name="readType"/><label for="rType"> Book</label></li>
+							<li><input type="radio" id="mangaType" value="Manga" name="readType" /><label for="rType"> Manga</label></li>
 						</ul>	
 					</fieldset>
 					<input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav"> Save as favorite?</label>

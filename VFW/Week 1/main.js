@@ -44,6 +44,29 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     }
         
+   function toggleControls(n){
+   	switch(n){
+   		case "on":
+   			$("addTask").style.display = "none";
+   			$("clear").style.display = "inline";
+   			$("displayLink").style.display = "none";
+   			$("addNew").style.display = "inline";
+   			break;
+   		case "off":
+   			$("addTask").style.display = "block";
+   			$("clear").style.display = "inline";
+   			$("displayLink").style.display = "inline";
+   			$("addNew").style.display = "none";
+   			$("items").style.display = "none";
+   			
+   			break;
+   		default:
+   			return false;
+   	}
+   
+   }     
+        
+        
     function storeData() {
         console.log("storeData fires");
             var id                          = Math.floor(Math.random()*1000001);

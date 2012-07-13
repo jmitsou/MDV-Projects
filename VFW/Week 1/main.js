@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", function() {
     
     // Write date from the local storage to the browser
     function getData(){
-//        toggleControls("on");
+        toggleControls("on");
         var makeDiv = document.createElement("div");
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement("ul");

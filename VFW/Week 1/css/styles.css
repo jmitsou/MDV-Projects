@@ -80,3 +80,16 @@ label#read{
 	margin-left: 0px;
 	margin-bottom: 10px;
 }
+
+.button {
+	background: #cccccc;
+	color: #555555;
+	font-size: 15px;
+	border: 2px #808080;
+	width: 100%;
+	padding: 6px;
+	margin-top: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+}

@@ -62,10 +62,6 @@ label.formInputs {
 	height: 25px;
 }
 
-input.formInputs {
-	margin-bottom: 10px;
-}
-
 input#submit{
 	margin: 20px;
 	display: block;
@@ -75,6 +71,7 @@ label#read{
 	display: block;
 	margin-top: 20px;
 }
+
 #select{
 	margin-left: 0px;
 	margin-bottom: 10px;
@@ -84,7 +81,7 @@ label#read{
 	background: #fafafa;
 	color: #4bc2eb;
 	font-size: 15px;
-	border: 3px #c700d1;
+	border: 5px #969696;
 	width: 100%;
 	padding: 6px;
 	margin-top: 5px;
@@ -97,7 +94,7 @@ label#read{
 	background: #f1f1f1;
 	color: #4bc2eb;
 	font-size: 15px;
-	border: 3px #c700d1;
+	border: 3px #969696;
 	width: 100%;
 	padding: 6px;
 	margin-top: 5px;

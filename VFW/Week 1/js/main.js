@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function () {
     
     //Find value of selected radio button.
     function getSelectedRadio() {
-        var radios = document.forms(0).readType;
+        var radios = document.forms(0).rType;
         for(var i = 0; i<radios.length; i++){
             if (radios[i].checked){
                 readValue = radios[i].value;
@@ -130,7 +130,7 @@ window.addEventListener("DOMContentLoaded", function () {
     
     //Variable defaults
     var holderType = ["-- Entry Type --", "Video", "Book"];
-     var  readValue;
+     var readValue;
           favValue = "No";    
     
     makeCats();

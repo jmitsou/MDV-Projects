@@ -82,7 +82,7 @@ window.addEventListener("DOMContentLoaded", function () {
                  item.para              = ["Paragraph: " , $('para').value];
                  item.line               = ["Line: " , $('line').value];
                  item.time              = ["Time: " , $('time').value];
-                 item.note              = ["Note: " , $('notes').value];
+                 item.notes              = ["Notes: " , $('notes').value];
                  item.read              = ["Type of Reading: " , readValue];
                  item.fav                = ["Save as Favorite: " , favValue];
             //Save data into Local Storage: Use stringify to convert our object to a string.
@@ -146,6 +146,36 @@ window.addEventListener("DOMContentLoaded", function () {
     	linksLi.appendChild(editLink); 
     }
     
+    function editItem() {
+    	//grab the data from our local storage
+    	var value = localStorage.getItem(this.key);
+    	var item = JSON.parse(value);
+    	
+		//show the form    	
+    	toggleControls('off');
+    	
+    	//populate the form fields with current localStorage values
+    	$('groups').value  = item.group[1];
+    	$('title').value       = item.title[1];
+    	$('chap').value     = item.chap[1];
+    	$('page').value     = item.page[1];
+    	$('para').value      = item.para[1];
+    	$('line').value       = item.line[1];
+    	var radios = document.forms[0].rType;
+    	for(var i=0; i<radios.length; i++){
+    		if(radios[i].value == "Book" && item.rType[1] == "Book"){
+    			radios[1].setAttribute("checked", "checked");
+    		}else if (radios[i].value == "Manga" && item.rType[1] == "Manga") {
+    			radios[1].setAttribute("checked", "checked");
+    		}
+    	}
+    	if(item.favorite[1] == "Yes"){
+    		$( 'fav' ).setAttribute("checked", "checked");
+    	}
+    	$('time').value    = item.time[1];
+    	$('date').value    = item.date[1];
+    	$('notes').value  = item.notes[1];
+    }
     
     function clearLocal(){
         if(localStorage.length === 0){

@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", function () {
         selectLi.appendChild(makeSelect);
     }
     
+    
     //Find value of selected radio button.
     function getSelectedRadio() {
         var radios = document.forms(0).rType;
@@ -68,7 +69,7 @@ window.addEventListener("DOMContentLoaded", function () {
         
         
     function storeData() {
-        console.log("storeData fires");
+          console.log("storeData fires")  
             var id                          = Math.floor(Math.random()*1000001);
             getSelectedRadio();
             getCheckboxValue();
@@ -87,11 +88,15 @@ window.addEventListener("DOMContentLoaded", function () {
             //Save data into Local Storage: Use stringify to convert our object to a string.
             localStorage.setItem(id, JSON.stringify(item)); 
             alert("Contact Saved!");         
-    }
+    };
     
     // Write date from the local storage to the browser
     function getData(){
         toggleControls("on");
+        if(localStorage.length === 0){
+        	alert("No Data Available!")
+        };
+        //Write Data from Local Storage to the browser
         var makeDiv = document.createElement("div");
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement("ul");
@@ -100,10 +105,11 @@ window.addEventListener("DOMContentLoaded", function () {
         $("items").style.display = "block";
         for(var i =0, j=localStorage.length; i<j; i++ ){
             var makeLi = document.createElement("li");
+            var linksLi = document.createElement('li');
             makeList.appendChild(makeLi);
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
-            //Convert string from loc stor val back to an object using JSON.parse()
+            //Convert string from local storage val back to an object using JSON.parse()
             var object = JSON.parse(value);
             var makeSubList = document.createElement("ul");
             makeLi.appendChild(makeSubList);
@@ -112,9 +118,34 @@ window.addEventListener("DOMContentLoaded", function () {
                 makeSubList.appendChild(makeSubLi);
                 var optSubText = object[n][0] +" " + object[n][1];
                 makeSubLi.innerHTML = optSubText;
+                makeSubList.appendChild(linksLi);
             }
+            makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
         }
     };    
+    
+    //Make Item Links:
+    // Create the edit nd delete links for each stored item when displayed
+    function makeItemLinks(key, linksLi) {
+    	//add edit single item link
+    	var editLink = document.createElement('a');
+   		editLink.href = "#";
+    	editLink.key = key;
+    	var editText = "Edit Marker";
+    //	editLink.addEventListener("click", editItem);
+    	editLink.innerHTML = editText;
+    	linksLi.appendChild(editLink);
+    	
+    	//add delete single item link
+    	var deleteLink = document.createElement('a')
+    	deleteLink.href = "#";
+    	deleteLink.key = key;
+    	var deleteText = "Delete Marker";
+    //	deleteLink.addEventListener("click", deleteItem);
+    	deleteLink.innerHTML = editText;
+    	linksLi.appendChild(editLink); 
+    }
+    
     
     function clearLocal(){
         if(localStorage.length === 0){
@@ -129,17 +160,17 @@ window.addEventListener("DOMContentLoaded", function () {
     
     
     //Variable defaults
-    var holderType = ["-- Entry Type --", "Video", "Book"];
-     var readValue;
-          favValue = "No";    
-    
+    var holderType = ["-- Entry Type --", "Video", "Book"],
+     	 readValue,
+     	 favValue = "No";    
+    ;
     makeCats();
     
 //    Set Link & Submit Click Events
     var displayLink = $ ('displayLink');
         displayLink.addEventListener("click", getData);
     var clearLink = $ ('clear');
-    clearLink.addEventListener("click", clearLocal);
+    	clearLink.addEventListener("click", clearLocal);
     var save = $('submit');
-    save.addEventListener("click", storeData);    
+    	save.addEventListener("click", storeData);    
 });

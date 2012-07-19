@@ -44,7 +44,7 @@ fieldset {
 	line-height: 20px;
 	width: 300px;
 	margin-bottom: 20px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 li {
@@ -60,6 +60,7 @@ legend {
 label.formInputs {
 	display: block;
 	height: 25px;
+	margin-top: 10px;
 }
 
 input#submit{
@@ -70,11 +71,6 @@ input#submit{
 label#read{
 	display: block;
 	margin-top: 20px;
-}
-
-#select{
-	margin-left: 0px;
-	margin-bottom: 10px;
 }
 
 .button {

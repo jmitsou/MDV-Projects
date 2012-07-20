@@ -175,7 +175,21 @@ window.addEventListener("DOMContentLoaded", function () {
     	$('time').value    = item.time[1];
     	$('date').value    = item.date[1];
     	$('notes').value  = item.notes[1];
+    	
+    	//Remove the initial listener from the input ' save contact ' button.
+    	save.removeEventListener("click", storeData);
+    	// Change Submit Button Value to edit button
+    	$('submit').value = "Edit Contact";
+    	var editSubmit = $('submit');
+    	// Save the key value establsihed  in the this function as a property of the editSubmit event 
+    	//so we can use that value when we save the data we edited. 
+    	editSubmit.addEventListener("click", validate);
+    	editSubmit.key = this.key;
     }
+    
+    
+    
+    
     
     function clearLocal(){
         if(localStorage.length === 0){

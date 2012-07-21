@@ -187,22 +187,64 @@ window.addEventListener("DOMContentLoaded", function () {
     	editSubmit.key = this.key;
     }
     
-    
-    
-    
-    
     function clearLocal(){
         if(localStorage.length === 0){
-        alert("There is no data to clear!");    
+        	  alert("There is no data to clear!");    
         } else {
-        localStorage.clear();
-        alert("All contact deleted!");
-        window.location.reload();
-        return false;
+        	 localStorage.clear();
+         	 alert("All contact deleted!");
+       		 window.location.reload();
+       		 return false;
         }
-    }; 
+    } 
     
+    function validate() {
+    	//define the elements we want to check
+    	var getGroups = $('groups');
+    	var getTitle = $('title');
+    	var getChap = $('chap');
+    	var getPage = $('page');
+    	var getPara = $('para');
+    	
+    	//get error messages 
+    	var messageAry = [];
+    	//group validation
+    	if (getGroups.value ==="-- Entry Type --"){
+    		var groupError = "Please choose a group.";
+    		getGroup.style.border = "1px solid red";
+    		messageAry.push(groupError);
+    	}
     
+    	//Title Valadation 
+    	if(getTitle.value === ""){
+    		 var tileError = "Please enter a Title."
+    		 getTitle.style.border = "1px solid red";
+    		 messageAry.push(titleError);
+    	}
+    	
+    	//Chapter Valadation 
+    	if(getChap.value === ""){
+    		 var chapError = "Please enter a chapter name."
+    		 getChap.style.border = "1px solid red";
+    		 messageAry.push(chapError);
+    	}
+    	
+    	//Page Valadation 
+    	if(getPage.value === ""){
+    		 var pageError = "Please enter a page number."
+    		 getPage.style.border = "1px solid red";
+    		 messageAry.push(pageError);
+    	}
+    	
+    	//Paragraph Valadation 
+    	if(getPara.value === ""){
+    		 var paraError = "Please enter a paragraph number."
+    		 getPara.style.border = "1px solid red";
+    		 messageAry.push(paraError);
+    	}
+    	
+    }
+
     //Variable defaults
     var holderType = ["-- Entry Type --", "Video", "Book"],
      	 readValue,
@@ -216,5 +258,5 @@ window.addEventListener("DOMContentLoaded", function () {
     var clearLink = $ ('clear');
     	clearLink.addEventListener("click", clearLocal);
     var save = $('submit');
-    	save.addEventListener("click", storeData);    
+    	save.addEventListener("click", validate);    
 });

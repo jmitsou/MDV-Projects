@@ -243,6 +243,17 @@ window.addEventListener("DOMContentLoaded", function () {
     		 messageAry.push(paraError);
     	}
     	
+    	//If there were errors, display them on the screen.
+    	if(messageAry.length >= 1){
+    		for(var i=0, j=messageAry.length; i < j; i++){
+    			 var txt = document.createElement('li');
+    			 txt.innerHTML = messageAry[i];
+    			 errMsg.appendChild(txt);
+    		}
+    	
+    	}
+    	e.preventDefault();
+    	return false;
     }
 
     //Variable defaults

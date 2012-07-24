@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", function () {
     
     //Find value of selected radio button.
     function getSelectedRadio() {
-        var radios = document.forms(0).rType;
+        var radios = document.forms[0].readType;
         for(var i = 0; i<radios.length; i++){
             if (radios[i].checked){
                 readValue = radios[i].value;
@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function () {
    
    }     
        
-    function storeData() {
+    function storeData(key) {
    		if (!key){ 
             var id                          = Math.floor(Math.random()*1000001);
         }else {
@@ -121,13 +121,15 @@ window.addEventListener("DOMContentLoaded", function () {
                 var optSubText = object[n][0] +" " + object[n][1];
                 makeSubLi.innerHTML = optSubText;
                 makeSubList.appendChild(linksLi);
+               
             }
             makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
+           
         }
     };    
     
     //Make Item Links:
-    // Create the edit nd delete links for each stored item when displayed
+    // Create the edit and delete links for each stored item when displayed
     function makeItemLinks(key, linksLi) {
     	//add edit single item link
     	var editLink = document.createElement('a');
@@ -138,14 +140,17 @@ window.addEventListener("DOMContentLoaded", function () {
     	editLink.innerHTML = editText;
     	linksLi.appendChild(editLink);
     	
+    	var space = document.createElement('br');
+    	linksLi.appendChild(space);
+    	
     	//add delete single item link
     	var deleteLink = document.createElement('a')
     	deleteLink.href = "#";
     	deleteLink.key = key;
     	var deleteText = "Delete Marker";
     	deleteLink.addEventListener("click", deleteItem);
-    	deleteLink.innerHTML = editText;
-    	linksLi.appendChild(editLink); 
+    	deleteLink.innerHTML = deleteText;
+    	linksLi.appendChild(deleteLink); 
     }
     
     function editItem() {
@@ -163,7 +168,7 @@ window.addEventListener("DOMContentLoaded", function () {
     	$('page').value     = item.page[1];
     	$('para').value      = item.para[1];
     	$('line').value       = item.line[1];
-    	var radios = document.forms[0].rType;
+    	var radios = document.forms[0].readType;
     	for(var i=0; i<radios.length; i++){
     		if(radios[i].value == "Book" && item.rType[1] == "Book"){
     			radios[1].setAttribute("checked", "checked");
@@ -187,6 +192,7 @@ window.addEventListener("DOMContentLoaded", function () {
     	//so we can use that value when we save the data we edited. 
     	editSubmit.addEventListener("click", validate);
     	editSubmit.key = this.key;
+    	console.log(this.key);
     }
     
     function deleteItem() {
@@ -239,7 +245,7 @@ window.addEventListener("DOMContentLoaded", function () {
     
     	//Title Valadation 
     	if(getTitle.value === ""){
-    		 var titleError = "Please enter a Title."
+    		 var titleError = "Please enter a title."
     		 getTitle.style.border = "1px solid red";
     		 messageAry.push(titleError);
     	}
@@ -251,7 +257,7 @@ window.addEventListener("DOMContentLoaded", function () {
     		 messageAry.push(chapError);
     	}
     	
-    	//Page Valadation 
+    	//Page Validation 
     	if(getPage.value === ""){
     		 var pageError = "Please enter a page number."
     		 getPage.style.border = "1px solid red";

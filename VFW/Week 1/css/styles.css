@@ -17,6 +17,13 @@ h2 {
 	color: #099cea;
 }
 
+#items ul ul{
+	border-bottom: 1px solid black;
+}
+
+#errors li{
+	color: red;
+}
 a:link {
 	color: #3bc0eb;
 }
@@ -42,7 +49,7 @@ fieldset {
 	border-style: solid;
 	font-style: italic;
 	line-height: 20px;
-	width: 300px;
+	width: 400px;
 	margin-bottom: 20px;
 	margin-top: 10px;
 }

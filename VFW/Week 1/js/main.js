@@ -63,32 +63,35 @@ window.addEventListener("DOMContentLoaded", function () {
    			break;
    		default:
    			return false;
-   	}
+   	 }
    
    }     
         
         
     function storeData() {
-          console.log("storeData fires")  
+   		if (!key){ 
             var id                          = Math.floor(Math.random()*1000001);
-            getSelectedRadio();
-            getCheckboxValue();
-            var item                     = {};
-                 item.group           	 = ["Group: " , $('groups').value];
-                 item.date              = ["Date: " , $('date').value];
-                 item.title               = ["Title: " , $('title').value];
-                 item.chap             = ["Chapter: " , $('chap').value];
-                 item.page             = ["Page: " , $('page').value];
-                 item.para              = ["Paragraph: " , $('para').value];
-                 item.line               = ["Line: " , $('line').value];
-                 item.time              = ["Time: " , $('time').value];
-                 item.notes              = ["Notes: " , $('notes').value];
-                 item.read              = ["Type of Reading: " , readValue];
-                 item.fav                = ["Save as Favorite: " , favValue];
+        }else {
+        	id = key;
+        }
+        getSelectedRadio();
+        getCheckboxValue();
+        var  item                     ={};
+              item.group            = ["Group: " , $('groups').value];
+              item.date              = ["Date: " , $('date').value];
+              item.title               = ["Title: " , $('title').value];
+              item.chap             = ["Chapter: " , $('chap').value];
+              item.page             = ["Page: " , $('page').value];
+              item.para              = ["Paragraph: " , $('para').value];
+              item.line               = ["Line: " , $('line').value];
+              item.time              = ["Time: " , $('time').value];
+              item.notes            = ["Notes: " , $('notes').value];
+              item.read              = ["Type of Reading: " , readValue];
+              item.fav                = ["Save as Favorite: " , favValue];
             //Save data into Local Storage: Use stringify to convert our object to a string.
             localStorage.setItem(id, JSON.stringify(item)); 
             alert("Contact Saved!");         
-    };
+    }
     
     // Write date from the local storage to the browser
     function getData(){
@@ -132,7 +135,7 @@ window.addEventListener("DOMContentLoaded", function () {
    		editLink.href = "#";
     	editLink.key = key;
     	var editText = "Edit Marker";
-    //	editLink.addEventListener("click", editItem);
+    	editLink.addEventListener("click", editItem);
     	editLink.innerHTML = editText;
     	linksLi.appendChild(editLink);
     	
@@ -141,7 +144,7 @@ window.addEventListener("DOMContentLoaded", function () {
     	deleteLink.href = "#";
     	deleteLink.key = key;
     	var deleteText = "Delete Marker";
-    //	deleteLink.addEventListener("click", deleteItem);
+    	deleteLink.addEventListener("click", deleteItem);
     	deleteLink.innerHTML = editText;
     	linksLi.appendChild(editLink); 
     }
@@ -198,7 +201,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     } 
     
-    function validate() {
+    function validate(e) {
     	//define the elements we want to check
     	var getGroups = $('groups');
     	var getTitle = $('title');
@@ -206,8 +209,17 @@ window.addEventListener("DOMContentLoaded", function () {
     	var getPage = $('page');
     	var getPara = $('para');
     	
+    	//Reset Error Messages
+    	errMsg.innerHTML = "";
+    	getGroup.style.border = "1px solid black";
+    	getTitle.style.border 	= "1px solid black";
+    	getChap.style.border 	= "1px solid black";
+      	getPage.style.border 	= "1px solid black";
+   	    getPara.style.border 	= "1px solid black";
+    	    		 
     	//get error messages 
     	var messageAry = [];
+    	
     	//group validation
     	if (getGroups.value ==="-- Entry Type --"){
     		var groupError = "Please choose a group.";
@@ -250,16 +262,20 @@ window.addEventListener("DOMContentLoaded", function () {
     			 txt.innerHTML = messageAry[i];
     			 errMsg.appendChild(txt);
     		}
-    	
+    		e.preventDefault();
+    		return false;
+    	}else{
+    		//If all is ok save our data!
+    		storeData(this.key);
     	}
-    	e.preventDefault();
-    	return false;
+    	
     }
 
     //Variable defaults
     var holderType = ["-- Entry Type --", "Video", "Book"],
      	 readValue,
-     	 favValue = "No";    
+     	 favValue = "No",
+     	 errMsg = $('errors');   
     ;
     makeCats();
     

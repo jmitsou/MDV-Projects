@@ -66,8 +66,7 @@ window.addEventListener("DOMContentLoaded", function () {
    	 }
    
    }     
-        
-        
+       
     function storeData() {
    		if (!key){ 
             var id                          = Math.floor(Math.random()*1000001);
@@ -190,6 +189,17 @@ window.addEventListener("DOMContentLoaded", function () {
     	editSubmit.key = this.key;
     }
     
+    function deleteItem() {
+    	 var ask = confirm("Are you sure you want to delete this Marker?");
+    	 if (ask){
+    	 		localStorage.removeItem(this.key);
+    	 		alert("Marker has been deleted.");
+    	 		window.location.reload();
+    	 }else {
+    	 	  alert("Marker not deleted.")
+    	 }
+    }
+    
     function clearLocal(){
         if(localStorage.length === 0){
         	  alert("There is no data to clear!");    
@@ -211,11 +221,11 @@ window.addEventListener("DOMContentLoaded", function () {
     	
     	//Reset Error Messages
     	errMsg.innerHTML = "";
-    	getGroup.style.border = "1px solid black";
-    	getTitle.style.border 	= "1px solid black";
-    	getChap.style.border 	= "1px solid black";
-      	getPage.style.border 	= "1px solid black";
-   	    getPara.style.border 	= "1px solid black";
+    	getGroups.style.border = "1px solid black";
+    	getTitle.style.border 	  = "1px solid black";
+    	getChap.style.border 	  = "1px solid black";
+      	getPage.style.border 	  = "1px solid black";
+   	    getPara.style.border 	  = "1px solid black";
     	    		 
     	//get error messages 
     	var messageAry = [];
@@ -223,13 +233,13 @@ window.addEventListener("DOMContentLoaded", function () {
     	//group validation
     	if (getGroups.value ==="-- Entry Type --"){
     		var groupError = "Please choose a group.";
-    		getGroup.style.border = "1px solid red";
+    		getGroups.style.border = "1px solid red";
     		messageAry.push(groupError);
     	}
     
     	//Title Valadation 
     	if(getTitle.value === ""){
-    		 var tileError = "Please enter a Title."
+    		 var titleError = "Please enter a Title."
     		 getTitle.style.border = "1px solid red";
     		 messageAry.push(titleError);
     	}

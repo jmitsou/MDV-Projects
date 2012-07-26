@@ -119,7 +119,7 @@ window.addEventListener("DOMContentLoaded", function () {
             for( var n in obj){
                 var makeSubLi = document.createElement("li");
                 makeSubList.appendChild(makeSubLi);
-                var optSubText = object[n][0] +" " + object[n][1];
+                var optSubText = obj[n][0] +" " + obj[n][1];
                 makeSubLi.innerHTML = optSubText;
                 makeSubList.appendChild(linksLi);
             }

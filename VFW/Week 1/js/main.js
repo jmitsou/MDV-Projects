@@ -24,8 +24,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         selectLi.appendChild(makeSelect);
     }
-    
-    
+
     //Find value of selected radio button.
     function getSelectedRadio() {
         var radios = document.forms[0].readType;
@@ -96,7 +95,8 @@ window.addEventListener("DOMContentLoaded", function () {
     function getData(){
         toggleControls("on");
         if(localStorage.length === 0){
-        	alert("No Data Available!")
+        	autoFillData();
+        	alert("No Data Available in Local Storage so default data was added.")
         };
         //Write Data from Local Storage to the browser
         var makeDiv = document.createElement("div");
@@ -115,18 +115,50 @@ window.addEventListener("DOMContentLoaded", function () {
             var object = JSON.parse(value);
             var makeSubList = document.createElement("ul");
             makeLi.appendChild(makeSubList);
-            for( var n in object){
+            getImage(obj.group[1], makeSubList);
+            for( var n in obj){
                 var makeSubLi = document.createElement("li");
                 makeSubList.appendChild(makeSubLi);
                 var optSubText = object[n][0] +" " + object[n][1];
                 makeSubLi.innerHTML = optSubText;
                 makeSubList.appendChild(linksLi);
-               
             }
             makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
-           
         }
-    };    
+    }
+    
+    //Get the image for the right catagory
+    function getImage(catName, makeSubList) {
+    	var imageLi = document.createElement('li');
+    	makeSubList.appendChild(imageLi);
+    	var newImg = document.createElement( 'img' );
+    	var setSrc   = newImg.setAttribute("src", "images/" + catName + ".png");
+    	imageLi.appendChild(newImg);
+    }    
+    
+    //JSON Object which will auto populate local storage
+    function autoFillData() {
+    	var json = {
+    		 "marker1":   {
+    		 		"group":  ["Group: " , "Book"],
+    		 		"date":    ["Date: " , "01-01-2012" ],
+    		 		"title":     ["Title: " , "Everybody poops"],
+    		 		"chap":   ["Chapter: " , "Stage 1" ],
+    		 		"page":   ["Page: " , "1" ],
+    		 		"para":    ["Paragraph: " , "3" ],
+    		 		"line":     ["Line: " , "50" ],
+    		 		"time":    ["Time: " , "01:00" ],
+    		 		"notes":  ["Notes: " , "book has fun activities"],
+    		 		"read":    ["Type of Reading: " , "Book"],
+    		 		"fav":      ["Save as Favorite: " , "Yes"]
+        		 }	 
+    	};
+    	//Store the JSON Object into Local Storage
+    	for(var n in json){
+    		var id 						=Math.floor(Math.random()*1000001);
+    		localStorage.setItem(id, JSON.stringify(json[n]));
+    	}
+    }
     
     //Make Item Links:
     // Create the edit and delete links for each stored item when displayed

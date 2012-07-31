@@ -137,8 +137,8 @@ window.addEventListener("DOMContentLoaded", function () {
     }    
     
     //JSON Object which will auto populate local storage
- /*   function autoFillData() {
-    	var json = {
+    function autoFillData() {
+    	/*var json = {
     		 "marker1":   {
     		 		"group":  ["Group: " , "Book"],
     		 		"date":    ["Date: " , "01-01-2012" ],
@@ -167,13 +167,13 @@ window.addEventListener("DOMContentLoaded", function () {
         		 		"fav":      ["Save as Favorite: " , "Yes"]
         		 	 }	 
         		 	 
-    	};
+    	}*/
     	//Store the JSON Object into Local Storage
     	for(var n in json){
     		var id 						=Math.floor(Math.random()*1000001);
     		localStorage.setItem(id, JSON.stringify(json[n]));
     	}
-    }*/
+    }
     
     //Make Item Links:
     // Create the edit and delete links for each stored item when displayed

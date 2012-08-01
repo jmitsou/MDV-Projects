@@ -1,1 +1,3 @@
-https://github.com/tenju88/MDV-Projects/tree/master/VFW
+https://github.com/tenju88/MDV-Projects/tree/master/MIU
+
+http://tenju88.github.com/MDV-Projects/MIU/Week%201/addItem.html

@@ -4,7 +4,7 @@
 window.addEventListener("DOMContentLoaded", function () {
 
     //getElementById Function
-    function $(x) {
+    function ge(x) {
         var theElement = document.getElementById(x);
         return theElement;
     }
@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
     // Create select field element and populate with options.
     function makeCats() {
         var formTag = document.getElementsByTagName("form"); //formTag is an array of all the form tags
-              selectLi = $('select');
+              selectLi = ge('select');
               makeSelect = document.createElement('select');
               makeSelect.setAttribute("id", "groups");
         for (var i=0, j=holderType.length; i<j; i++){
@@ -37,8 +37,8 @@ window.addEventListener("DOMContentLoaded", function () {
     
     
     function getCheckboxValue(){
-        if($('fav').checked){
-            favValue = $('fav').value;
+        if(ge('fav').checked){
+            favValue = ge('fav').value;
         }else {
             favValue = "No";
         }
@@ -47,17 +47,17 @@ window.addEventListener("DOMContentLoaded", function () {
    function toggleControls(n){
    	switch(n){
    		case "on":
-   			$("addTask").style.display = "none";
-   			$("clear").style.display = "inline";
-   			$("displayLink").style.display = "none";
-   			$("addNew").style.display = "inline";
+   			ge("addTask").style.display = "none";
+   			ge("clear").style.display = "inline";
+   			ge("displayLink").style.display = "none";
+   			ge("addNew").style.display = "inline";
    			break;
    		case "off":
-   			$("addTask").style.display = "block";
-   			$("clear").style.display = "inline";
-   			$("displayLink").style.display = "inline";
-   			$("addNew").style.display = "none";
-   			$("items").style.display = "none";
+   			ge("addTask").style.display = "block";
+   			ge("clear").style.display = "inline";
+   			ge("displayLink").style.display = "inline";
+   			ge("addNew").style.display = "none";
+   			ge("items").style.display = "none";
    			
    			break;
    		default:
@@ -75,15 +75,15 @@ window.addEventListener("DOMContentLoaded", function () {
         getSelectedRadio();
         getCheckboxValue();
         var  item                     ={};
-              item.group            = ["Group: " , $('groups').value];
-              item.date              = ["Date: " , $('date').value];
-              item.title               = ["Title: " , $('title').value];
-              item.chap             = ["Chapter: " , $('chap').value];
-              item.page             = ["Page: " , $('page').value];
-              item.para              = ["Paragraph: " , $('para').value];
-              item.line               = ["Line: " , $('line').value];
-              item.time              = ["Time: " , $('time').value];
-              item.notes            = ["Notes: " , $('notes').value];
+              item.group            = ["Group: " , ge('groups').value];
+              item.date              = ["Date: " , ge('date').value];
+              item.title               = ["Title: " , ge('title').value];
+              item.chap             = ["Chapter: " , ge('chap').value];
+              item.page             = ["Page: " , ge('page').value];
+              item.para              = ["Paragraph: " , ge('para').value];
+              item.line               = ["Line: " , ge('line').value];
+              item.time              = ["Time: " , ge('time').value];
+              item.notes            = ["Notes: " , ge('notes').value];
               item.read              = ["Type of Reading: " , readValue];
               item.fav                = ["Save as Favorite: " , favValue];
             //Save data into Local Storage: Use stringify to convert our object to a string.
@@ -104,7 +104,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
-        $("items").style.display = "block";
+        ge("items").style.display = "block";
         for(var i =0, j=localStorage.length; i<j; i++ ){
             var makeLi = document.createElement("li");
             var linksLi = document.createElement('li');
@@ -209,12 +209,12 @@ window.addEventListener("DOMContentLoaded", function () {
     	toggleControls('off');
     	
     	//populate the form fields with current localStorage values
-    	$('groups').value  = item.group[1];
-    	$('title').value       = item.title[1];
-    	$('chap').value     = item.chap[1];
-    	$('page').value     = item.page[1];
-    	$('para').value      = item.para[1];
-    	$('line').value       = item.line[1];
+    	ge('groups').value  = item.group[1];
+    	ge('title').value       = item.title[1];
+    	ge('chap').value     = item.chap[1];
+    	ge('page').value     = item.page[1];
+    	ge('para').value      = item.para[1];
+    	ge('line').value       = item.line[1];
     	var radios = document.forms[0].readType;
     	for(var i=0; i<radios.length; i++){
     		if(radios[i].value == "Book" && item.readType[1] == "Book"){
@@ -224,17 +224,17 @@ window.addEventListener("DOMContentLoaded", function () {
     		}
     	}
     	if(item.favorite[1] == "Yes"){
-    		$( 'fav' ).setAttribute("checked", "checked");
+    		ge( 'fav' ).setAttribute("checked", "checked");
     	}
-    	$('time').value    = item.time[1];
-    	$('date').value    = item.date[1];
-    	$('notes').value  = item.notes[1];
+    	ge('time').value    = item.time[1];
+    	ge('date').value    = item.date[1];
+    	ge('notes').value  = item.notes[1];
     	
     	//Remove the initial listener from the input ' save contact ' button.
     	save.removeEventListener("click", storeData);
     	// Change Submit Button Value to edit button
-    	$('submit').value = "Edit Contact";
-    	var editSubmit = $('submit');
+    	ge("submit").value = "Edit Contact";
+    	var editSubmit = ge("submit");
     	// Save the key value established  in the this function as a property of the editSubmit event 
     	//so we can use that value when we save the data we edited. 
     	editSubmit.addEventListener("click", validate);
@@ -265,12 +265,12 @@ window.addEventListener("DOMContentLoaded", function () {
     
     function validate(e) {
     	//define the elements we want to check
-    	var getGroups = $('groups');
-    	var getDate = $('date');
-    	var getTitle = $('title');
-    	var getChap = $('chap');
-    	var getPage = $('page');
-    	var getPara = $('para');
+    	var getGroups = ge('groups');
+    	var getDate = ge('date');
+    	var getTitle = ge('title');
+    	var getChap = ge('chap');
+    	var getPage = ge('page');
+    	var getPara = ge('para');
     	
     	//Reset Error Messages
     	errMsg.innerHTML = "";
@@ -346,15 +346,15 @@ window.addEventListener("DOMContentLoaded", function () {
     var holderType = ["-- Entry Type --", "Video", "Book"],
      	 readValue,
      	 favValue = "No",
-     	 errMsg = $('errors');   
+     	 errMsg = ge('errors');   
     ;
     makeCats();
     
 //    Set Link & Submit Click Events
-    var displayLink = $ ('displayLink');
+    var displayLink = ge ('displayLink');
         displayLink.addEventListener("click", getData);
-    var clearLink = $ ('clear');
+    var clearLink = ge ('clear');
     	clearLink.addEventListener("click", clearLocal);
-    var save = $('submit');
+    var save = ge('submit');
     	save.addEventListener("click", validate);    
 });

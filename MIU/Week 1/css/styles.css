@@ -80,31 +80,29 @@ label#read{
 	margin-top: 20px;
 }
 
-.button {
-	background: #fafafa;
-	color: #4bc2eb;
-	font-size: 15px;
-	border: 5px #969696;
+#links {
 	width: 100%;
-	padding: 6px;
-	margin-top: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	text-decoration: none;
 }
 
-.button:hover {
-	background: #f1f1f1;
-	color: #4bc2eb;
-	font-size: 15px;
-	border: 3px #969696;
-	width: 100%;
-	padding: 6px;
-	margin-top: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-moz-box-shadow: 2px 2px 1px #888;
-	-webkit-box-shadow: 2px 2px 1px #888;
-	box-shadow: 2px 2px 1px #888;
+
+#links li a {
 	text-decoration: none;
+	height: 28px;
+	color: white;
+	font-size: 20px;
+	margin-bottom: 5px ;
 }
+
+#links li a:link, #links li a:visited {
+	display: block;
+	background-color: #0d65b8;
+	padding: 12px 0 0 20px;
+}
+
+#links ul {
+	list-style: none;
+	margin: 0px;
+	padding: 1px;
+}
+
+

@@ -1,0 +1,115 @@
+/*Jeff Mitsou/VFW/1207 */
+
+h1 {
+	color: #00a6da;
+	font-weight: bold;
+	text-decoration: underline;
+	margin-bottom: 25px;
+}
+
+p {
+	color: #0d65b8;
+	font-weight: bold;
+	font-style: italic;
+}
+
+h2 {
+	color: #099cea;
+}
+
+#items ul ul{
+	border-bottom: 1px solid black;
+}
+
+#errors li{
+	color: red;
+}
+a:link {
+	color: #3bc0eb;
+}
+
+a:hover {
+	color: #1228d7;
+
+}
+
+body {
+	color: #00b4e4;
+	background-color: #e0fafd;
+	font-size: 19px;
+	opacity: 1;
+}
+
+fieldset {
+	color: #0d65b8;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	background-color: #e5f8fe;
+	opacity: 1;
+	border-color: #2023a7;
+	border-style: solid;
+	font-style: italic;
+	line-height: 20px;
+	width: 300px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+li {
+	list-style: none;
+}
+
+legend {
+	font-style: italic;
+	font-size: 28px;
+	color: #4bc2eb;
+}
+
+label.formInputs {
+	display: block;
+	height: 25px;
+	margin-top: 10px;
+}
+
+input#submit{
+	margin: 20px;
+	display: block;
+}
+
+label#read{
+	display: block;
+	margin-top: 20px;
+}
+
+#links {
+	width: 100%;
+}
+
+
+#links li a {
+	text-decoration: none;
+	height: 28px;
+	color: #ffffff;
+	font-size: 20px;
+	margin-bottom: 1px ;
+	border: 3px solid white;
+}
+
+#links li a:link, #links li a:visited {
+	display: block;
+	background-color: #0d65b8;
+	padding: 12px 0 0 20px;
+}
+
+#links ul {
+	list-style: none;
+	margin: 0px;
+	padding: 1px;
+}
+
+#bar{
+	width: 85%;
+	display: inline;
+}
+
+
+

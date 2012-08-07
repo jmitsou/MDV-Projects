@@ -1,4 +1,4 @@
-<!-- Jeff Mitsou/VFW/1207 -->
+<!-- Jeff Mitsou/MIU/week 2/1208 -->
 
 <!doctype HTML>
 <html lang="en">
@@ -16,28 +16,98 @@
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 		<script src="js/libs/modernizr.custom.min.js"></script>
-		<title> Place Holder </title>
+		<title> Family Tree Tracker </title>
 	</head>
 	<body>
-		<div data-role="page">
+		<div data-role="page" id="home">
 			<div data-role="header" data-position="fixed">
-				<h1> Place Holder </h1>
+				<h1> Family Tree Tracker </h1>
 			</div>
 			<!--Feature Image Link-->
-			<a href="additem.html"> <img src="images/feature.png" /></a>
+			<img src="images/tree.png" />
+			<a href="additem.html"> <img src="images/addMem.png" /></a>
 			<!--Search bar and go button-->
 			<div data-role="content">
-				<p> This application allows you to add in little notes to remind you of your place in the last episode of a show you were watching or the place you left off in the last book you were reading. 
-				</p>
+				<p> "This application allows you to add a family members and then organize them by name, birthday, age, etc."</p>
+			<div>
+				<div data-role="collapsible"  data-theme="a" data-content-theme="a"><h2>1st Gen</h2>
+					<ul>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Grandfathers</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of male grandparents.</a></li>
+						</div>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Grandmothers</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of female grandparents.</a></li>
+						</div>
+					</ul>
+				</div>
 			</div>
-		
-			<form method="post" name="search" action="#"/>
-			<input type="text" placeholder="Search" id="bar"/>
-			<input type="button" value="Go!" id="search" />
-			</form>
-		
-			<div data-role="footer" data-position="fixed">
-					<h4> Footer </h4>
+			<div>
+				<div data-role="collapsible" data-theme="a" data-content-theme="a"><h2>2nd Gen</h2>
+					<ul>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Fathers</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of male parents.</a></li>
+						</div>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Mothers</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of female parents.</a></li>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<div data-role="collapsible"  data-theme="a" data-content-theme="a"><h2>3rd Gen</h2>
+					<ul>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Teen (M)</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of male teens.</a></li>
+						</div>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Teen (F)</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of female teens.</a></li>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<div data-role="collapsible"  data-theme="a" data-content-theme="a"><h2>4th Gen</h2>
+					<ul>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Boys</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of male kids.</a></li>
+						</div>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Girls</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of female kids.</a></li>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<div data-role="collapsible"  data-theme="a" data-content-theme="a"><h2>5th Gen</h2>
+					<ul>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Babies (M)</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of male babies.</a></li>
+						</div>
+						<div data-role="collapsible" data-collapsed="false" data-mini="true">
+						<h5>Babies (F)</h5>
+						<li><a href="underCon.html" data-ajax="false" id="link">Go to list of female babies.</a></li>
+						</div>
+					</ul>
+				</div>
+			</div>
+					
+			</div>		
+			<div data-role="footer" data-position="fixed" data-id="nav">
+				<div  data-role="navbar">
+					<ul>
+						<li><a href="#home"data-icon="gear">Gold</a></li>
+						<li><a href="#bronze"data-icon="gear">Bronze</a></li>
+					</ul>
+				</div>
 			</div>
 
 		</div>

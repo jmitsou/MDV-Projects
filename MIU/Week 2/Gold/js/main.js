@@ -1,4 +1,4 @@
-// Jeff Mitsou, VFW,12/07
+// Jeff Mitsou/MIU/week 2/1208
 
 // Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function () {
@@ -344,7 +344,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     //Variable defaults
-    var holderType = ["-- Entry Type --", "Video", "Book"],
+    var holderType = ["-- Entry Type --", "Grandparent","Parent", "Teen", "Kid", "Baby"],
      	 readValue,
      	 favValue = "No",
      	 errMsg = ge('errors');   

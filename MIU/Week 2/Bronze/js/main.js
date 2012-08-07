@@ -1,4 +1,4 @@
-// Jeff Mitsou, VFW,12/07
+<!-- Jeff Mitsou/MIU/week 2/1208 -->
 
 // Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function () {

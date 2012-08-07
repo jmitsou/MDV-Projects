@@ -1,3 +1,5 @@
+<!-- Jeff Mitsou/MIU/week 2/1208 -->
+	
 	var json = {
 	
 		 "marker1":   {

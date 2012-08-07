@@ -14,34 +14,36 @@
 		<meta http-equiv="cleartype" content="on">
 		<!-- StyleSheets under here -->
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 		<script src="js/libs/modernizr.custom.min.js"></script>
 		<title> Place Holder </title>
 	</head>
 	<body>
-		<h1> Place Holder </h1>
-		<!--Feature Image Link-->
-		<a href="additem.html"> <img src="images/feature.png" /> </a>
+		<div data-role="page">
+			<div data-role="header" data-position="fixed">
+				<h1> Place Holder </h1>
+			</div>
+			<!--Feature Image Link-->
+			<a href="additem.html"> <img src="images/feature.png" /></a>
+			<!--Search bar and go button-->
+			<div data-role="content">
+				<p> This application allows you to add in little notes to remind you of your place in the last episode of a show you were watching or the place you left off in the last book you were reading. 
+				</p>
+			</div>
 		
+			<form method="post" name="search" action="#"/>
+			<input type="text" placeholder="Search" id="bar"/>
+			<input type="button" value="Go!" id="search" />
+			</form>
 		
-		<form method="post" name="search" action="#"/>
-		<input type="text" placeholder="Search" id="bar"/>
-		<input type="button" value="Go!" id="search" />
-		</form>
-		
-		<p> This application allows you to add in little notes to remind you of your place in the last episode of a show you were watching or the place you left off in the last book you were reading. 
-		</p>
-		
-		<div id="links"><h2> Holder Type:</h2>
-			<ul>
-				<li><a href="underCon.html">Book</a></li>
-				<li><a href="underCon.html">Video</a></li>
-			</ul>
+			<div data-role="footer" data-position="fixed">
+					<h4> Footer </h4>
+			</div>
+
 		</div>
-		<div id="links"><h2>Type of reading:</h2>
-			<ul>
-				<li><a href="underCon.html">Book</a></li>
-				<li><a href="underCon.html">Manga</a></li>
-			</ul>
-		</div>
-			</body>
+		<!-- JavaScript  under here -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</body>
 </html>

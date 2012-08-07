@@ -49,7 +49,7 @@ fieldset {
 	border-style: solid;
 	font-style: italic;
 	line-height: 20px;
-	width: 400px;
+	width: 300px;
 	margin-bottom: 20px;
 	margin-top: 10px;
 }
@@ -88,9 +88,10 @@ label#read{
 #links li a {
 	text-decoration: none;
 	height: 28px;
-	color: white;
+	color: #ffffff;
 	font-size: 20px;
-	margin-bottom: 5px ;
+	margin-bottom: 1px ;
+	border: 3px solid white;
 }
 
 #links li a:link, #links li a:visited {
@@ -104,5 +105,11 @@ label#read{
 	margin: 0px;
 	padding: 1px;
 }
+
+#bar{
+	width: 85%;
+	display: inline;
+}
+
 
 

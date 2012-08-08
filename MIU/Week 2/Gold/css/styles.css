@@ -74,3 +74,10 @@ label#read{
 	color: #ffffff;
 }
 
+li{
+	list-style: none;
+}
+
+title{
+	font-size: 16px;
+}

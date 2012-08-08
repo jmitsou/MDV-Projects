@@ -30,19 +30,12 @@
 						<li id="select"><label for="group" class="formInputs"> *Title:</label></li>
 						<li><label for="fname" class="formInputs">*First Name:</label><input type="text" id="fname" placeholder="First Name" class="formInputs"/></li>
 						<li><label for="lname" class="formInputs">*Last Name:</label><input type="text" id="lname" placeholder="Last Name" class="formInputs"/></li>
-						<li><label for="date" class="formInputs">*Birthday:</label><input type="date" id="date" value="mm/dd/yyyy" class="formInputs"/></li>
-						<li><label for="age" class="formInputs">*Age:</label>
-						           <input type="range" min="00" max="100" value = "1" class="formInputs" onchange = "showNumber(this.value)" /> <span id="age">00 yrs</span>
-						           <!-- Display range number function-->
-						             <script type="text/javascript">
-						                   function showNumber(newNumber){
-						                          document.getElementById("age").innerHTML = newNumber;
-						                    }
-						              </script>
+						<li><label for="date" class="formInputs">*Birthday:</label><input type="date" id="date" value="" class="formInputs"/></li>
+						<li><label for="age" class="formInputs">*Age:</label><input type="range" min="00" max="100" value = "1" class="formInputs" id="age"/> <span id="number"></span>	             
 						<li><label for="sex" id="read" class="formInputs">*Gender:</label>
 						  <ul class="radio">
-						  	<li><input type="radio" id="male" value="male" name="readType"/><label for="gender"> Male</label></li>
-						  	<li><input type="radio" id="female" value="female" name="readType" /><label for="gender"> Female</label></li>
+						  	<li><input type="radio" id="male" value="male" name="sex"/><label for="gender"> Male</label></li>
+						  	<li><input type="radio" id="female" value="female" name="sex" /><label for="gender"> Female</label></li>
 						  </ul>
 						<li><label for="notes" class="formInputs">Notes:<br> </label><textarea id="notes"></textarea></li>
 					</fieldset>

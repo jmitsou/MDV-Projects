@@ -1,4 +1,4 @@
-// Jeff Mitsou/MIU/week 2/1208
+/*  Jeff Mitsou/MIU/Week2/1208  */
 
 // Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function () {
@@ -9,15 +9,22 @@ window.addEventListener("DOMContentLoaded", function () {
         return theElement;
     }
     
+    function showNumber(){
+           var newNumber = ge("age").value;
+           ge("number").innerHTML = newNumber + " yrs";
+     }
+     
+     ge("age").addEventListener("change", showNumber);
+    
     // Create select field element and populate with options.
     function makeCats() {
         var formTag = document.getElementsByTagName("form"); //formTag is an array of all the form tags
               selectLi = ge('select');
               makeSelect = document.createElement('select');
               makeSelect.setAttribute("id", "groups");
-        for (var i=0, j=holderType.length; i<j; i++){
+        for (var i=0, j=title.length; i<j; i++){
             var makeOption = document.createElement('option');
-            var optText = holderType [i];
+            var optText = title [i];
             makeOption.setAttribute("value", optText);
             makeOption.innerHTML = optText;
             makeSelect.appendChild(makeOption);
@@ -27,12 +34,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //Find value of selected radio button.
     function getSelectedRadio() {
-        var radios = document.forms[0].readType;
+        var radios = document.forms[0].sex;
         for(var i = 0; i<radios.length; i++){
             if (radios[i].checked){
-                readValue = radios[i].value;
+                sexValue = radios[i].value;
             }
-        } return readValue;
+        }
     }
     
     
@@ -76,16 +83,13 @@ window.addEventListener("DOMContentLoaded", function () {
         getCheckboxValue();
         var  item                     ={};
               item.group            = ["Group: " , ge('groups').value];
+              item.fname           = ["First Name: " , ge('fname').value];
+              item.lname           = ["Last Name: " , ge('lname').value];
               item.date              = ["Date: " , ge('date').value];
-              item.title               = ["Title: " , ge('title').value];
-              item.chap             = ["Chapter: " , ge('chap').value];
-              item.page             = ["Page: " , ge('page').value];
-              item.para              = ["Paragraph: " , ge('para').value];
-              item.line               = ["Line: " , ge('line').value];
-              item.time              = ["Time: " , ge('time').value];
-              item.notes            = ["Notes: " , ge('notes').value];
-              item.read              = ["Type of Reading: " , readValue];
-              item.fav                = ["Save as Favorite: " , favValue];
+              item.age               = ["Age: " , ge('age').value];
+              item.sex                = ["Gender: " , sexValue];
+              item.notes             = ["Notes: " , ge('notes').value];
+              item.fav                 = ["Save as Favorite: " , favValue];
             //Save data into Local Storage: Use stringify to convert our object to a string.
             localStorage.setItem(id, JSON.stringify(item)); 
             alert("Contact Saved!");         
@@ -138,36 +142,8 @@ window.addEventListener("DOMContentLoaded", function () {
     
     //JSON Object which will auto populate local storage
     function autoFillData() {
-    	/*var json = {
-    		 "marker1":   {
-    		 		"group":  ["Group: " , "Book"],
-    		 		"date":    ["Date: " , "01-01-2012" ],
-    		 		"title":     ["Title: " , "Everybody poops"],
-    		 		"chap":   ["Chapter: " , "Stage 1" ],
-    		 		"page":   ["Page: " , "1" ],
-    		 		"para":    ["Paragraph: " , "3" ],
-    		 		"line":     ["Line: " , "50" ],
-    		 		"time":    ["Time: " , "01:00" ],
-    		 		"notes":  ["Notes: " , "book has fun activities"],
-    		 		"read":    ["Type of Reading: " , "Book"],
-    		 		"fav":      ["Save as Favorite: " , "Yes"]
-        		 },
-        		 
-        		 "marker2":   {
-        		 		"group":  ["Group: " , "Video"],
-        		 		"date":    ["Date: " , "01-01-2012" ],
-        		 		"title":     ["Title: " , "Everybody Poops the Movie"],
-        		 		"chap":   ["Chapter: " , "Stage 1" ],
-        		 		"page":   ["Page: " , "1" ],
-        		 		"para":    ["Paragraph: " , "" ],
-        		 		"line":     ["Line: " , "" ],
-        		 		"time":    ["Time: " , "01:00" ],
-        		 		"notes":  ["Notes: " , "love the videos"],
-        		 		"read":    ["Type of Reading: " , "N/A"],
-        		 		"fav":      ["Save as Favorite: " , "Yes"]
-        		 	 }	 
-        		 	 
-    	}*/
+    	/*var json = {*/
+    		 
     	//Store the JSON Object into Local Storage
     	for(var n in json){
     		var id 						=Math.floor(Math.random()*1000001);
@@ -182,7 +158,7 @@ window.addEventListener("DOMContentLoaded", function () {
     	var editLink = document.createElement('a');
    		editLink.href = "#";
     	editLink.key = key;
-    	var editText = "Edit Marker";
+    	var editText = "Edit Member";
     	editLink.addEventListener("click", editItem);
     	editLink.innerHTML = editText;
     	linksLi.appendChild(editLink);
@@ -194,7 +170,7 @@ window.addEventListener("DOMContentLoaded", function () {
     	var deleteLink = document.createElement('a')
     	deleteLink.href = "#";
     	deleteLink.key = key;
-    	var deleteText = "Delete Marker";
+    	var deleteText = "Delete Member";
     	deleteLink.addEventListener("click", deleteItem);
     	deleteLink.innerHTML = deleteText;
     	linksLi.appendChild(deleteLink); 
@@ -210,30 +186,26 @@ window.addEventListener("DOMContentLoaded", function () {
     	
     	//populate the form fields with current localStorage values
     	ge('groups').value  = item.group[1];
-    	ge('title').value       = item.title[1];
-    	ge('chap').value     = item.chap[1];
-    	ge('page').value     = item.page[1];
-    	ge('para').value      = item.para[1];
-    	ge('line').value       = item.line[1];
-    	var radios = document.forms[0].readType;
+    	ge('fname').value       = item.fname[1];
+    	ge('lname').value     = item.lname[1];
+    	ge('date').value     = item.date[1];
+    	ge('age').value      = item.age[1];
+    	ge('notes').value  = item.notes[1];
+    	ge("number").innerHTML = item.age[1] + " yrs";
+    	var radios = document.forms[0].sex;
     	for(var i=0; i<radios.length; i++){
-    		if(radios[i].value == "Book" && item.readType[1] == "Book"){
-    			radios[1].setAttribute("checked", "checked");
-    		}else if (radios[i].value == "Manga" && item.rType[1] == "Manga") {
-    			radios[1].setAttribute("checked", "checked");
+    		if(radios[i].value === item.sex[1]){
+    			radios[i].setAttribute("checked", "checked");
     		}
     	}
-    	if(item.favorite[1] == "Yes"){
+    	if(item.fav[1] == "Yes"){
     		ge( 'fav' ).setAttribute("checked", "checked");
     	}
-    	ge('time').value    = item.time[1];
-    	ge('date').value    = item.date[1];
-    	ge('notes').value  = item.notes[1];
     	
     	//Remove the initial listener from the input ' save contact ' button.
     	save.removeEventListener("click", storeData);
     	// Change Submit Button Value to edit button
-    	ge("submit").value = "Edit Contact";
+    	ge("submit").value = "Edit Member";
     	var editSubmit = ge("submit");
     	// Save the key value established  in the this function as a property of the editSubmit event 
     	//so we can use that value when we save the data we edited. 
@@ -243,13 +215,13 @@ window.addEventListener("DOMContentLoaded", function () {
     }
     
     function deleteItem() {
-    	 var ask = confirm("Are you sure you want to delete this Marker?");
+    	 var ask = confirm("Are you sure you want to delete this member?");
     	 if (ask){
     	 		localStorage.removeItem(this.key);
-    	 		alert("Marker has been deleted.");
+    	 		alert("Member has been deleted.");
     	 		window.location.reload();
     	 }else {
-    	 	  alert("Marker not deleted.")
+    	 	  alert("Member not deleted.")
     	 }
     }
     
@@ -258,7 +230,7 @@ window.addEventListener("DOMContentLoaded", function () {
         	  alert("There is no data to clear!");    
         } else {
         	 localStorage.clear();
-         	 alert("All contact deleted!");
+         	 alert("All members deleted!");
        		 window.location.reload();
        		 return false;
         }
@@ -267,29 +239,41 @@ window.addEventListener("DOMContentLoaded", function () {
     function validate(e) {
     	//define the elements we want to check
     	var getGroups = ge('groups');
+    	var getFname = ge('fname');
+    	var getLname = ge('lname');
     	var getDate = ge('date');
-    	var getTitle = ge('title');
-    	var getChap = ge('chap');
-    	var getPage = ge('page');
-    	var getPara = ge('para');
     	
     	//Reset Error Messages
     	errMsg.innerHTML = "";
-    	getGroups.style.border = "1px solid black";
-    	getDate.style.border = "1px solid black";
-    	getTitle.style.border 	  = "1px solid black";
-    	getChap.style.border 	  = "1px solid black";
-      	getPage.style.border 	  = "1px solid black";
-   	    getPara.style.border 	  = "1px solid black";
+    	getGroups.style.border 	= "1px solid black";
+    	getFname.style.border 	= "1px solid black";
+    	getLname.style.border 	= "1px solid black";
+    	getDate.style.border 	  	= "1px solid black";
+    
+   	    
     	    		 
     	//get error messages 
     	var messageAry = [];
     	
     	//Group validation
     	if (getGroups.value ==="-- Entry Type --"){
-    		var groupError = "Please choose a group.";
+    		var groupError = "Please select a group.";
     		getGroups.style.border = "1px solid red";
     		messageAry.push(groupError);
+    	}
+    	
+    	//First Name Valadation 
+    	if(getFname.value === ""){
+    		 var fnameError = "Please enter a First Name."
+    		 getFname.style.border = "1px solid red";
+    		 messageAry.push(fnameError);
+    	}
+    	
+    	//Last Name Valadation 
+    	if(getLname.value === ""){
+    		 var lnameError = "Please enter a Last Name."
+    		 getLname.style.border = "1px solid red";
+    		 messageAry.push(lnameError);
     	}
     	
     	//Date Valadation 
@@ -298,34 +282,7 @@ window.addEventListener("DOMContentLoaded", function () {
     		 getDate.style.border = "1px solid red";
     		 messageAry.push(dateError);
     	}
-    
-    	//Title Valadation 
-    	if(getTitle.value === ""){
-    		 var titleError = "Please enter a title."
-    		 getTitle.style.border = "1px solid red";
-    		 messageAry.push(titleError);
-    	}
     	
-    	//Chapter Valadation 
-    	if(getChap.value === ""){
-    		 var chapError = "Please enter a chapter name."
-    		 getChap.style.border = "1px solid red";
-    		 messageAry.push(chapError);
-    	}
-    	
-    	//Page Validation 
-    	if(getPage.value === ""){
-    		 var pageError = "Please enter a page number."
-    		 getPage.style.border = "1px solid red";
-    		 messageAry.push(pageError);
-    	}
-    	
-    	//Paragraph Valadation 
-    	if(getPara.value === ""){
-    		 var paraError = "Please enter a paragraph number."
-    		 getPara.style.border = "1px solid red";
-    		 messageAry.push(paraError);
-    	}
     	
     	//If there were errors, display them on the screen.
     	if(messageAry.length >= 1){
@@ -344,8 +301,8 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     //Variable defaults
-    var holderType = ["-- Entry Type --", "Grandparent","Parent", "Teen", "Kid", "Baby"],
-     	 readValue,
+    var title = ["-- Entry Type --", "Grandpa", "Grandma", "Father","Mother", "Teen (M)", "Teen (F)", "Boy", "Girl",  "Baby boy", "Baby girl"],
+     	 sexValue,
      	 favValue = "No",
      	 errMsg = ge('errors');   
     ;

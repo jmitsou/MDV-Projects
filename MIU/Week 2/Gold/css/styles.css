@@ -71,7 +71,7 @@ label#read{
 }
 
 #link{
-	color: #ffffff;
+	color: #000000;
 }
 
 li{
@@ -80,4 +80,9 @@ li{
 
 title{
 	font-size: 16px;
+}
+
+#ucon p {
+	color: #b41d1d;
+	font-size: 20px;
 }

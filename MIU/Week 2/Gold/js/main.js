@@ -85,7 +85,8 @@ window.addEventListener("DOMContentLoaded", function () {
               item.group            = ["Group: " , ge('groups').value];
               item.fname           = ["First Name: " , ge('fname').value];
               item.lname           = ["Last Name: " , ge('lname').value];
-              item.date              = ["Date: " , ge('date').value];
+              item.bdate              = ["Birthday: " , ge('bdate').value];
+              item.ddate              = ["Death date: " , ge('ddate').value];
               item.age               = ["Age: " , ge('age').value];
               item.sex                = ["Gender: " , sexValue];
               item.notes             = ["Notes: " , ge('notes').value];
@@ -188,7 +189,8 @@ window.addEventListener("DOMContentLoaded", function () {
     	ge('groups').value  = item.group[1];
     	ge('fname').value       = item.fname[1];
     	ge('lname').value     = item.lname[1];
-    	ge('date').value     = item.date[1];
+    	ge('bdate').value     = item.bdate[1];
+    	ge('ddate').value     = item.ddate[1];
     	ge('age').value      = item.age[1];
     	ge('notes').value  = item.notes[1];
     	ge("number").innerHTML = item.age[1] + " yrs";
@@ -241,14 +243,16 @@ window.addEventListener("DOMContentLoaded", function () {
     	var getGroups = ge('groups');
     	var getFname = ge('fname');
     	var getLname = ge('lname');
-    	var getDate = ge('date');
+    	var getBdate = ge('bdate');
+    	var getDdate = ge('ddate');
     	
     	//Reset Error Messages
     	errMsg.innerHTML = "";
     	getGroups.style.border 	= "1px solid black";
     	getFname.style.border 	= "1px solid black";
     	getLname.style.border 	= "1px solid black";
-    	getDate.style.border 	  	= "1px solid black";
+    	getBdate.style.border 	  	= "1px solid black";
+    	getDdate.style.border 	  	= "1px solid black";
     
    	    
     	    		 
@@ -277,12 +281,18 @@ window.addEventListener("DOMContentLoaded", function () {
     	}
     	
     	//Date Valadation 
-    	if(getDate.value === "mm/dd/yyyy"){
-    		 var dateError = "Please enter a date."
-    		 getDate.style.border = "1px solid red";
-    		 messageAry.push(dateError);
+    	if(getBdate.value === "mm/dd/yyyy"){
+    		 var bdateError = "Please enter a date."
+    		 getBdate.style.border = "1px solid red";
+    		 messageAry.push(bdateError);
     	}
     	
+    	//Date Valadation 
+    	if(getDdate.value === "mm/dd/yyyy"){
+    		 var ddateError = "Please enter a date."
+    		 getDdate.style.border = "1px solid red";
+    		 messageAry.push(ddateError);
+    	}
     	
     	//If there were errors, display them on the screen.
     	if(messageAry.length >= 1){
@@ -301,7 +311,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     //Variable defaults
-    var title = ["-- Entry Type --", "Grandpa", "Grandma", "Father","Mother", "Teen (M)", "Teen (F)", "Boy", "Girl",  "Baby boy", "Baby girl"],
+    var title = ["-- Entry Type --", "Great Grandparent", "Grandparent", "Parent", "Sibling", "Aunt & Uncle",  "Cousin", "Children", "Grandchildren", "Great Grandchildren"],
      	 sexValue,
      	 favValue = "No",
      	 errMsg = ge('errors');   

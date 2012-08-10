@@ -3,16 +3,24 @@
 <!doctype html> 
 <html>
 	<head>
-		<meta charset="utf-8"/>
-		<meta name="description" content="Our very first HTML5 document. How exciting!"/>
-		<meta name="keywords" content="html5, mobile developement, Full Sail University"/>
-		<meta name="robots" content="index, follow" />
-		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta charset="utf-8">
+		<meta content="Second step to a full working app!" name="description">
+		<meta content="html5, mobile developement, Full Sail University" name="keywords">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="index, follow" name="robots">
+		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
-		<title> Place Holder </title>
+		<title> Family </title>
 	</head>
 	<body>
-		<h1> Place Holder </h1>
+		<h1> Family </h1>
 		<nav>
 			<a href="#" id="displayLink" style="display: block;"> Display Data</a>
 			<a href="#" id="clear" style="display: block;"> Clear Stored Data</a>
@@ -30,8 +38,9 @@
 						<li id="select"><label for="group" class="formInputs"> *Title:</label></li>
 						<li><label for="fname" class="formInputs">*First Name:</label><input type="text" id="fname" placeholder="First Name" class="formInputs"/></li>
 						<li><label for="lname" class="formInputs">*Last Name:</label><input type="text" id="lname" placeholder="Last Name" class="formInputs"/></li>
-						<li><label for="date" class="formInputs">*Birthday:</label><input type="date" id="date" value="" class="formInputs"/></li>
-						<li><label for="age" class="formInputs">*Age:</label><input type="range" min="00" max="100" value = "1" class="formInputs" id="age"/> <span id="number"></span>	             
+						<li><label for="bdate" class="formInputs">*Birthday:</label><input type="date" id="bdate" value="" class="formInputs"/></li>
+						<li><label for="ddate" class="formInputs">*Date of Death:</label><input type="date" id="ddate" value="" class="formInputs"/></li>
+						<li><label for="age" class="formInputs">Age:</label><input type="range" min="00" max="100" value = "1" class="formInputs" id="age"/> <span id="number"></span>	             
 						<li><label for="sex" id="read" class="formInputs">*Gender:</label>
 						  <ul class="radio">
 						  	<li><input type="radio" id="male" value="male" name="sex"/><label for="gender"> Male</label></li>

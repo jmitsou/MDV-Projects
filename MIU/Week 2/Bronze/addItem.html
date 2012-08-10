@@ -3,54 +3,50 @@
 <!doctype html> 
 <html>
 	<head>
-		<meta charset="utf-8"/>
-		<meta name="description" content="Our very first HTML5 document. How exciting!"/>
-		<meta name="keywords" content="html5, mobile developement, Full Sail University"/>
-		<meta name="robots" content="index, follow" />
-		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta charset="utf-8">
+		<meta content="Second step to a full working app!" name="description">
+		<meta content="html5, mobile developement, Full Sail University" name="keywords">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="index, follow" name="robots">
+		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
-		<title> Place Holder </title>
+		<title> Family </title>
 	</head>
 	<body>
-		<h1> Place Holder </h1>
+		<h1> Family </h1>
 		<nav>
 			<a href="#" id="displayLink" style="display: block;"> Display Data</a>
 			<a href="#" id="clear" style="display: block;"> Clear Stored Data</a>
 			<br>
-			<a href="addItem.html" id="addNew" style="display: none;">Add New Marker</a>
+			<a href="addItem.html" id="addNew" style="display: none;">Add New Member</a>
 		</nav>
 			
 			<form action="#" method="post" id="addTask">
 				<fieldset>
-					<legend><strong> Add Marker</strong></legend>
+					<legend><strong> Add Member</strong></legend>
 					<span>* fields are required. </span>
 					<ul id="errors"></ul>
 					<ul id="questions"></ul>
 					<ul>
-						<li id="select"><label for="group" class="formInputs"> *Holder:</label></li>
-						<li><label for="date" class="formInputs">*Date:</label><input type="date" id="date" value="mm/dd/yyyy" class="formInputs"/></li>
-						<li><label for="title" class="formInputs">*Title:</label><input type="text" id="title" placeholder="title" class="formInputs"/></li>
-						<li><label for="chap" class="formInputs">*Chapter:</label><input type="text" id="chap" value=""class="formInputs" /></li>
-						<li><label for="page" class="formInputs">*Page:</label><input type="number" id="page" value="" class="formInputs" /></li>
-						<li><label for="para" class="formInputs">*Paragraph:</label><input type="number" id="para" value="" class="formInputs" /></li>
-						<li><label for="line" class="formInputs">Line:</label><input type="number" id="line" value="" class="formInputs" /></li>
-					<!--add video question in here	-->
-						 <li><label for="time" class="formInputs">Time Stopped:</label>
-						            <input type="range" min="00" max="60" value = "" class="formInputs" onchange = "showNumber(this.value)" /> <span id="time">00 minutes</span>
-						            <!-- Display range number function-->
-						              <script type="text/javascript">
-						                    function showNumber(newNumber){
-						                           document.getElementById("time").innerHTML = newNumber;
-						                     }
-						               </script>
-						
-						<li><label for="notes">Notes:<br> </label><textarea id="notes"></textarea></li>
-					</ul>
-						<label for="rType" id="read">Type of Reading:</label>
-						<ul class="radio">
-							<li><input type="radio" id="bookType" value="Book" name="readType"/><label for="rType"> Book</label></li>
-							<li><input type="radio" id="mangaType" value="Manga" name="readType" /><label for="rType"> Manga</label></li>
-					</ul>	
+						<li id="select"><label for="group" class="formInputs"> *Title:</label></li>
+						<li><label for="fname" class="formInputs">*First Name:</label><input type="text" id="fname" placeholder="First Name" class="formInputs"/></li>
+						<li><label for="lname" class="formInputs">*Last Name:</label><input type="text" id="lname" placeholder="Last Name" class="formInputs"/></li>
+						<li><label for="bdate" class="formInputs">*Birthday:</label><input type="date" id="bdate" value="" class="formInputs"/></li>
+						<li><label for="ddate" class="formInputs">*Date of Death:</label><input type="date" id="ddate" value="" class="formInputs"/></li>
+						<li><label for="age" class="formInputs">Age:</label><input type="range" min="00" max="100" value = "1" class="formInputs" id="age"/> <span id="number"></span>	             
+						<li><label for="sex" id="read" class="formInputs">*Gender:</label>
+						  <ul class="radio">
+						  	<li><input type="radio" id="male" value="male" name="sex"/><label for="gender"> Male</label></li>
+						  	<li><input type="radio" id="female" value="female" name="sex" /><label for="gender"> Female</label></li>
+						  </ul>
+						<li><label for="notes" class="formInputs">Notes:<br> </label><textarea id="notes"></textarea></li>
 					</fieldset>
 					<input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav"> Save as favorite?</label>
 				<input type="button"  value="Submit Marker" id="submit" />

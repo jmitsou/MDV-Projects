@@ -5,14 +5,13 @@
 		<meta charset="utf-8">
 		<meta content="Second step to a full working app!" name="description">
 		<meta content="html5, mobile developement, Full Sail University" name="keywords">
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta content="index, follow" name="robots">
+		
 		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="index, follow" name="robots">
+		
 		<!-- Mobile IE needs ClearType for smoothing fonts -->
 		<meta http-equiv="cleartype" content="on">
 		<title>Family Rolladex</title>
@@ -21,6 +20,7 @@
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 		<script src="js/libs/modernizr.custom.min.js"></script>
+		
 <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
@@ -29,14 +29,15 @@
 <!-- Start of Home page -->
 		<div data-role="page" id="home" data-theme="c">
 			<div data-role="header" data-position="fixed" data-theme="c">
-			<a href="http://tenju88.github.com/MDV-Projects/MIU/Week 2/Bronze/index.html" data-ajax="false" data-icon="star">Bronze App</a>
-			<a href="ticker.html" data-ajax="false" data-icon="arrow-r">News Feed</a>
+			
 				<h1> Family Rolladex </h1>
 			</div><!-- /header -->
 			 
 			 <ul data-role="" data-mini="true" data-inset="true">
+			 
 			 <!--Feature Image Link-->
-			 	<a href="#addmem" data-ajax="false"><img src="images/addFmem.png" /></a>
+			 	<a href="#addmem" data-ajax="false"><img src="images/addFmems.png" /></a>
+			 	
 			 	<!--App statement-->
 			 	<li><p> "This application allows you to add a family members and then organize them by name, birthday, age, etc."</p></li>
 			 </ul>
@@ -91,10 +92,11 @@
 				</ul>	
 			</div><!-- /content -->
 			
-			<div data-role="navbar" data-position="fixed" data-id="nav">
+			<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
@@ -107,8 +109,10 @@
 			</div><!-- /header -->
 			
 			
-			<div id="">
-			
+			<div data-role="listview">
+				<ul>
+					<li></li>
+				</ul>
 			</div><!-- /content -->
 			
 			
@@ -620,7 +624,7 @@
 		</div><!-- /page -->
 		
 <!-- Start of About Me page -->
-		<div data-role="page" id="about" data-theme="a">
+		<div data-role="page" id="about" data-theme="">
 			<div data-role="header" data-position="fixed">
 				<h1>About Me</h1>
 			</div><!-- /header -->
@@ -636,6 +640,7 @@
 					<li><a href="https://github.com/tenju88/MDV-Projects/tree/master/MIU">Master Branch</a></li>
 					<br>
 					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 2/Bronze/index.html">Bronze App</a></li>
+					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 2/Gold/index.html">Gold App</a></li>
 				</ul>
 			</div><!-- /content -->
 			
@@ -670,7 +675,7 @@
 <!-- Under info test page -->
 				<div data-role="page" id="info" data-theme="c">
 					<div data-role="header" data-position="fixed">
-						<h1></h1>
+						<h1>Family Rolladex</h1>
 					</div><!-- /header -->
 				
 					<div data-role="content" >				

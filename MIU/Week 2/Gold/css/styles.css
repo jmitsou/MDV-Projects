@@ -34,7 +34,7 @@ body {
 	opacity: 1;
 }
 
-fieldset {
+/*fieldset {
 	color: #3942b4;
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 	background-color: #a7f7f1;
@@ -46,7 +46,7 @@ fieldset {
 	width: 300px;
 	margin-bottom: 20px;
 	margin-top: 10px;
-}
+}*/
 
 legend {
 	font-style: italic;

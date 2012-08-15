@@ -1,0 +1,92 @@
+/*Jeff Mitsou/MIU/week 2/1208*/
+
+h1 {
+	color: #408dae;
+	margin-bottom: 25px;
+}
+
+p {
+	color: #429ca5;
+	font-weight: bold;
+	font-style: italic;
+}
+
+h2 {
+	color: #58bef8;
+}
+
+#errors li{
+	color: red;
+}
+a:link {
+	color: #0cc1af;
+}
+
+a:hover {
+	color: #5375e3;
+
+}
+
+body {
+	color: #966c5e;
+	background-color: #;
+	font-size: 16px;
+	opacity: 1;
+}
+
+/*fieldset {
+	color: #3942b4;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	background-color: #a7f7f1;
+	opacity: 1;
+	border-color: #2023a7;
+	border-style: solid;
+	font-style: italic;
+	line-height: 20px;
+	width: 300px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}*/
+
+legend {
+	font-style: italic;
+	font-size: 28px;
+	color: #0f5494;
+}
+
+label.formInputs {
+	display: block;
+	height: 25px;
+	margin-top: 10px;
+}
+
+input#submit{
+	margin: 20px;
+	display: block;
+}
+
+label#read{
+	display: block;
+	margin-top: 20px;
+}
+
+#link{
+	color: #000000;
+}
+
+li{
+	list-style: none;
+}
+
+title{
+	font-size: 16px;
+}
+
+#ucon p {
+	color: #b41d1d;
+	font-size: 20px;
+}
+
+#link{
+	color: #073e7e;
+}

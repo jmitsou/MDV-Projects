@@ -134,57 +134,65 @@
 			<div data-role="content">
 				
 				<form action="" method="post" id="addmemform">
-				* Required Field
+				<b>* Required Field</b>
 				
 					<div data-role="fieldcontain">
 						<label for="title">*Title:</label>
 						<select name="title" id="title" data-native-menu="false" value="" class="required">
-							<option data-placeholder="true">--Please Choose--</option>
-							<option value="ggpar">Great Grandparent</option>
-							<option value="gpar">Grandparent</option>
-							<option value="par">Parent</option>
-							<option value="sib">Sibling</option>
-							<option value="a&u">Aunt or Uncle</option>
-							<option value="cos">Cousin</option>
-							<option value="child">Child</option>
-							<option value="gchild">Grandchild</option>
-							<option value="ggchild">Great Grandchild</option>
+							<option data-placeholder="true">Please Choose One</option>
+							<optgroup label="Adults">
+								<option value="ggpar">Great Grandparent</option>
+								<option value="gpar">Grandparent</option>
+								<option value="par">Parent</option>
+								<option value="sib">Sibling</option>
+								<option value="a&u">Aunt or Uncle</option>
+							</optgroup>
+							<optgroup label="Youth">
+								<option value="cos">Cousin</option>
+								<option value="child">Child</option>
+								<option value="gchild">Grandchild</option>
+								<option value="ggchild">Great Grandchild</option>
+							</optgroup>
 						</select>
 					</div>
 				
 					<div data-role="fieldcontain">
 						<label for="fname">*First Name: </label>
 						<input type="text" name="fname" id="fname" class="required"/>
+						<sub><i>Example: James</i></sub>
 					</div>
 					
 					<div data-role="fieldcontain">
 						<label for="lname">*Last Name: </label>
 						<input type="text" name="lname" id="lname" class="required"/>
+						<sub><i>Example: Smith</i></sub>
 					</div>
 					
 					<div data-role="fieldcontain">
 						<label for="bday">*Birthday: </label>
 						<input type="date" name="bday" id="bday" class="required" />
+						<sub><i>Please enter using proper date format: mm/dd/yyyy</i></sub>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="live">Is this member still alive ?</label>
+						<br>
+						<select data-role="slider" >
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
 					</div>
 					
 					<div data-role="fieldcontain">
 						<label for="ddate">*Death date: </label>
 						<input type="date" name="ddate" id="ddate" class="required"/>
+						<sub><i>Please enter using proper date format: mm/dd/yyyy</i></sub>
 					</div>
 					
 					<div data-role="fieldcontain">
 						<label for="Age">*Age: </label>
 						<br>
 						<input type="range" name="age" id="age" value="0" min="0" max="100"/>
-					</div>
-					
-					<div data-role="fieldcontain">
-						<label for="live">Is member alive ?</label>
-						<br>
-						<select data-role="slider" >
-							<option value="yes">Yes</option>
-							<option value="no">No</option>
-						</select>
 					</div>
 					
 					<div data-role="fieldcontain">
@@ -198,7 +206,7 @@
 					</div>
 					
 					<div data-role="fieldcontain">
-						<label for="notes">Notes: </label>
+						<label for="notes" >Notes: </label>
 						<br>
 						<textarea></textarea>
 					</div>

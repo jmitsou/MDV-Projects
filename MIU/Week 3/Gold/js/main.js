@@ -1,28 +1,25 @@
 /*  Jeff Mitsou/MIU/Week2/1208  */
 
 // Wait until the DOM is ready.
-
-var parseMemForm = function(data) {
-	// uses form data here;
-};
-
-$(document).ready(function() {
-
-		var mform = $('#addmemform');
-		
-		mform.validate({
-				invalidHandler:  function(form, validator) {},
-				submitHandler: function() {
-						var data = mform.serializeArray();
-						parseMemForm(data);
-				}
-		});
-});
-
 window.addEventListener("DOMContentLoaded", function () {
 
-	
-  
+	var parseMemForm = function(data) {
+	// uses form data here;
+	};
+
+	$(document).ready(function() {
+
+			var mform = $('#addmemform');
+		
+			mform.validate({
+				invalidHandler:  function(form, validator) {},
+				submitHandler:  function() {
+						var data = mform.serializeArray();
+						parseMemForm(data);
+					}
+			});
+	});
+
     //getElementById Function
     function ge(x) {
         var theElement = document.getElementById(x);
@@ -37,7 +34,7 @@ window.addEventListener("DOMContentLoaded", function () {
      ge("age").addEventListener("change", showNumber);
     
     // Create select field element and populate with options.
-    function makeCats() {
+    /*function makeCats() {
         var formTag = document.getElementsByTagName("form"); //formTag is an array of all the form tags
               selectLi = ge('select');
               makeSelect = document.createElement('select');
@@ -50,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function () {
             makeSelect.appendChild(makeOption);
         }
         selectLi.appendChild(makeSelect);
-    }
+    }*/
 
     //Find value of selected radio button.
     function getSelectedRadio() {
@@ -336,7 +333,7 @@ window.addEventListener("DOMContentLoaded", function () {
      	 favValue = "No",
      	 errMsg = ge('errors');   
     ;
-    makeCats();
+    //makeCats();
     
 //    Set Link & Submit Click Events
     var displayLink = ge ('displayLink');

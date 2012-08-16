@@ -4,7 +4,7 @@
 window.addEventListener("DOMContentLoaded", function () {
 
 	var parseMemForm = function(data) {
-	// uses form data here;
+			// uses form data here;
 	};
 
 	$(document).ready(function() {
@@ -255,7 +255,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     } 
     
-    function validate(e) {
+   /* function validate(e) {
     	//define the elements we want to check
     	var getGroups = ge('groups');
     	var getFname = ge('fname');
@@ -325,10 +325,10 @@ window.addEventListener("DOMContentLoaded", function () {
     		storeData(this.key);
     	}
     	
-    }
+    }*/
 
     //Variable defaults
-    var title = ["-- Entry Type --", "Great Grandparent", "Grandparent", "Parent", "Sibling", "Aunt & Uncle",  "Cousin", "Children", "Grandchildren", "Great Grandchildren"],
+    //var title = ["-- Entry Type --", "Great Grandparent", "Grandparent", "Parent", "Sibling", "Aunt & Uncle",  "Cousin", "Children", "Grandchildren", "Great Grandchildren"],
      	 sexValue,
      	 favValue = "No",
      	 errMsg = ge('errors');   

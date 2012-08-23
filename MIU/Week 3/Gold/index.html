@@ -97,9 +97,61 @@
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
 					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
+		
+		<!-- Start of thumbgrid page -->
+				<div data-role="page" id="gallery" data-theme="c">
+					<div data-role="header" data-position="fixed" data-theme="c">
+					
+						<h1> Gallery </h1>
+					</div><!-- /header -->
+					
+					<!-- Thumbnail Grid -->
+					<div data-role="content">
+						<div class="ui-grid-b">
+							<div class="ui-block-a">
+								<img src="images/Baby boy.png" alt="cover" />
+							</div>
+							<div class="ui-block-b">
+								<img src="images/Baby boy.png" alt="cover" />
+							</div>
+							<div class="ui-block-c">
+								<img src="images/western1.jpg" alt="cover" />
+							</div>
+							<div class="ui-block-a">
+								<img src="images/trinity1.png" alt="cover" />
+							</div>
+							<div class="ui-block-b">
+								<img src="images/trinity2.jpg" alt="cover" />
+							</div>
+							<div class="ui-block-c">
+								<img src="images/trinity3.png" alt="cover" />
+							</div>
+							<div class="ui-block-a">
+								<img src="images/pursuit1.png" alt="cover" />
+							</div>
+							<div class="ui-block-b">
+								<img src="images/pursuit2.png" alt="cover" />
+							</div>
+							<div class="ui-block-c">
+								<img src="images/pursuit3.png" alt="cover" />
+							</div>
+						</div>
+					</div><!-- end of content -->
+					
+					
+				<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+						<ul>
+							<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
+							<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+							<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+							<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
+						</ul>
+					</div><!-- /footer -->
+				</div><!-- /page -->
 		
 	<!-- Start of feed page -->
 		<div data-role="page" id="feed" data-theme="c">
@@ -109,17 +161,64 @@
 			</div><!-- /header -->
 			
 			
-			<div data-role="listview">
-				<ul>
-					<li></li>
+			<div data-role="content">
+				<ul data-role="listview" >
+						<li>
+						<div class="ui-grid-solo">
+						<div class="ui-block-a">
+						<div class="ui-bar ui-bar-a">
+						Feb 01, 2012 - James Mitsou birthday is today
+						</div>
+						</div>
+						</div>
+						</li>
+						<li>
+						<div class="ui-grid-solo">
+						<div class="ui-block-a">
+						<div class="ui-bar ui-bar-a">
+						May 9, 2012 - 
+						</div>
+						</div>
+						</div>
+						</li>
+						<li>
+						<div class="ui-grid-solo">
+						<div class="ui-block-a">
+						<div class="ui-bar ui-bar-a">
+						January 3, 2012 - 
+						</div>
+						</div>
+						</div>
+						</li>
+						<li>
+						<div class="ui-grid-solo">
+						<div class="ui-block-a">
+						<div class="ui-bar ui-bar-a">
+						January 3, 2012 - 
+						</div>
+						</div>
+						</div>
+						</li>
+						<li>
+						<div class="ui-grid-solo">
+						<div class="ui-block-a">
+						<div class="ui-bar ui-bar-a">
+						January 3, 2012 - 
+						</div>
+						</div>
+						</div>
+						</li>
 				</ul>
+				
 			</div><!-- /content -->
 			
 			
 			<div data-role="navbar" data-position="fixed" data-id="nav">
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#about" data-ajax="false" data-icon="info">Info Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul></div><!-- /footer -->
 		</div><!-- /page -->
 		
@@ -136,7 +235,9 @@
 	<div data-role="navbar" data-position="fixed" data-id="nav">
 			<ul>
 				<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-				<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+				<li><a href="#about" data-ajax="false" data-icon="info">Info Me</a></li>
+				<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+				<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 			</ul></div><!-- /footer -->
 	</div><!-- /page -->
 	
@@ -162,8 +263,8 @@
 					<div data-role="fieldcontain">
 						<label for="title">*Title:</label>
 						<select name="title" id="title" data-native-menu="false" value="" class="required">
-							<option data-placeholder="true">Please Choose One</option>
 							<optgroup label="Adults">
+								<option>Please Choose One</option>
 								<option value="ggpar">Great Grandparent</option>
 								<option value="gpar">Grandparent</option>
 								<option value="par">Parent</option>
@@ -257,7 +358,9 @@
 			<div data-role="navbar" data-position="fixed" data-id="nav">
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul></div><!-- /footer -->
 		</div><!-- /page -->
 		
@@ -303,12 +406,14 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of Grandparents page -->
-		<div data-role="page" id="grandparents" data-back-btn="back">
+		<div data-role="page" id="grandparents" data-back-btn="back" data-theme="c">
 		
 			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
@@ -317,9 +422,9 @@
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" ><h2> Grandparents</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2> Grandparents</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Grandfathers</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">James Jr.</a></li>
@@ -329,7 +434,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Arthur</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Grandmothers</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Jody</a></li>
@@ -348,23 +453,25 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of Parents page -->
-		<div data-role="page" id="parents" data-back-btn="back">
+		<div data-role="page" id="parents" data-back-btn="back" data-theme="c">
 		
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
 				<h1>Parents</h1>
 			</div><!-- /header -->
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Parents</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2>Parents</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Fathers</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Jeff</a></li>
@@ -374,7 +481,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Abe</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Mothers</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Keyri</a></li>
@@ -393,23 +500,25 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of Siblings page -->
-		<div data-role="page" id="siblings" data-back-btn="back">
+		<div data-role="page" id="siblings" data-back-btn="back" data-theme="c">
 		
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
-				<h1>Great Grand Parents</h1>
+				<h1>Siblings</h1>
 			</div><!-- /header -->
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Siblings</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2>Siblings</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Brothers</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Jim</a></li>
@@ -419,7 +528,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Alfred</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Sisters</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
@@ -438,23 +547,25 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of Aunts & Uncles page -->
-		<div data-role="page" id="aunts&uncles" data-back-btn="back">
+		<div data-role="page" id="aunts&uncles" data-back-btn="back" data-theme="c">
 		
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
 				<h1>Aunts & Uncles</h1>
 			</div><!-- /header -->
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Aunts & Uncles</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2>Aunts & Uncles</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Uncles</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Edy</a></li>
@@ -464,7 +575,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Aunts</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
@@ -483,23 +594,25 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of Cousins page -->
-		<div data-role="page" id="cousins" data-back-btn="back">
+		<div data-role="page" id="cousins" data-back-btn="back" data-theme="c">
 		
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
 				<h1>Cousins</h1>
 			</div><!-- /header -->
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Cousins</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2>Cousins</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Boy Cousins</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Eric</a></li>
@@ -509,7 +622,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Girl Cousins</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Jane</a></li>
@@ -528,23 +641,25 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of Children page -->
-		<div data-role="page" id="children" data-back-btn="back">
+		<div data-role="page" id="children" data-back-btn="back" data-theme="c">
 		
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
 				<h1>Children</h1>
 			</div><!-- /header -->
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Children</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2>Children</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Boys</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">James</a></li>
@@ -554,7 +669,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Girls</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
@@ -573,23 +688,25 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of grandchildren page -->
-		<div data-role="page" id="grandchildren" data-back-btn="back">
+		<div data-role="page" id="grandchildren" data-back-btn="back" data-theme="c">
 		
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
 				<h1>Grandchildren</h1>
 			</div><!-- /header -->
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Grandchildren</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2>Grandchildren</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Grandsons</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">James</a></li>
@@ -599,7 +716,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Granddaughters</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
@@ -618,23 +735,25 @@
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		<!-- Start of Ggrandparents page -->
-		<div data-role="page" id="Ggrandchildren" data-back-btn="back">
+		<div data-role="page" id="Ggrandchildren" data-back-btn="back" data-theme="c">
 		
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-theme="c">
 			<a href="index.html" data-icon="back">Back</a>
 				<h1>Great Grandchildren</h1>
 			</div><!-- /header -->
 		
 			<div data-role="content">	
 				<div>
-					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Great Grandchildren</h2>
+					<div data-role="collapsible" data-collapsed="false" data-theme="b"><h2>Great Grandchildren</h2>
 						<ul>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Great Grandsons</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">James</a></li>
@@ -644,7 +763,7 @@
 									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
 								</ol>
 							</div>
-							<div data-role="collapsible" data-collapsed="false" data-mini="true">
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b">
 								<h5>Great Granddaughters</h5>
 								<ol data-role="listview" data-filter="true">
 									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
@@ -662,14 +781,16 @@
 			<div data-role="navbar" data-position="fixed" data-id="nav">
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 <!-- Start of About Me page -->
-		<div data-role="page" id="about" data-theme="">
-			<div data-role="header" data-position="fixed">
+		<div data-role="page" id="about" data-theme="" data-theme="c">
+			<div data-role="header" data-position="fixed" data-theme="c">
 				<h1>About Me</h1>
 			</div><!-- /header -->
 		
@@ -678,19 +799,18 @@
 					<!--Logo Image Link-->
 					<li><img src="images/logo/logo.png" /></li>
 					<li><p> JAKA apps is a family made company </p></li>
-					<br>
-					<br>
-					<br>
 					<li><a href="https://github.com/tenju88/MDV-Projects/tree/master/MIU">Master Branch</a></li>
-					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 2/Bronze/index.html">Bronze App</a></li>
-					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 2/Gold/index.html">Gold App</a></li>
+					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 4/Bronze/index.html">Bronze App</a></li>
+					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 4/Gold/index.html">Gold App</a></li>
 				</ul>
 			</div><!-- /content -->
 			
 		<div data-role="navbar" data-position="fixed" data-id="nav">
 			<ul>
 				<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-				<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+				<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+				<li><a href="#feed" data-ajax="false" data-icon="info">News Feed</a></li>
+				<li><a href="#gallery" data-ajax="false" data-icon="info">Gallery</a></li>
 			</ul>
 		</div><!-- /footer -->
 	</div><!-- /page -->
@@ -710,12 +830,14 @@
 			<div data-role="navbar" data-position="fixed" data-id="nav">
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-					<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+					<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 				</ul>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
-<!-- Under info test page -->
+<!-- info test page -->
 				<div data-role="page" id="info" data-theme="c">
 					<div data-role="header" data-position="fixed">
 						<h1>Family Rolladex</h1>
@@ -753,7 +875,9 @@
 					<div data-role="navbar" data-position="fixed" data-id="nav">
 						<ul>
 							<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
-							<li><a href="#about" data-ajax="false" data-icon="info">About Me</a></li>
+							<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+							<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+							<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
 						</ul>
 					</div><!-- /footer -->
 				</div><!-- /page -->

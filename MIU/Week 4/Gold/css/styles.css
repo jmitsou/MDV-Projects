@@ -15,9 +15,12 @@ h2 {
 	color: #58bef8;
 }
 
-#errors li{
-	color: red;
+label.error{
+	display: block;
+	margin: 10px 0;
+	color: #cc0000;
 }
+
 a:link {
 	color: #0cc1af;
 }
@@ -29,9 +32,10 @@ a:hover {
 
 body {
 	color: #966c5e;
-	background-color: #;
+	background: url('../images/background/ice_age.png');
 	font-size: 16px;
 	opacity: 1;
+	
 }
 
 /*fieldset {

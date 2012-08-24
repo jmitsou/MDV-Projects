@@ -30,9 +30,9 @@
 <!-- Start of Home page -->
 		<div data-role="page" id="home" data-theme="a">
 			<div data-role="header" data-position="fixed">
-			<a href="#about" ><img src="images/logo/minilogo.png" /></a>
+				<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+				<h1 class="headers"> Family Rolladex </h1>
 			
-				<h1> Family Rolladex </h1>
 			</div><!-- /header -->
 			 
 			 <ul data-role="" data-mini="true" data-inset="true">
@@ -107,7 +107,8 @@
 		<!-- Start of thumbgrid page -->
 				<div data-role="page" id="gallery" data-theme="a">
 					<div data-role="header" data-position="fixed" data-theme="a">
-					<a data-rel="back" data-icon="back">Back</a>
+					<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+					<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 					
 						<h1> Gallery </h1>
 					</div><!-- /header -->
@@ -116,10 +117,10 @@
 					<div data-role="content">
 						<div class="ui-grid-b">
 							<div class="ui-block-a">
-								<img src="images/Baby boy.png" alt="cover" />
+								<img src="" alt="cover" />
 							</div>
 							<div class="ui-block-b">
-								<img src="images/Baby boy.png" alt="cover" />
+								<img src="" alt="cover" />
 							</div>
 							<div class="ui-block-c">
 								<img src="" alt="cover" />
@@ -159,7 +160,8 @@
 	<!-- Start of feed page -->
 		<div data-role="page" id="feed" data-theme="a">
 			<div data-role="header" data-position="fixed" data-theme="">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1> News Feed </h1>
 			</div><!-- /header -->
 			
@@ -179,7 +181,7 @@
 						<div class="ui-grid-solo">
 						<div class="ui-block-a">
 						<div class="ui-bar ui-bar-a">
-						May 9, 2012 - 
+						May 9, 2012 - Anniversary of Grandfathers death
 						</div>
 						</div>
 						</div>
@@ -228,7 +230,8 @@
 	<!--Start of data page-->
 	<div data-role="page" id="showdata" data-theme="a" >
 		<div data-role="header" data-position="fixed" data-theme="a">
-		<a data-rel="back" data-icon="back">Back</a>
+		<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+		<a href="#addmem" data-icon="back">Back</a>
 		<h1>Display Data</h1>
 	</div>
 	
@@ -248,7 +251,8 @@
 	<!-- Start of Add member page -->
 		<div data-role="page" id="addmem" data-theme="a">
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1> Add Member </h1>
 			</div><!-- /header -->
 			
@@ -302,28 +306,16 @@
 						<sub><i>Please enter using proper date format: mm/dd/yyyy</i></sub>
 					</div>
 					
-					<div data-role="fieldcontain">
+					<div data-role="fieldcontain" id="slider">
 						<label for="live">Is this member still alive ?</label>
 						<br>
-						<select data-role="slider" >
+						<select data-role="slider">
 							<option value="yes">Yes</option>
 							<option value="no">No</option>
 						</select>
 					</div>
 					
-					<script type="text/javascript">
-					<!--
-					    function toggle_visibility(ddate) {
-					       var e = document.getElementById(ddate);
-					       if(e.style.display == 'block')
-					          e.style.display = 'none';
-					       else
-					          e.style.display = 'block';
-					    }
-					//-->
-					</script>
-					
-					<div data-role="fieldcontain" style="display: none;">
+					<div data-role="fieldcontain">
 						<label for="ddate">*Death date: </label>
 						<input type="date" name="ddate" id="ddate" class="required" placeholder="mm/dd/yyyy"/>
 						<sub><i>Please enter using proper date format: mm/dd/yyyy</i></sub>
@@ -354,7 +346,7 @@
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup" id="fav">
 							<legend>Favorite?</legend>
-							<input type="checkbox" name="fav" value="Yes" id="yup"/>
+							<input type="checkbox" name="fav" value="Yes" id="yup" checked="checked"/>
 							<label for="yup">Yes</label>
 						</fieldset>
 					</div>
@@ -383,9 +375,9 @@
 		
 		<!-- Start of Ggrandparents page -->
 		<div data-role="page" id="Ggrandparents" data-back-btn="back" data-theme="a">
-		
-			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1> Great Grandparents </h1>
 			</div><!-- /header -->
 		
@@ -432,7 +424,8 @@
 		<div data-role="page" id="grandparents" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Grandparents</h1>
 			</div><!-- /header -->
 		
@@ -479,7 +472,8 @@
 		<div data-role="page" id="parents" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Parents</h1>
 			</div><!-- /header -->
 		
@@ -526,7 +520,8 @@
 		<div data-role="page" id="siblings" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Siblings</h1>
 			</div><!-- /header -->
 		
@@ -573,7 +568,8 @@
 		<div data-role="page" id="aunts&uncles" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Aunts & Uncles</h1>
 			</div><!-- /header -->
 		
@@ -620,7 +616,8 @@
 		<div data-role="page" id="cousins" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Cousins</h1>
 			</div><!-- /header -->
 		
@@ -667,7 +664,8 @@
 		<div data-role="page" id="children" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Children</h1>
 			</div><!-- /header -->
 		
@@ -714,7 +712,8 @@
 		<div data-role="page" id="grandchildren" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Grandchildren</h1>
 			</div><!-- /header -->
 		
@@ -761,7 +760,8 @@
 		<div data-role="page" id="Ggrandchildren" data-back-btn="back" data-theme="a">
 		
 			<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Great Grandchildren</h1>
 			</div><!-- /header -->
 		
@@ -807,7 +807,8 @@
 <!-- Start of About Me page -->
 		<div data-role="page" id="about" data-theme="" data-theme="a">
 			<div data-role="header" data-position="fixed" data-theme="">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>About Me</h1>
 			</div><!-- /header -->
 		
@@ -835,7 +836,8 @@
 <!-- Under Construction page -->
 		<div data-role="page" id="ucon" data-theme="a">
 			<div data-role="header" data-position="fixed">
-			<a data-rel="back" data-icon="back">Back</a>
+			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 				<h1>Closed</h1>
 			</div><!-- /header -->
 		
@@ -858,36 +860,38 @@
 <!-- info test page -->
 				<div data-role="page" id="info" data-theme="a">
 					<div data-role="header" data-position="fixed">
+					<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+					<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
 						<h1>Family Rolladex</h1>
 					</div><!-- /header -->
 				
-					<div data-role="content" >				
-						<ul data-role="listview" >
-							<li>
-							<img src="images/addpic.png" />
-							<h3>James Mitsou</h3>
-							<p>Group: Father</p>
-							<p>Birthday: 02/01/1935</p>
-							<p>Date of Death: N/A</p>
-							<p>Age: 76</p>
-							<p>Gender: Male</p>
-							<p>Notes:  Mothers, Doesn't like Anime</p>
-							<p>Favorite: No</p>
-							</li>
-							<li><a href="#Ggrandparents"> ... Back</a></li>
-							<li>
-							<img src="images/addpic.png" />
-							<h3>Nicolas Roman</h3>
-							<p>Group: Great Grandfathers</p>
-							<p>Birthday: 05/09/1932</p>
-							<p>Date of Death: 11/28/2009</p>
-							<p>Age: 77</p>
-							<p>Gender: Male</p>
-							<p>Notes: Father's side, likes Anime, R.I.P</p>
-							<p>Favorite: Yes</p>
-							</li>
-							<li><a href="#Ggrandparents"> ... Back</a></li>
-						</ul>	
+					<div data-role="content" >
+						<div data-role="feildcontain">
+							<ul data-role="listview"  >
+								<li>
+								<img src="images/Grandpa.png" />
+								<h3>James Mitsou</h3>
+								<p>Group: Parent</p>
+								<p>Birthday: 02/01/1935</p>
+								<p>Date of Death: N/A</p>
+								<p>Age: 76</p>
+								<p>Gender: Male</p>
+								<p>Notes:  Mothers, Doesn't like Anime</p>
+								<p>Favorite: No</p>
+								</li>		
+								<li>
+								<img src="images/Grandpa.png" />
+								<h3>Nicolas Roman</h3>
+								<p>Group: Great Grandparent</p>
+								<p>Birthday: 05/09/1932</p>
+								<p>Date of Death: 11/28/2009</p>
+								<p>Age: 77</p>
+								<p>Gender: Male</p>
+								<p>Notes: Father's side, likes Anime, R.I.P</p>
+								<p>Favorite: Yes</p>
+								</li>
+							</ul>
+						</div>						
 					</div><!-- /content -->
 					
 					<div data-role="navbar" data-position="fixed" data-id="nav">

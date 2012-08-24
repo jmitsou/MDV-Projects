@@ -9,6 +9,20 @@ p {
 	color: #429ca5;
 	font-weight: bold;
 	font-style: italic;
+	font-size: 7;
+}
+
+#home ul li p {
+	font-size: 7;
+}
+
+.logo{
+	float: left;
+	display: inline;
+}
+
+.back{
+	float: right;
 }
 
 h2 {

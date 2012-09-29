@@ -1,0 +1,595 @@
+<!doctype html>  
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta content="Second step to a full working app!" name="description">
+		<meta content="html5, mobile developement, Full Sail University" name="keywords">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="index, follow" name="robots">
+		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+		<title>Family Rolladex</title>
+	
+<!-- StyleSheets under here -->
+		<link rel="stylesheet" href="themes/Ice.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		<link rel="stylesheet" href="css/styles.css" type="text/css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<script src="js/libs/modernizr.custom.min.js"></script>
+<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	</head>
+	<body>
+		<!-- Start of Home page -->
+		<div data-role="page" id="home" data-theme="e">
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			
+				<h1>Family Rolladex</h1>
+			</div><!-- /header -->
+			 
+			 <ul data-role="" data-inset="true">
+			 <!--Feature Image Link-->
+			 <li><a href="additem.html" data-ajax="false"><img src="images/addFmem.png" /></a></li>
+			 <!--App statement-->
+			 <li><p> "This application allows you to add a family members and then organize them by name, birthday, age, etc."</p></li>
+			 </ul>
+			 
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-inset="true" data-theme="b">
+					<li><a href="#Ggrandparents">
+					<img src="images/tabIcons/grandparents.png" />
+					<h3>Great Grandparents</h3>
+					<p>The eldest and wisest of most families</p>
+					</a></li>
+					<li><a href="#grandparents">
+					<img src="images/tabIcons/grandparents.png" />
+					<h3>Grandparents</h3>
+					<p>Your parent's Mother and Father</p>
+					</a></li>
+					<li><a href="#parents">
+					<img src="images/tabIcons/parents.png" />
+					<h3>Parents</h3>
+					<p>Your Mother and Father</p>
+					</a></li>
+					<li><a href="#siblings">
+					<img src="images/tabIcons/cousins.png" />
+					<h3>Siblings</h3>
+					<p>Your parent's other children</p>
+					</a></li>
+					<li><a href="#aunts&uncles">
+					<img src="images/tabIcons/parents.png" />
+					<h3>Aunts & Uncles</h3>
+					<p>Your Parent's siblings</p>
+					</a></li>
+					<li><a href="#cousins">
+					<img src="images/tabIcons/cousins.png" />
+					<h3>Cousins</h3>
+					<p>Your Aunt & Uncles children</p>
+					</a></li>
+					<li><a href="#children">
+					<img src="images/tabIcons/children.png" />
+					<h3>Children</h3>
+					<p>Your children</p>
+					</a></li>
+					<li><a href="#grandchildren">
+					<img src="images/tabIcons/children.png" />
+					<h3>Grandchildren</h3>
+					<p>Your children's children</p>
+					</a></li>
+					<li><a href="#Ggrandchildren">
+					<img src="images/tabIcons/great grandchildren.png" />
+					<h3>Great Grandchildren</h3>
+					<p>The babies of the family</p>
+					</a></li>
+				</ul>	
+			</div><!-- /content -->
+			
+			<div data-role="navbar" data-position="fixed" data-id="nav" data-theme="b">
+				<ul>
+					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
+					<li><a href="#about" data-ajax="false" data-icon="info">Info</a></li>
+				</ul>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		
+		<!-- Start of Ggrandparents page -->
+		<div data-role="page" id="Ggrandparents" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Great Grand Parents</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Great Grandparents</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Great Grandfathers</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#info" data-ajax="false" id="link">James Mitsou</a></li>
+									<li><a href="#info" data-ajax="false" id="link">Nicolas Roman</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Danny</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Joshua</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Great Grandmothers</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Claudia</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Harriet</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jennifer</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alicia</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+				
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of Grandparents page -->
+		<div data-role="page" id="grandparents" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Grandparents</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2> Grandparents</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true"data-theme="a">
+								<h5>Grandfathers</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">James Jr.</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Hector</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">David</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jona</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Arthur</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Grandmothers</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Jody</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Clair</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Helen</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jill</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Anna</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+				
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of Parents page -->
+		<div data-role="page" id="parents" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Parents</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Parents</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Fathers</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Jeff</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Harold</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Derek</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">John</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Abe</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Mothers</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Keyri</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Irmari</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Racheal</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Michelle</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Amy</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+				
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of Siblings page -->
+		<div data-role="page" id="siblings" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Great Grand Parents</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Siblings</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Brothers</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Jim</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Havier</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Donald</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jack</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alfred</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Sisters</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Cindy</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Harriet</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jennifer</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alicia</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+				
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of Aunts & Uncles page -->
+		<div data-role="page" id="aunts&uncles" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Aunts & Uncles</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Aunts & Uncles</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Uncles</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Edy</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Edward</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Danny</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Joshua</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Aunts</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Claudia</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Harriet</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jennifer</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alicia</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+				
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of Cousins page -->
+		<div data-role="page" id="cousins" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Cousins</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Cousins</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Boy Cousins</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Eric</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Howard</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Danny</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Joshua</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Girl Cousins</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Jane</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Corry</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Diana</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jamie</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Victoria</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of Children page -->
+		<div data-role="page" id="children" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Children</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Children</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Boys</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">James</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Howard</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Danny</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Joshua</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Girls</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Claudia</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Harriet</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jennifer</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alicia</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+				
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of grandchildren page -->
+		<div data-role="page" id="grandchildren" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Grandchildren</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Grandchildren</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Grandsons</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">James</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Howard</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Danny</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Joshua</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Granddaughters</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Claudia</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Harriet</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jennifer</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alicia</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+				
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Start of Ggrandparents page -->
+		<div data-role="page" id="Ggrandchildren" data-back-btn="back" data-theme="e">
+		
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a href="index.html" data-icon="back">Back</a>
+				<h1>Great Grandchildren</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">	
+				<div>
+					<div data-role="collapsible" data-collapsed="false" data-theme="a"><h2>Great Grandchildren</h2>
+						<ul>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Great Grandsons</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">James</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Howard</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Danny</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Joshua</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alex</a></li>
+								</ol>
+							</div>
+							<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a">
+								<h5>Great Granddaughters</h5>
+								<ol data-role="listview" data-filter="true">
+									<li><a href="#ucon" data-ajax="false" id="link">Joanna</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Claudia</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Harriet</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Jennifer</a></li>
+									<li><a href="#ucon" data-ajax="false" id="link">Alicia</a></li>
+								</ol>
+							</div>
+						</ul>
+					</div>
+				</div>			
+			</div><!-- /content -->
+		
+			<div data-role="footer" data-position="fixed" data-back-btn-text="previous">
+				<h4></h4>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+<!-- Start of About Me page -->
+		<div data-role="page" id="about" data-theme="e">
+		<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<div data-role="header" data-position="fixed">
+				<h1>About Me</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content">				
+				<ul>
+					<!--Logo Image Link-->
+					<li><img src="images/logo/logo.png" /></li>
+					<li><p> JAKA apps is a family made company </p></li>
+					<li><a href="https://github.com/tenju88/MDV-Projects/tree/master/MIU">Master Branch</a></li>
+					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 4/Bronze/index.html">Bronze App</a></li>
+					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 4/Gold/index.html">Gold App</a></li>
+					
+				</ul>
+			</div><!-- /content -->			
+			<div data-role="navbar" data-position="fixed" data-id="nav" data-content-theme="a">
+				<ul>
+					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
+				</ul>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+<!-- Under Construction page -->
+		<div data-role="page" id="ucon" data-theme="e">
+			<div data-role="header" data-position="fixed">
+			<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+			<a data-rel="back"  data-icon="back" >Back</a>
+			
+				<h1>Closed</h1>
+			</div><!-- /header -->
+		
+			<div data-role="content" id="ucon">				
+			<!--ucon Image Link-->
+				<img src="images/undercon.png" />
+				<p> This page is currently not available check back later... </p>
+			</div><!-- /content -->
+			
+			<div data-role="navbar" data-position="fixed" data-id="nav">
+				<ul>
+					<li><a href="" data-rel="back" data-theme="a" data-ajax="false" data-icon="back" >Back</a></li>
+				</ul>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+<!-- Under info test page -->
+				<div data-role="page" id="info" data-theme="e">
+					<div data-role="header" data-position="fixed">
+					<a><img src="images/logo/minilogo.png" alt="Jaka Logo"/></a>
+						<h1></h1>
+					</div><!-- /header -->
+				
+					<div data-role="content" >				
+						<ul data-role="listview" >
+							<li>
+							<img src="images/addpic.png" />
+							<h3>James Mitsou</h3>
+							<p>Group: Father</p>
+							<p>Birthday: 02/01/1935</p>
+							<p>Date of Death: N/A</p>
+							<p>Age: 76</p>
+							<p>Gender: Male</p>
+							<p>Notes:  Mothers, Doesn't like Anime</p>
+							<p>Favorite: No</p>
+							</li>
+							<li><a href="#Ggrandparents"> ... Back</a></li>
+							<li>
+							<img src="images/addpic.png" />
+							<h3>Nicolas Roman</h3>
+							<p>Group: Great Grandfathers</p>
+							<p>Birthday: 05/09/1932</p>
+							<p>Date of Death: 11/28/2009</p>
+							<p>Age: 77</p>
+							<p>Gender: Male</p>
+							<p>Notes: Father's side, likes Anime, R.I.P</p>
+							<p>Favorite: Yes</p>
+							</li>
+							<li><a href="#Ggrandparents"> ... Back</a></li>
+						</ul>	
+					</div><!-- /content -->
+					
+					<div data-role="navbar" data-position="fixed" data-id="nav">
+						<ul>
+							<li><a href="" data-rel="back" data-theme="a" data-ajax="false" data-icon="back" >Back</a></li>
+						</ul>
+					</div><!-- /footer -->
+				</div><!-- /page -->
+		
+		
+
+		<!-- JavaScript under here -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+
+	</body>
+</html>

@@ -15,7 +15,7 @@ $('#addmem').on('pageinit', function(){
 	//    Set Link & Submit Click Events
 	    var displayLink = $('#displayLink');
 	        displayLink.on("click", getData);
-	        
+	    console.log()    
 	    var clearLink = $ ('#clear');
 	    	clearLink.on("click", clearLocal);
 	    	
@@ -56,6 +56,7 @@ $('#addmem').on('pageinit', function(){
 	}
 	
 	function storeData(key) {
+	console.log('storeData') 
 			if (!key){ 
 	        var id                          = Math.floor(Math.random()*1000001);
 	    }else {
@@ -79,6 +80,7 @@ $('#addmem').on('pageinit', function(){
 	}
 	
 	function getData(){
+	console.log('getData fired') 
 	    if(localStorage.length === 0){
 	    	alert("No Data Available in Local Storage so default data was added.")
 	    	autoFillData();
@@ -114,11 +116,11 @@ $('#addmem').on('pageinit', function(){
 	
 	//Get the image for the right catagory
 	function getImage(catName, makeSubList) {
-		var imageLi = document.createElement('li');
-		makeSubList.appendChild(imageLi);
-		var newImg = document.createElement( 'img' );
+		var imageLi = $('li');
+		makeSubList.append(imageLi);
+		var newImg = $( 'img' );
 		var setSrc   = newImg.setAttribute("src", "images/tabIcons" + catName + ".png");
-		imageLi.appendChild(newImg);
+		imageLi.append(newImg);
 	}  
 	
 	//JSON Object which will auto populate local storage
@@ -132,6 +134,13 @@ $('#addmem').on('pageinit', function(){
 		}
 	}
 	
+//	function name(){
+//		if($("#idInput").val() === "yes"){
+//			$('#slider').show();
+//		}else{
+//			$('#slider').hide();
+//		}
+//	};
 	//Make Item Links:
 	// Create the edit and delete links for each stored item when displayed
 	function makeItemLinks(key, linksLi) {
@@ -145,8 +154,8 @@ $('#addmem').on('pageinit', function(){
 				.html(editText);
 		linksLi.append(editLink);
 		
-		var space = document.createElement('br');
-		linksLi.appendChild(space);
+		var space = $('<br/>');
+		linksLi.append(space);
 		
 		//add delete single item link
 		var deleteLink = $('a');

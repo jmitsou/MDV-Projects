@@ -4,38 +4,23 @@ $('#home').on('pageinit', function(){
 		
 $('#addmem').on('pageinit', function(){
 
-//		var mform = $('#addmemform');
-//		    mform.validate({
-//			invalidHandler: function(form, validator) {},
-//			submitHandler: function() {
-//		var data = mform.serializeArray();
-//			storeData(this.key);
-//		}
-//	});
-	//    Set Link & Submit Click Events
-	    var displayLink = $('#displayLink');
-	        displayLink.on("click", getData);
-	    console.log()    
-	    var clearLink = $ ('#clear');
-	    	clearLink.on("click", clearLocal);
-	    	
-	    var save = $('#submit');
-	    	save.on("click", validate);  
+		var mform = $('#addmemform');
+		    mform.validate({
+			invalidHandler: function(form, validator) {},
+			submitHandler: function() {
+		var data = mform.serializeArray();
+			storeData(this.key);
+		}
+	});
 	
 	//any other code needed for addItem page goes here
-	var validate= function (){
-	console.log('made it')
-		var mform = $('#addmemform');
-			    mform.validate({
-				invalidHandler: function(form, validator) {},
-				submitHandler: function() {
-			var data = mform.serializeArray();
-				storeData(this.key);
-			}
-		});
-		
+	
+	//getElementById Function
+	function ge(x) {
+	    var theElement = document.getElementById(x);
+	    return theElement;
 	}
-
+	
 //	Find value of selected radio button.
 //	function getSelectedRadio() {
 //	    var radios = document.forms[0].sex;
@@ -48,15 +33,14 @@ $('#addmem').on('pageinit', function(){
 	
 	//	Find value of favorite button.
 	function getCheckboxValue(){
-	    if($('fav').checked){
-	        favValue = $('fav').value;
+	    if(ge('fav').checked){
+	        favValue = ge('fav').value;
 	    }else {
 	        favValue = "No";
 	    }
 	}
 	
 	function storeData(key) {
-	console.log('storeData') 
 			if (!key){ 
 	        var id                          = Math.floor(Math.random()*1000001);
 	    }else {
@@ -65,14 +49,14 @@ $('#addmem').on('pageinit', function(){
 	    //getSelectedRadio();
 	    //getCheckboxValue();
 	    var  item                     ={};
-	          item.title            	   = ["Title: " , $('#title').val()];
-	          item.fname           = ["First Name: " , $('#fname').val()];
-	          item.lname           = ["Last Name: " , $('$lname').val()];
-	          item.bday            = ["Birthday: " , $('#bday').val()];
-	          item.ddate            = ["Death date: " , $('#ddate').val()];
-	          item.age               = ["Age: " , $('#age').value];
+	          item.title            	   = ["Title: " , ge('title').value];
+	          item.fname           = ["First Name: " , ge('fname').value];
+	          item.lname           = ["Last Name: " , ge('lname').value];
+	          item.bday            = ["Birthday: " , ge('bday').value];
+	          item.ddate            = ["Death date: " , ge('ddate').value];
+	          item.age               = ["Age: " , ge('age').value];
 //	          item.sex         	   = ["Gender: " , sexValue];
-	          item.notes            = ["Notes: " , $('#notes').value];
+	          item.notes            = ["Notes: " , ge('notes').value];
 	          item.fav                = ["Save as Favorite: " , favValue];
 	        //Save data into Local Storage: Use stringify to convert our object to a string.
 	        localStorage.setItem(id, JSON.stringify(item)); 
@@ -80,47 +64,46 @@ $('#addmem').on('pageinit', function(){
 	}
 	
 	function getData(){
-	console.log('getData fired') 
 	    if(localStorage.length === 0){
-	    	alert("No Data Available in Local Storage so default data was added.")
 	    	autoFillData();
+	    	alert("No Data Available in Local Storage so default data was added.")
 	    };
-	    
 	    //Write Data from Local Storage to the browser
-	    var makeDiv = $("#data" )
-	    var makeList = $("ul");
-	    makeDiv.append(makeList);
-	    
+	    var makeDiv = ge("data")
+	    var makeList = document.createElement("ul");
+	    makeDiv.appendChild(makeList);
 	    for(var i =0, j=localStorage.length; i<j; i++ ){
-	        var makeLi = $("li");
-	        makeLi.addClass("makeLi")
-	        	.appendTo(makeList)
-	        var linksLi = $('li');
+	        var makeLi = document.createElement("li");
+	        var linksLi = document.createElement('li');
+	        makeList.appendChild(makeLi);
 	        var key = localStorage.key(i);
 	        var value = localStorage.getItem(key);
 	        //Convert string from local storage val back to an object using JSON.parse()
 	        var obj = JSON.parse(value);
-	        var makeSubList = $("ul");
-	        makeSubList.appendTo(makeLi)
+	        console.log(obj);
+	        var makeSubList = document.createElement("ul");
+	        makeLi.appendChild(makeSubList);
+	        console.log(obj.title[1]);
 	        getImage(obj.title[1], makeSubList);
+	    
 	        for( var n in obj){
-	            var makeSubLi = $("li");
-	            makeSubLi.appendTo(makeSubList);
+	            var makeSubLi = document.createElement("li");
+	            makeSubList.appendChild(makeSubLi);
 	            var optSubText = obj[n][0] +" " + obj[n][1];
-	            				.html(optSubText);
-	            makeSubList.append(linksLi);
+	            makeSubLi.innerHTML = optSubText;
+	            makeSubList.appendChild(linksLi);
 	        }
-	    makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
+	        makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
 	    }
 	}
 	
 	//Get the image for the right catagory
 	function getImage(catName, makeSubList) {
-		var imageLi = $('li');
-		makeSubList.append(imageLi);
-		var newImg = $( 'img' );
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement( 'img' );
 		var setSrc   = newImg.setAttribute("src", "images/tabIcons" + catName + ".png");
-		imageLi.append(newImg);
+		imageLi.appendChild(newImg);
 	}  
 	
 	//JSON Object which will auto populate local storage
@@ -134,55 +117,48 @@ $('#addmem').on('pageinit', function(){
 		}
 	}
 	
-//	function name(){
-//		if($("#idInput").val() === "yes"){
-//			$('#slider').show();
-//		}else{
-//			$('#slider').hide();
-//		}
-//	};
 	//Make Item Links:
 	// Create the edit and delete links for each stored item when displayed
 	function makeItemLinks(key, linksLi) {
 		//add edit single item link
-		var editLink = $('a');
-			editLink.attr("href","#addmemform");
+		var editLink = document.createElement('a');
+			editLink.href = "#addmemform";
 		editLink.key = key;
 		var editText = "Edit Member";
-		editLink.addClass("editLink")
-				.on("click", editItem)
-				.html(editText);
-		linksLi.append(editLink);
+		editLink.addEventListener("click", editItem);
+		editLink.innerHTML = editText;
+		linksLi.appendChild(editLink);
 		
-		var space = $('<br/>');
-		linksLi.append(space);
+		var space = document.createElement('br');
+		linksLi.appendChild(space);
 		
 		//add delete single item link
-		var deleteLink = $('a');
-		deleteLink.attr("href","#");
+		var deleteLink = document.createElement('a')
+		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Member";
-		deleteLink.addClass("deleteLink")
-					.on("click", deleteItem)
-					.html(deleteText);
-		linksLi.append(deleteLink); 
+		deleteLink.addEventListener("click", deleteItem);
+		deleteLink.innerHTML = deleteText;
+		linksLi.appendChild(deleteLink); 
 	}
 	
 	function editItem() {
+		console.log("edit fires");
 		//grab the data from our local storage
 		var value = localStorage.getItem(this.key);
 		var item = JSON.parse(value);
+		console.log(item.bday);
 		//show the form    	
 //		toggleControls('off');
 		
 		//populate the form fields with current localStorage values
-		$('#title').val(item.title[1]);
-		$('#fname').val(item.fname[1]);
-		$('#lname').val(item.lname[1]);
-		$('#bday').val(item.bday[1]);
-		$('#ddate').val(item.ddate[1]);
-		$('#age').val(item.age[1]);
-		$('#notes').val(item.notes[1]);
+		ge('title').value            = item.title[1];
+		ge('fname').value       = item.fname[1];
+		ge('lname').value     = item.lname[1];
+		ge('bday').value     = item.bday[1];
+		ge('ddate').value     = item.ddate[1];
+		ge('age').value      = item.age[1];
+		ge('notes').value  = item.notes[1];
 	//	ge("number").innerHTML = item.age[1] + " yrs";
 //		var radios = document.forms[0].sex;
 //		console.log(radios);
@@ -192,17 +168,17 @@ $('#addmem').on('pageinit', function(){
 //			}
 //		}
 		if(item.fav[1] == "Yes"){
-			$( '#fav' ).attr("checked", "checked");
+			ge( 'fav' ).setAttribute("checked", "checked");
 		}
 		
 		//Remove the initial listener from the input ' save contact ' button.
-		editSubmit.off("click", storeData);
+		save.removeEventListener("click", storeData);
 		// Change Submit Button Value to edit button
-		$("#submit").val("Edit Member");
-		var editSubmit = $("submit");
+		ge("submit").value = "Edit Member";
+		var editSubmit = ge("submit");
 		// Save the key value established  in the this function as a property of the editSubmit event 
 		//so we can use that value when we save the data we edited. 
-		editSubmit.on("click", storeData);
+		editSubmit.addEventListener("click", storeData);
 		editSubmit.key = this.key;
 		
 	}
@@ -231,17 +207,15 @@ $('#addmem').on('pageinit', function(){
 	} 
 //		sexValue,
 		favValue = "No",
-		errMsg = $('errors');   
+		errMsg = ge('errors');   
 	
 	//    Set Link & Submit Click Events
-	    var displayLink = $('#displayLink');
-	        displayLink.on("click", getData);
-	        
-	    var clearLink = $ ('#clear');
-	    	clearLink.on("click", clearLocal);
-	    	
-	    var save = $('#submit');
-	    	save.on("click", storeData);    
+	    var displayLink = ge ('displayLink');
+	        displayLink.addEventListener("click", getData);
+	    var clearLink = ge ('clear');
+	    	clearLink.addEventListener("click", clearLocal);
+	    var save = ge('submit');
+	    	save.addEventListener("click", storeData);    
 	   
 	
 });

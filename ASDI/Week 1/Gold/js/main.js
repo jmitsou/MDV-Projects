@@ -243,11 +243,11 @@ $('#addmem').on('pageinit', function(){
 	    var save = $('#submit');
 	    	save.on("click", storeData);    
 	   
-	   $("#xhr").on("pageinit", function(){
-	   				$("#json").on("click", function(){
+$("#xhr").on("pageinit", function(){
+	   		$("#json").on("click", function(){
 	   							console.log("json");
-	   						$("#xhr").empty();
-	   						$('<p>').html('JSON').appendTo('#json');
+	   				$("#xhr").empty();
+	   				$('<p>').html('JSON').appendTo('#json');
 	   
 	   $.ajax({
 	   				type: "GET",
@@ -320,26 +320,27 @@ $('<p>').html('XML').appendTo('#xml');
 											'</ul>'	
 ));
 });
-$('#xhrdata').listview('refresh');
+$('#xhr').listview('refresh');
 }
 });	
 });
 
 $("#csv").on('click', function(){
-console.log("csv");
-$("#xhrdata").empty();
-$('<p>').html('CSV').appendTo('#csv');
-$.ajax({
-type: "GET",
-url: "xhr/csvdata.csv",
-dataType: "text",
-success: function(filmData){
-var list = filmData.split('\n');
-for (i=1, i < list.length; i++;) {
-var items = list[i];
-var films = items.split(',');
+			console.log("csv");
+				$("#xhrdata").empty();
+				$('<p>').html('CSV').appendTo('#csv');
+				
+						$.ajax({
+							type: "GET",
+							url: "xhr/csvdata.csv",
+							dataType: "text",
+							success: function(filmData){
+								var list = filmData.split('\n');
+								for (i=1, i < list.length; i++;) {
+								var items = list[i];
+								var films = items.split(',');
 
-$('#xhrdata').append($(
+								$('#xhr').append($(
 '<ul data-inset="true" data-role="listview">' +
 '<li>' + items + '</li>' +
 '</ul>'	

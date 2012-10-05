@@ -18,7 +18,6 @@ $('#addmem').on('pageinit', function(){
 	    console.log()    
 	    var clearLink = $ ('#clear');
 	    	clearLink.on("click", clearLocal);
-	    	
 	    var save = $('#submit');
 	    	save.on("click", validate);  
 	
@@ -55,9 +54,9 @@ $('#addmem').on('pageinit', function(){
 	    }
 	}
 	
-	function storeData(key) {
+	function storeData(data) {
 	console.log('storeData') 
-			if (!key){ 
+			if (!data.key){ 
 	        var id                          = Math.floor(Math.random()*1000001);
 	    }else {
 	    	id = key;
@@ -67,16 +66,18 @@ $('#addmem').on('pageinit', function(){
 	    var  item                     ={};
 	          item.title            	   = ["Title: " , $('#title').val()];
 	          item.fname           = ["First Name: " , $('#fname').val()];
-	          item.lname           = ["Last Name: " , $('$lname').val()];
+	          item.lname           = ["Last Name: " , $('#lname').val()];
 	          item.bday            = ["Birthday: " , $('#bday').val()];
 	          item.ddate            = ["Death date: " , $('#ddate').val()];
 	          item.age               = ["Age: " , $('#age').value];
 //	          item.sex         	   = ["Gender: " , sexValue];
 	          item.notes            = ["Notes: " , $('#notes').value];
 	          item.fav                = ["Save as Favorite: " , favValue];
+	          item.key				  =id;
 	        //Save data into Local Storage: Use stringify to convert our object to a string.
 	        localStorage.setItem(id, JSON.stringify(item)); 
-	        alert("Contact Saved!");         
+	        alert("Contact Saved!");
+	           $.mobile.changePage("#familyMember");  
 	}
 	
 	function getData(){
@@ -87,30 +88,29 @@ $('#addmem').on('pageinit', function(){
 	    };
 	    
 	    //Write Data from Local Storage to the browser
-	    var makeDiv = $("#data" )
-	    var makeList = $("ul");
-	    makeDiv.append(makeList);
+//	    var makeDiv = $("#data" )
+//	    var makeList = $("ul");
+//	    makeDiv.append(makeList);
 	    
 	    for(var i =0, j=localStorage.length; i<j; i++ ){
-	        var makeLi = $("li");
-	        makeLi.addClass("makeLi")
-	        	.appendTo(makeList)
-	        var linksLi = $('li');
+	        var member = $("li").appendTo("#familyMember");
+	        //makeLi.addClass("makeLi")
+	        	
+	        //var linksLi = $('li');
 	        var key = localStorage.key(i);
 	        var value = localStorage.getItem(key);
 	        //Convert string from local storage val back to an object using JSON.parse()
 	        var obj = JSON.parse(value);
-	        var makeSubList = $("ul");
-	        makeSubList.appendTo(makeLi)
-	        getImage(obj.title[1], makeSubList);
+	        //var makeSubList = $("ul");
+	        //makeSubList.appendTo(makeLi)
+	        //getImage(obj.title[1], makeSubList);
 	        for( var n in obj){
-	            var makeSubLi = $("li");
-	            makeSubLi.appendTo(makeSubList);
-	            var optSubText = obj[n][0] +" " + obj[n][1];
-	            				.html(optSubText);
-	            makeSubList.append(linksLi);
+	        	var factInfo = obj[n][0] +" " + obj[n][1];
+	            var fact = $("<p>").html(factInfo); 
+	            fact.appendTo(member);			
+	            //makeSubList.append(linksLi);
 	        }
-	    makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
+	    makeItemLinks(localStorage.key(i), fact); // Create our edit and delete buttons/link for each item in local storage.
 	    }
 	}
 	
@@ -243,23 +243,114 @@ $('#addmem').on('pageinit', function(){
 	    var save = $('#submit');
 	    	save.on("click", storeData);    
 	   
+	   $("#xhr").on("pageinit", function(){
+	   				$("#json").on("click", function(){
+	   							console.log("json");
+	   						$("#xhr").empty();
+	   						$('<p>').html('JSON').appendTo('#json');
+	   
+	   $.ajax({
+	   				type: "GET",
+	   				url: "xhr/data.json",
+	   				dataType: "json",
+	   				success: function(result){
+	   								for(var i=0, j=result.memberdir.length; i<j; i++){
+	   													   var members = result.memberdir[i];
+	  															 $(''+
+	   															 '<ul data-inset="true" data-role="listview">'+
+																   '<li>'+
+																   		'<p class="ui-li desc">'+"Film Genre:"+ films.genre + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Director Name:"+ films.dname + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Producer Name:"+ films.pname + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Film Title:"+ films.ftitle + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Email:"+ films.email + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Film Website:"+ films.url + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Film Type:"+ films.filmType + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Film Length:"+ films.minutes + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Is the Director From the Bay Area?:"+ films.director + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Film Completion Date:"+ films.date + '<br />' + '</p>'+
+																   		'<p class="ui-li desc">'+"Short Synopsis:"+ films.synopsis + '<br />' + '</p>'+
+																   '</li>'+
+																 '</ul>'
+	   
+	   					).appendTo("#xhr");
+	   			};
+	   //error: function(result){
+	   console.log(result);
+	   			}
+	 });
 	
 });
 
-$('#home').on('pageinit', function(){
-	//code needed for home page goes here
+//XML
+$("#xml").on('click', function(){
+console.log("xml");
+$("#xhrdata").empty();
+$('<p>').html('XML').appendTo('#xml');
+		$.ajax({
+					type:"GET",
+					url: "xhr/xmldata.xml",
+					dataType: "xml",
+					success: function(filmData){
+							$(filmData).find("film").each(function(){
+									var genre = $(this).find('genre').text();
+									var dName = $(this).find('dName').text();
+									var pName = $(this).find('pName').text();
+									var filmTitle = $(this).find('filmTitle').text();
+									var email = $(this).find('email').text();
+									var url = $(this).find('url').text();
+									var filmType = $(this).find('filmType').text();
+									var minutes = $(this).find('minutes').text();
+									var director	= $(this).find('director').text();
+									var date = $(this).find('date').text();
+									var synopsis	= $(this).find('synopsis').text();
+									$('#xhrdata').append($(''+
+											'<ul data-inset="true" data-role="listview">' +
+												'<li>Film Genre:' + genre + '</li>'+
+												'<li>Director Name:' + dName + '</li>'+
+												'<li>Producer Name:' + pName + '</li>'+
+												'<li>Film Title:' + filmTitle + '</li>'+
+												'<li>Email:' + email + '</li>'+
+												'<li>Film Website:' + url + '</li>'+
+												'<li>Choose Film Type:' + filmType + '</li>'+
+												'<li>Film Length:' + minutes + '</li>'+
+												'<li>Is the Director from the Bay Area?' + director + '</li>'+
+												'<li>Film Completion Data:' + date + '</li>'+
+												'<li>Short Synopsis' + synopsis + '</li>'+
+											'</ul>'	
+));
+});
+$('#xhrdata').listview('refresh');
+}
+});	
 });
 
-$('#').on('pageinit', function(){
-	//code needed for home page goes here
+$("#csv").on('click', function(){
+console.log("csv");
+$("#xhrdata").empty();
+$('<p>').html('CSV').appendTo('#csv');
+$.ajax({
+type: "GET",
+url: "xhr/csvdata.csv",
+dataType: "text",
+success: function(filmData){
+var list = filmData.split('\n');
+for (i=1, i < list.length; i++;) {
+var items = list[i];
+var films = items.split(',');
+
+$('#xhrdata').append($(
+'<ul data-inset="true" data-role="listview">' +
+'<li>' + items + '</li>' +
+'</ul>'	
+));
+}
+}
+});	
 });
 
-$('#home').on('pageinit', function(){
-	//code needed for home page goes here
-});
 
-$('#home').on('pageinit', function(){
-	//code needed for home page goes here
-});
+
+
 
 

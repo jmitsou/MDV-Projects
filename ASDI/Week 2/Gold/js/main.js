@@ -16,7 +16,8 @@ $('#addmem').on('pageinit', function(){
         var displayLink = $('#displayLink');
             displayLink.on("click", getData);  
         var clearLink = $ ('#clear');
-;        var save = $('#submit');
+        	  clearLink.on("click", clearLocal);
+        var save = $('#submit');
             save.on("click", validate);  
     
     //any other code needed for addItem page goes here
@@ -27,11 +28,10 @@ $('#addmem').on('pageinit', function(){
                 invalidHandler: function(form, validator) {},
                 submitHandler: function() {
             var data = mform.serializeArray();
-                storeData(this.key);
+                storeData(data);
             }
-        });
-        
-    };
+      });
+    
 
 //    Find value of selected radio button.
 //    function getSelectedRadio() {
@@ -53,7 +53,7 @@ $('#addmem').on('pageinit', function(){
     }
     
     function storeData(data) {
-    console.log('storeData');
+    console.log('storeData')
             if (!data.key){
             var id                          = Math.floor(Math.random()*1000001);
         }else {
@@ -215,8 +215,7 @@ $('#addmem').on('pageinit', function(){
                alert("Member not deleted.");
          }
     }
-    
-    
+
     function clearLocal(){
         if(localStorage.length === 0){
               alert("There is no data to clear!");    
@@ -232,118 +231,39 @@ $('#addmem').on('pageinit', function(){
         errMsg = $('errors');   
     
     //    Set Link & Submit Click Events
-        var displayLink = $('#displayLink');
-            displayLink.on("click", getData);
-            
-        var clearLink = $ ('#clear');
-            clearLink.on("click", clearLocal);
-            
-        var save = $('#submit');
-            save.on("click", storeData);    
-       
-$("#xhr").on("pageinit", function(){
-               $("#json").on("click", function(){
-                                   console.log("json");
-                       $("#xhr").empty();
-                       $('<p>').html('JSON').appendTo('#json');
-       
-       $.ajax({
-                       type: "GET",
-                       url: "xhr/data.json",
-                       dataType: "json",
-                       success: function(result){
-                                       for(var i=0, j=result.memberdir.length; i<j; i++){
-                                                              var members = result.memberdir[i];
-                                                                   $(''+
-                                                                    '<ul data-inset="true" data-role="listview">'+
-                                                                   '<li>'+
-                                                                           '<p class="ui-li desc">'+"Film Genre:"+ films.genre + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Director Name:"+ films.dname + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Producer Name:"+ films.pname + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Film Title:"+ films.ftitle + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Email:"+ films.email + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Film Website:"+ films.url + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Film Type:"+ films.filmType + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Film Length:"+ films.minutes + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Is the Director From the Bay Area?:"+ films.director + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Film Completion Date:"+ films.date + '<br />' + '</p>'+
-                                                                           '<p class="ui-li desc">'+"Short Synopsis:"+ films.synopsis + '<br />' + '</p>'+
-                                                                   '</li>'+
-                                                                 '</ul>'
-       
-                           ).appendTo("#xhr");
-                   };
-       //error: function(result){
-       console.log(result);
-                   }
-     });
-    
-});
+//        var displayLink = $('#displayLink');
+//            displayLink.on("click", getData);
+//         var clearLink = $ ('#clear');
+//            clearLink.on("click", clearLocal);
+//          var save = $('#submit');
+//            save.on("click", storeData); 
+
+             
+//Fam Data 
+$("#xhr").on('pageinit', function(){
+
+	//JSON
+		$('#json').on('click', function(){
+				$('#').empty();
+				$('#').empty();
+				$('<p>').html("JSON").appendTo('#json');
+
+					$.ajax({
+						url: "xhr/data.json",
+						type: "GET",
+						dataType: "json",
+						success: function(result){
+								console.log(result);
+					}
+					error: function(data) { 
+						console.error(':', data);
+	 				}
+});      
+
+//$("#json").on("click", function(){console.log("TEST")};
+
+})
+
+
 
 //XML
-$("#xml").on('click', function(){
-console.log("xml");
-$("#xhrdata").empty();
-$('<p>').html('XML').appendTo('#xml');
-        $.ajax({
-                    type:"GET",
-                    url: "xhr/xmldata.xml",
-                    dataType: "xml",
-                    success: function(filmData){
-                            $(filmData).find("film").each(function(){
-                                    var genre = $(this).find('genre').text();
-                                    var dName = $(this).find('dName').text();
-                                    var pName = $(this).find('pName').text();
-                                    var filmTitle = $(this).find('filmTitle').text();
-                                    var email = $(this).find('email').text();
-                                    var url = $(this).find('url').text();
-                                    var filmType = $(this).find('filmType').text();
-                                    var minutes = $(this).find('minutes').text();
-                                    var director    = $(this).find('director').text();
-                                    var date = $(this).find('date').text();
-                                    var synopsis    = $(this).find('synopsis').text();
-                                    $('#xhrdata').append($(''+
-                                            '<ul data-inset="true" data-role="listview">' +
-                                                '<li>Film Genre:' + genre + '</li>'+
-                                                '<li>Director Name:' + dName + '</li>'+
-                                                '<li>Producer Name:' + pName + '</li>'+
-                                                '<li>Film Title:' + filmTitle + '</li>'+
-                                                '<li>Email:' + email + '</li>'+
-                                                '<li>Film Website:' + url + '</li>'+
-                                                '<li>Choose Film Type:' + filmType + '</li>'+
-                                                '<li>Film Length:' + minutes + '</li>'+
-                                                '<li>Is the Director from the Bay Area?' + director + '</li>'+
-                                                '<li>Film Completion Data:' + date + '</li>'+
-                                                '<li>Short Synopsis' + synopsis + '</li>'+
-                                            '</ul>'    
-));
-});
-$('#xhr').listview('refresh');
-}
-});    
-});
-
-$("#csv").on('click', function(){
-            console.log("csv");
-                $("#xhrdata").empty();
-                $('<p>').html('CSV').appendTo('#csv');
-                
-                        $.ajax({
-                            type: "GET",
-                            url: "xhr/csvdata.csv",
-                            dataType: "text",
-                            success: function(filmData){
-                                var list = filmData.split('\n');
-                                for (i=1, i < list.length; i++;) {
-                                var items = list[i];
-                                var films = items.split(',');
-
-                                $('#xhr').append($(
-'<ul data-inset="true" data-role="listview">' +
-'<li>' + items + '</li>' +
-'</ul>'    
-));
-}
-}
-});    
-});

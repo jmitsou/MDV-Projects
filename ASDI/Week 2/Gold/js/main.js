@@ -254,50 +254,48 @@ $("#xhr").on('pageinit', function() {
                 type: "GET",
                 dataType: "json",
                 success: function(result) {
+                		console.log(result);
                 				for(var i=0, j=result.memberdir.length; i<j; i++){
                 							var member = result.memberdir[i];
                 				
-	                				$(''+'<ul data-inset="true" data-role="listview">'+
+	                				$(''+
 		                						'<li>'+
-					                				'<p class="ui-li desc">'+"Title:"+ memeber.title + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"First Name:"+ memeber.fname + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Last Name:"+ memeber.lname + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Birthday:"+ memeber.bday + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Death Date:"+ memeber.ddate + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Age:"+ memeber.age + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Gender:"+ memeber.sex + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Notes:"+ memeber.notes+ '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Favorite?:"+ memeber.fav + '<br />' + '</p>'+
-					                				'</li>'+
-	                						'</ul>'
-	                				).appendTo("#xhr");
-                   				
-                				
-                	error: function(data) {
-                     console.log(result);
-                    };
-                }
+					                				'<p class="ui-li desc">'+"Title:"+ member.title + '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"First Name:"+ member.fname + '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"Last Name:"+ member.lname + '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"Birthday:"+ member.bday + '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"Death Date:"+ member.ddate + '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"Age:"+ member.age + '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"Gender:"+ member.sex + '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"Notes:"+ member.notes+ '<br />' + '</p>'+
+					                				'<p class="ui-li desc">'+"Favorite?:"+ member.fav + '<br />' + '</p>'+
+					                				'</li>'
+	                					
+	                				).appendTo("#json");
+                   				}
+                },				
+                	error: function(data) {}
          	});
 
         });
         
         //CSV
-        $('#csv').on('click', function(){
-        		$('#xhr').empty();
-        		$('<p>').html('CSV').appendTo('#xhr');
-        		
-        		$.ajax({
-        		    url      : "xhr/csvdata.csv",
-        		    type     : "GET",
-        		    dataType : "text",
-        		    success  : function() {
-        		        console.log('ERROR', data);
-        		    }
-        		});
-        
-        
-        )};
-        
+//        $('#csv').on('click', function(){
+//        		$('#xhr').empty();
+//        		$('<p>').html('CSV').appendTo('#xhr');
+//        		
+//        		$.ajax({
+//        		    url      : "xhr/csvdata.csv",
+//        		    type     : "GET",
+//        		    dataType : "text",
+//        		    success  : function() {
+//        		        console.log('ERROR', data);
+//        		    }
+//        		});
+//        
+//        
+//        )};
+//        
         
         
 });

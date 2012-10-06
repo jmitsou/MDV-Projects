@@ -105,31 +105,34 @@
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		
-		<!--Start of XHR page-->
-		<div data-role="page" id="xhr" data-theme="a" >
-			<div data-role="header" data-position="fixed" data-theme="a">
-			<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
-			<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
-			<h1>Fam Data</h1>
-		</div>
+			<!--Start of XHR page-->
+			<div data-role="page" id="xhrdata" data-theme="a" >
+				<div data-role="header" data-position="fixed" data-theme="a">
+				<img src="images/logo/minilogo.png" alt="Jaka Logo" class="logo" />
+				<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
+				<h1>XHR Data</h1>
+			</div>
 		
-		<div data-role="content" id="">
-			<ul data-role="listview" data-inset="true" id="memberdir">
-				<li><a href="#csv" id="csv">CSV</a></li>
-				<li><a href="#xml" id="xml">XML</a></li>
-				<li><a href="#json" id="json">JSON</a></li>
-			</ul>
-			
-			
-		</div>
+			<div data-role="content" >
+				<ul data-role="listview" data-inset="true" id="memberdir">
+					<li><a href="#csv" id="csv">CSV</a></li>
+					<li><a href="#xml" id="xml">XML</a></li>
+					<li><a href="#json" id="json">JSON</a></li>
+				</ul>
+				<ul id="#" data-role="listview">
+				</ul>
+				
+				
+			</div>
 		
-		<div data-role="navbar" data-position="fixed" data-id="nav">
+			<div data-role="navbar" data-position="fixed" data-id="nav">
 				<ul>
 					<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 					<li><a href="#about" data-ajax="false" data-icon="info">Info Me</a></li>
 					<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
 					<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
-				</ul></div><!-- /footer -->
+				</ul>
+			</div><!-- /footer -->
 		</div><!-- /page -->
 		
 		
@@ -288,7 +291,7 @@
 			
 			<div data-role="content">
 				
-				<form action="" method="post" id="addmemform">
+				<form action="" id="addmemform">
 					<div>
 						<a href="#showdata" id="displayLink" data-role="button">Display Data</a>
 						<a href="#" id="clear" data-role="button">Clear Storage</a>
@@ -844,7 +847,7 @@
 			<div data-role="content">				
 				<ul>
 					<!--Logo Image Link-->
-					<li><img src="images/logo/logo.png" /></li>
+					<!--<li><img src="images/logo/logo.png" /></li>-->
 					<li><p> JAKA apps is a family made company </p></li>
 					<li><a href="https://github.com/tenju88/MDV-Projects/tree/master/MIU">Master Branch</a></li>
 					<li><a href="http://tenju88.github.com/MDV-Projects/MIU/Week 4/Bronze/index.html">Bronze App</a></li>

@@ -78,7 +78,7 @@ $('#addmem').on('pageinit', function() {
         //Save data into Local Storage: Use stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Contact Saved!");
-        $.mobile.changePage("#familyMember");
+        $.mobile.changePage("#showdata");
     }
 
     function getData() {
@@ -93,7 +93,7 @@ $('#addmem').on('pageinit', function() {
         //        var makeList = $("ul");
         //        makeDiv.append(makeList);
         for (var i = 0, j = localStorage.length; i < j; i++) {
-            var member = $("li").appendTo("#familyMember");
+            var member = $("li").appendTo("#familyMembers");
             //makeLi.addClass("makeLi")
             //var linksLi = $('li');
             var key = localStorage.key(i);
@@ -246,8 +246,8 @@ $("#xhr").on('pageinit', function() {
 
         //JSON
         $('#json').on('click', function() {
-            $('#xhr').empty();
-            $('<p>').html("JSON").appendTo('#xhr');
+            $('#xhrdata').empty();
+            
 
             $.ajax({
                 url: "xhr/data.json",
@@ -255,24 +255,28 @@ $("#xhr").on('pageinit', function() {
                 dataType: "json",
                 success: function(result) {
                 		console.log(result);
+                		$('<h3>').html("JSON List").appendTo('#jtitle');
                 				for(var i=0, j=result.memberdir.length; i<j; i++){
                 							var member = result.memberdir[i];
                 				
 	                				$(''+
 		                						'<li>'+
-					                				'<p class="ui-li desc">'+"Title:"+ member.title + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"First Name:"+ member.fname + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Last Name:"+ member.lname + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Birthday:"+ member.bday + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Death Date:"+ member.ddate + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Age:"+ member.age + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Gender:"+ member.sex + '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Notes:"+ member.notes+ '<br />' + '</p>'+
-					                				'<p class="ui-li desc">'+"Favorite?:"+ member.fav + '<br />' + '</p>'+
+					                				'<p>'+"Title: "+ member.title + '<br />' + '</p>'+
+					                				'<p>'+"First Name: "+ member.fname + '<br />' + '</p>'+
+					                				'<p>'+"Last Name: "+ member.lname + '<br />' + '</p>'+
+					                				'<p>'+"Birthday: "+ member.bday + '<br />' + '</p>'+
+					                				'<p>'+"Death Date: "+ member.ddate + '<br />' + '</p>'+
+					                				'<p>'+"Age: "+ member.age + '<br />' + '</p>'+
+					                				'<p>'+"Gender: "+ member.sex + '<br />' + '</p>'+
+					                				'<p >'+"Notes: "+ member.notes+ '<br />' + '</p>'+
+					                				'<p>'+"Favorite?: "+ member.fav + '<br />' + '</p>'+
 					                				'</li>'
 	                					
-	                				).appendTo("#json");
+	                				).appendTo("#xhrdata");
+	                				
                    				}
+                   				
+                   				$('#xhrdata').listview('refresh');
                 },				
                 	error: function(data) {}
          	});

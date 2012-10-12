@@ -1,8 +1,8 @@
 https://github.com/tenju88/MDV-Projects/tree/master/ASDI
 
-http://tenju88.github.com/MDV-Projects/ASDI/Week 2/Gold/index.html
+http://tenju88.github.com/MDV-Projects/ASDI/Week 3/Gold/index.html
 
-http://tenju88.github.com/MDV-Projects/ASDI/Week 2/Bronze/index.html
+http://tenju88.github.com/MDV-Projects/ASDI/Week 3/Bronze/index.html
 
 cloudant link:
 

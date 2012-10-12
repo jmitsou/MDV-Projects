@@ -3,3 +3,7 @@ https://github.com/tenju88/MDV-Projects/tree/master/ASDI
 http://tenju88.github.com/MDV-Projects/ASDI/Week 2/Gold/index.html
 
 http://tenju88.github.com/MDV-Projects/ASDI/Week 2/Bronze/index.html
+
+cloudant link:
+
+https://tenju.cloudant.com/asdproject/_design%2Fapp/index.html

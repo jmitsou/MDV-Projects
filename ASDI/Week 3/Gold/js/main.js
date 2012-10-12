@@ -13,8 +13,8 @@ $('#addmem').on('pageinit', function() {
     //        }
     //    });
     //    Set Link & Submit Click Events
-    var displayLink = $('#displayLink');
-    displayLink.on("click", getData);
+//    var displayLink = $('#displayLink');
+//    displayLink.on("click", getData);
     var clearLink = $('#clear');
     clearLink.on("click", clearLocal);
     var save = $('#submit');
@@ -46,22 +46,21 @@ $('#addmem').on('pageinit', function() {
     //    Find value of favorite button.
 
 
-    function getCheckboxValue() {
-        if ($('fav').checked) {
-            favValue = $('fav').value;
-        } else {
-            favValue = "No";
-        }
-    }
+//    function getCheckboxValue() {
+//        if ($('fav').checked) {
+//            favValue = $('fav').value;
+//        } else {
+//            favValue = "No";
+//        }
+//    }
 
     function storeData(data) {
         console.log('storeData');
-
-        if (!data.key) {
-            var id = Math.floor(Math.random() * 1000001);
-        } else {
-            id = key;
-        }
+		var id = Math.floor(Math.random() * 1000001);
+//        if (!data.key) {
+//        } else {
+//            id = key;
+//        }
         //getSelectedRadio();
         //getCheckboxValue();
         var item = {};
@@ -78,11 +77,15 @@ $('#addmem').on('pageinit', function() {
         //Save data into Local Storage: Use stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Contact Saved!");
-        $.mobile.changePage("#showdata");
+      	changePage("showdata");
+      	console.log('changePage');
+      	getData();
+      	console.log('getData');
+      	
     }
 
     function getData() {
-        console.log('getData fired');
+        
         if (localStorage.length === 0) {
             alert("No Data Available in Local Storage so default data was added.");
             autoFillData();
@@ -93,23 +96,21 @@ $('#addmem').on('pageinit', function() {
         //        var makeList = $("ul");
         //        makeDiv.append(makeList);
         for (var i = 0, j = localStorage.length; i < j; i++) {
-            var member = $("li").appendTo("#familyMembers");
-            //makeLi.addClass("makeLi")
-            //var linksLi = $('li');
+            var member = $('<li id="eachMem"></li>').appendTo("#familyMembers");
+         
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             //Convert string from local storage val back to an object using JSON.parse()
             var obj = JSON.parse(value);
-            //var makeSubList = $("ul");
-            //makeSubList.appendTo(makeLi)
-            //getImage(obj.title[1], makeSubList);
             for (var n in obj) {
                 var factInfo = obj[n][0] + " " + obj[n][1];
                 var fact = $("<p>").html(factInfo);
                 fact.appendTo(member);
-                //makeSubList.append(linksLi);
+                var linksLi = $('<li id="link"></li>');
+                linksLi.appendTo(member);
             }
-            makeItemLinks(localStorage.key(i), fact); // Create our edit and delete buttons/link for each item in local storage.
+            makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
+            console.log('getData fired');
         }
     }
 
@@ -127,9 +128,9 @@ $('#addmem').on('pageinit', function() {
     //JSON Object which will auto populate local storage
 
 
-    function autoFillData() { /*var json = {*/
+    function autoFillData() { 
 
-        //Store the JSON Object into Local Storage
+//        Store the JSON Object into Local Storage
         for (var n in json) {
             var id = Math.floor(Math.random() * 1000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
@@ -239,6 +240,12 @@ $('#addmem').on('pageinit', function() {
     //          var save = $('#submit');
     //            save.on("click", storeData);
     
+    var changePage = function(pageID){
+    			$('#' + pageID).trigger('pageinit');
+    			$.mobile.changePage($('#' + pageID), {transition: 'fade'});
+    
+    }
+    
 }); // #addmem pageinit
 
 //Fam Data
@@ -261,15 +268,15 @@ $("#xhr").on('pageinit', function() {
                 				
 	                				$(''+
 		                						'<li>'+
-					                				'<p>'+"Title: "+ member.title + '<br />' + '</p>'+
-					                				'<p>'+"First Name: "+ member.fname + '<br />' + '</p>'+
-					                				'<p>'+"Last Name: "+ member.lname + '<br />' + '</p>'+
-					                				'<p>'+"Birthday: "+ member.bday + '<br />' + '</p>'+
-					                				'<p>'+"Death Date: "+ member.ddate + '<br />' + '</p>'+
-					                				'<p>'+"Age: "+ member.age + '<br />' + '</p>'+
-					                				'<p>'+"Gender: "+ member.sex + '<br />' + '</p>'+
-					                				'<p >'+"Notes: "+ member.notes+ '<br />' + '</p>'+
-					                				'<p>'+"Favorite?: "+ member.fav + '<br />' + '</p>'+
+						                				'<p>'+"Title: "+ member.title + '<br />' + '</p>'+
+						                				'<p>'+"First Name: "+ member.fname + '<br />' + '</p>'+
+						                				'<p>'+"Last Name: "+ member.lname + '<br />' + '</p>'+
+						                				'<p>'+"Birthday: "+ member.bday + '<br />' + '</p>'+
+						                				'<p>'+"Death Date: "+ member.ddate + '<br />' + '</p>'+
+						                				'<p>'+"Age: "+ member.age + '<br />' + '</p>'+
+						                				'<p>'+"Gender: "+ member.sex + '<br />' + '</p>'+
+						                				'<p >'+"Notes: "+ member.notes+ '<br />' + '</p>'+
+						                				'<p>'+"Favorite?: "+ member.fav + '<br />' + '</p>'+
 					                				'</li>'
 	                					
 	                				).appendTo("#xhrdata");

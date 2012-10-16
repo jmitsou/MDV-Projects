@@ -4,7 +4,7 @@
       "db": "http://127.0.0.1:5984/asdproject"
     },
     "cloudant": {
-      "db": "https://ieremplaterandillyingera:ya44qIG0N6gCBlbgVCSQBh3q@tenju.cloudant.com/asdproject"
+      "db": "http://tenju:dragon22@tenju.cloudant.com/asdproject"
     }
     
   }

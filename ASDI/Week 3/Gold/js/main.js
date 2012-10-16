@@ -13,8 +13,8 @@ $('#addmem').on('pageinit', function() {
     //        }
     //    });
     //    Set Link & Submit Click Events
-//    var displayLink = $('#displayLink');
-//    displayLink.on("click", getData);
+    var displayLink = $('#displayLink');
+    displayLink.on("click", getData);
     var clearLink = $('#clear');
     clearLink.on("click", clearLocal);
     var save = $('#submit');
@@ -85,34 +85,40 @@ $('#addmem').on('pageinit', function() {
     }
 
     function getData() {
-        
-        if (localStorage.length === 0) {
-            alert("No Data Available in Local Storage so default data was added.");
-            autoFillData();
-        };
-
-        //Write Data from Local Storage to the browser
-        //        var makeDiv = $("#data" )
-        //        var makeList = $("ul");
-        //        makeDiv.append(makeList);
-        for (var i = 0, j = localStorage.length; i < j; i++) {
-            var member = $('<li id="eachMem"></li>').appendTo("#familyMembers");
-         
-            var key = localStorage.key(i);
-            var value = localStorage.getItem(key);
-            //Convert string from local storage val back to an object using JSON.parse()
-            var obj = JSON.parse(value);
-            for (var n in obj) {
-                var factInfo = obj[n][0] + " " + obj[n][1];
-                var fact = $("<p>").html(factInfo);
-                fact.appendTo(member);
-                var linksLi = $('<li id="link"></li>');
-                linksLi.appendTo(member);
-            }
-            makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/link for each item in local storage.
-            console.log('getData fired');
-        }
-    }
+       $('#familyMembers').empty();
+               $.ajax({
+                   url: "_view/members",
+                   type: "GET",
+                   dataType: "json",
+                   success: function(result) {
+                   		console.log(result);
+                   		$('<h3>').html("JSON List").appendTo('#data');
+                   				$.each(result.rows, function(index, member){
+                   				
+                       				$(''+
+       	                						'<li>'+
+       					                				'<p>'+"Title: "+ member.title + '<br />' + '</p>'+
+       					                				'<p>'+"First Name: "+ member.fname + '<br />' + '</p>'+
+       					                				'<p>'+"Last Name: "+ member.lname + '<br />' + '</p>'+
+       					                				'<p>'+"Birthday: "+ member.bday + '<br />' + '</p>'+
+       					                				'<p>'+"Death Date: "+ member.ddate + '<br />' + '</p>'+
+       					                				'<p>'+"Age: "+ member.age + '<br />' + '</p>'+
+       					                				'<p>'+"Gender: "+ member.sex + '<br />' + '</p>'+
+       					                				'<p >'+"Notes: "+ member.notes+ '<br />' + '</p>'+
+       					                				'<p>'+"Favorite?: "+ member.fav + '<br />' + '</p>'+
+       				                				'</li>'
+                       					
+                       				).appendTo("#familyMembers");
+                       				
+                      				});
+                      				$('#familyMembers').listview('refresh');
+                   },				
+                   	error: function(data) {}
+            	}); 
+     
+     
+     
+     }
 
     //Get the image for the right catagory
 

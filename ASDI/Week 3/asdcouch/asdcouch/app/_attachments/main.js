@@ -13,8 +13,8 @@ $('#addmem').on('pageinit', function() {
     //        }
     //    });
     //    Set Link & Submit Click Events
-//    var displayLink = $('#displayLink');
-//    displayLink.on("click", getData);
+    var displayLink = $('#displayLink');
+    displayLink.on("click", getData);
     var clearLink = $('#clear');
     clearLink.on("click", clearLocal);
     var save = $('#submit');
@@ -85,16 +85,16 @@ $('#addmem').on('pageinit', function() {
     }
 
     function getData() {
-        
+      console.log("getData fires");  
     	$('#familyMembers').empty();
         $.ajax({
-            url: "_view/member",
+            url: "_view/members",
             type: "GET",
             dataType: "json",
             success: function(result) {
             		console.log(result);
             		$('<h3>').html("JSON List").appendTo('#data');
-            				$.each(result.rows, function(index, members){
+            				$.each(result.rows, function(index, member){
             				
                 				$(''+
 	                						'<li>'+

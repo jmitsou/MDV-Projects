@@ -2,8 +2,8 @@ Master Link
 https://github.com/tenju88/MDV-Projects/tree/master/ASDI
 
 Live Links
-http://tenju88.github.com/MDV-Projects/ASDI/Week 3/Gold/index.html
-http://tenju88.github.com/MDV-Projects/ASDI/Week 3/Bronze/index.html
+http://tenju88.github.com/MDV-Projects/ASDI/Week 4/Gold/index.html
+http://tenju88.github.com/MDV-Projects/ASDI/Week 4/Bronze/index.html
 
 Cloudant link:
 https://tenju.cloudant.com/asdproject/_design%2Fapp/index.html

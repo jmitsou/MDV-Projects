@@ -1,0 +1,57 @@
+<!-- Jeff Mitsou/MIU/week 2/1208 -->
+
+<!doctype html> 
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="Second step to a full working app!" name="description">
+		<meta content="html5, mobile developement, Full Sail University" name="keywords">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="index, follow" name="robots">
+		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+		<link rel="stylesheet" href="css/styles.css" type="text/css" />
+		<title> Family Rolladex </title>
+	</head>
+	<body>
+		<h1> Family Rolladex</h1>
+		<nav>
+			<a href="#" id="displayLink" style="display: block;"> Display Data</a>
+			<a href="#" id="clear" style="display: block;"> Clear Stored Data</a>
+			<br>
+			<a href="addItem.html" id="addNew" style="display: none;">Add New Member</a>
+		</nav>
+			
+			<form action="#" method="post" id="addTask">
+				<fieldset>
+					<legend><strong> Add Member</strong></legend>
+					<span>* fields are required. </span>
+					<ul id="errors"></ul>
+					<ul id="questions"></ul>
+					<ul>
+						<li id="select"><label for="group" class="formInputs"> *Title:</label></li>
+						<li><label for="fname" class="formInputs">*First Name:</label><input type="text" id="fname" placeholder="First Name" class="formInputs"/></li>
+						<li><label for="lname" class="formInputs">*Last Name:</label><input type="text" id="lname" placeholder="Last Name" class="formInputs"/></li>
+						<li><label for="bdate" class="formInputs">*Birthday:</label><input type="date" id="bdate" value="" class="formInputs"/></li>
+						<li><label for="ddate" class="formInputs">*Date of Death:</label><input type="date" id="ddate" value="" class="formInputs"/></li>
+						<li><label for="age" class="formInputs">Age:</label><input type="range" min="00" max="100" value = "1" class="formInputs" id="age"/> <span id="number"></span>	             
+						<li><label for="sex" id="read" class="formInputs">*Gender:</label>
+						  <ul class="radio">
+						  	<li><input type="radio" id="male" value="male" name="sex"/><label for="gender"> Male</label></li>
+						  	<li><input type="radio" id="female" value="female" name="sex" /><label for="gender"> Female</label></li>
+						  </ul>
+						<li><label for="notes" class="formInputs">Notes:<br> </label><textarea id="notes"></textarea></li>
+					</fieldset>
+					<input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav"> Save as favorite?</label>
+				<input type="button"  value="Submit Marker" id="submit" />
+			</form>
+			<script src="js/json.js" type="text/javascript"></script>
+			<script src="js/main.js" type="text/javascript"></script>
+	</body>
+</html>

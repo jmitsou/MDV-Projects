@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Members Page</title>
+</head>
+<body>
+	<div data-role="page" id="showData" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<img src="minilogo.png" alt="Jaka Logo" class="logo" />
+		<a data-rel="back" data-icon="back" class="back, ui-btn-right">Back</a>
+		<h1>Display Data</h1>
+	</div>
+	
+	<div data-role="content" id="data">
+		<ul data-role="listview" id="familyMembers">
+		</ul>
+		<ul>
+			<a href="#" id="delete" data-role="button">Delete Member</a>
+			<a href="#" id="edit" data-role="button">Edit Member</a>
+		</ul>
+	</div>
+	
+	<div data-role="navbar" data-position="fixed" data-id="nav">
+			<ul>
+				<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
+				<li><a href="#about" data-ajax="false" data-icon="info">Info Me</a></li>
+				<li><a href="#feed" data-ajax="false"   data-icon="arrow-r">News Feed</a></li>
+				<li><a href="#gallery" data-ajax="false"   data-icon="grid">Gallery</a></li>
+			</ul></div><!-- /footer -->
+	</div><!-- /page -->
+</body>
+</html>

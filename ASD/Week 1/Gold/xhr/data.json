@@ -1,0 +1,59 @@
+{ "memberdir":
+	[
+		{
+			"title": "Parent",
+			"fname": "James",
+			"lname": "Mitsou",
+			"bday": "02-01-1942",
+			"ddate": "02-01-2012",
+			"age": "70",
+			"sex": "Male",
+			"notes": "He is a nice person",
+			"fav": "yes"
+		},
+		{
+			"title": "Grandparent",
+			"fname": "Nicholas",
+			"lname": "Roman",
+			"bday": "01-10-1967",
+			"ddate": "",
+			"age": "70",
+			"sex": "Male",
+			"notes": "Likes to drink ",
+			"fav": "yes"
+		},
+		{
+			"title": "Aunt",
+			"fname": "Karen",
+			"lname": "Roman",
+			"bday": "05-10-19",
+			"ddate": "",
+			"age": "42",
+			"sex": "Female",
+			"notes": "She's crazy",
+			"fav": "no"
+		},
+		{
+			"title": "Cousin",
+			"fname": "Derek",
+			"lname": "Roman",
+			"bday": "02-01-1986",
+			"ddate": "",
+			"age": "26",
+			"sex": "Male",
+			"notes": "Grew up with him",
+			"fav": "no"
+		},
+		{
+			"title": "Sibling",
+			"fname": "Amanda",
+			"lname": "Mitsou",
+			"bday": "02-01-1992",
+			"ddate": "",
+			"age": "20",
+			"sex": "Female",
+			"notes": "really annoying",
+			"fav": "no"
+		}
+		
+]}

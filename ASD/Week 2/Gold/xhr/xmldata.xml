@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<memData>
+
+	<member>
+		<title>Parent</title>
+		<fname>James</fname>
+		<lname>Mitsou</lname>
+		<bday>02-01-1942</bday>
+		<ddate>02-01-2012</ddate>
+		<age>70</age>
+		<sex>Male</sex>
+		<notes>He is a nice person</notes>
+		<fav>Yes</fav>
+	</member>
+	
+	<member>
+		<title>Grandparent</title>
+		<fname>Nicholas</fname>
+		<lname>Roman</lname>
+		<bday>01-10-1967</bday>
+		<ddate></ddate>
+		<age>70</age>
+		<sex>Male</sex>
+		<notes>Likes to drink</notes>
+		<fav>Yes</fav>
+	</member>
+	
+	<member>
+		<title>Aunt</title>
+		<fname>Karen</fname>
+		<lname>Roman</lname>
+		<bday>05-10-1970</bday>
+		<ddate></ddate>
+		<age>42</age>
+		<sex>Female</sex>
+		<notes>She's Crazy</notes>
+		<fav>No</fav>
+	</member>
+	
+	<member>
+		<title>Cousin</title>
+		<fname>Derek</fname>
+		<lname>Roman</lname>
+		<bday>02-01-1986</bday>
+		<ddate></ddate>
+		<age>26</age>
+		<sex>Male</sex>
+		<notes>Grew up with him</notes>
+		<fav>No</fav>
+	</member>
+	
+	<member>
+		<title>Sibling</title>
+		<fname>Amanda</fname>
+		<lname>Mitsou</lname>
+		<bday>02-01-1992</bday>
+		<ddate></ddate>
+		<age>20</age>
+		<sex>Female</sex>
+		<notes>really annoying</notes>
+		<fav>No</fav>
+	</member>
+	
+	
+	
+</memData>

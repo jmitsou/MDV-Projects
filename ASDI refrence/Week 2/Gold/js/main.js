@@ -278,6 +278,7 @@ $("#xhr").on('pageinit', function() {
      		    url      : "xhr/xmldata.xml",
      		    type     : "GET",
      		    dataType : "xml",
+     		    error: function (error) {},
      		    success  : function (xml,data) {
      		    		console.log(xml);
 	     		    // assume that the XML above is in a string named "xml"
@@ -312,8 +313,8 @@ $("#xhr").on('pageinit', function() {
 	     		    });
 	     		    $('#xhrdata').listview();
      		    	$('#xhrdata').listview('refresh');
-     		    },
-     		    error: function (data) {}
+     		    }
+//     		    error: function (data) {}
         	});
      });
         

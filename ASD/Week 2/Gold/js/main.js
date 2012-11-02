@@ -64,7 +64,7 @@ $('#addmem').on('pageinit', function() {
     function getData() {
        $('#familyMembers').empty();
                $.ajax({
-                   url: "js/data.json",
+                   url: "xhr/data.json",
                    type: "GET",
                    dataType: "json",
                    success: function(result) {
@@ -233,63 +233,13 @@ $("#xhr").on('pageinit', function() {
 	                				).appendTo("#xhrdata");
 	                				
                    				}
-                   				
+                   				$('#xhrdata').listview();
                    				$('#xhrdata').listview('refresh');
                 },				
                 	error: function(data) {}
          	});
 
         });
-        
-        //CSV
-//        $('#csv').on('click', function(){
-//        		$('#xhr').empty();
-//        		$('<p>').html('').appendTo('#xhr');
-//        		
-//        		$.ajax({
-//        		    url      : "xhr/csvdata.csv",
-//        		    type     : "GET",
-//        		    dataType : "text",
-//        		    success  : function(status, csv) {
-//        		    	console.log(status, csv);
-//        		    	 Assume that your entire CSV file is in the data variable.
-//        		    	 The "\n" is the string escape for the end-of-line character.
-//        		    	var lines = csv.split("\n");
-//        		    	 The lines variable is now an array of lines of text.
-//        		    	for (var lineNum = 0; lineNum < lines.length; lineNum++) {
-//        		    	     Get the current line/row
-//        		    	    var row = lines[lineNum];
-//        		    	    var columns = row.split(",");
-//        		    	     The columns variable is now an array.
-//        		    	    console.log(columns);
-//        		    	}; // for lineNum
-//        		    
-//        		    	$(''+
-//        		    					'<li>'+
-//        		    	 				'<p>'+"Title: "+ member.title + '<br />' + '</p>'+
-//        		    	 				'<p>'+"First Name: "+ member.fname + '<br />' + '</p>'+
-//        		    	 				'<p>'+"Last Name: "+ member.lname + '<br />' + '</p>'+
-//        		    	 				'<p>'+"Birthday: "+ member.bday + '<br />' + '</p>'+
-//        		    	 				'<p>'+"Death Date: "+ member.ddate + '<br />' + '</p>'+
-//        		    	 				'<p>'+"Age: "+ member.age + '<br />' + '</p>'+
-//        		    	 				'<p>'+"Gender: "+ member.sex + '<br />' + '</p>'+
-//        		    	 				'<p >'+"Notes: "+ member.notes+ '<br />' + '</p>'+
-//        		    	 				'<p>'+"Favorite?: "+ member.fav + '<br />' + '</p>'+
-//        		    	 				'</li>'
-//        		    			
-//        		    			).appendTo("#xhrdata");
-//        		    		
-//        		    	}
-//        		    	
-//        		    	$('#xhrdata').listview('refresh');
-//        		    	
-//        		    },
-//        		    error: function(data) {
-//        		    	console.log(result);
-//        		    }
-//        		});
-//                
-//        });
         
     // XML
      $('#xml').on('click', function () {
@@ -301,11 +251,12 @@ $("#xhr").on('pageinit', function() {
      		    dataType : "xml",
      		    success  : function (xml,data) {
      		    		console.log(xml);
+     		    	$('<h3>').html("XML List").appendTo('#jtitle');
 	     		    // assume that the XML above is in a string named "xml"
 //	     		    var data = $.parseXML();
 	     		    // wrap the XML in a jQuery object to make it easier to work with
 //	     		    var xml = $(data);
-	     		    $(data).find("member").each(function () {
+	     		    $(xml).find("member").each(function () {
 	     		        var title 	 = $(this).find('title').text(),
 	     		        	  fname = $(this).find('fname').text(),
 	     		        	  lname = $(this).find('lname').text(),
@@ -316,7 +267,7 @@ $("#xhr").on('pageinit', function() {
 	     		        	  notes  = $(this).find('notes').text(),
 	     		        	  fav    	 = $(this).find('fav').text();
 	     		 
-	     		       $("#xhrdata").append($(
+	     		       			$("#xhrdata").append($('<ul>'+
 									     		                	'<li>'+"Title: "+ title + '<br />' + '</li>'+
 									     		                	'<li>'+"First Name: "+ fname + '<br />' + '</li>'+
 									     		                	'<li>'+"Last Name: "+ lname + '<br />' + '</li>'+
@@ -325,11 +276,10 @@ $("#xhr").on('pageinit', function() {
 									     		                	'<li>'+"Age: "+ age + '<br />' + '</li>'+
 									     		                	'<li>'+"Gender: "+ sex + '<br />' + '</li>'+
 									     		                	'<li>'+"Notes: "+ notes+ '<br />' + '</li>'+
-									     		                	'<li>'+"Favorite?: "+ fav + '<br />' + '</li>'
+									     		                	'<li>'+"Favorite?: "+ fav + '<br />' + '</li>'+
+									     		                '</ul>'
 	     		           									 ));
-	     		           //.append("#xhrdata");
-	     		        
-//	     		        console.log("Title: ", item.find("title"));
+	     		         
 	     		    });
 	     		    $('#xhrdata').listview();
      		    	$('#xhrdata').listview('refresh');
@@ -338,4 +288,41 @@ $("#xhr").on('pageinit', function() {
         	});
      });
         
+     //CSV
+     $('#csv').on('click', function () {
+     		$('#xhrdata').empty();
+     		
+     		$.ajax({
+     		    url      : "xhr/csvdata.csv",
+     		    type     : "GET",
+     		    dataType : "text",
+     		    success  : function (data) {
+     		    		console.log(data);
+     		    	$('<h3>').html("CSV List").appendTo('#jtitle');
+     		    	var lines = data.split("\n");
+     		    	for (var lineNum = 1; lineNum < lines.length; lineNum++) {
+     		    	    // Get the current line/row
+     		    	    var row = lines[lineNum];
+     		    	    var columns = row.split(",");
+     		    	    // The columns variable is now an array.
+     		    	    $("#xhrdata").append($('<ul>'+
+     		    	    			     		                	'<li>'+"Title: "+ columns[0] + '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"First Name: "+ columns[1] + '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"Last Name: "+ columns[2] + '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"Birthday: "+ columns[3] + '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"Death Date: "+ columns[4] + '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"Age: "+ columns[5] + '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"Gender: "+ columns[6] + '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"Notes: "+ columns[7]+ '<br />' + '</li>'+
+     		    	    			     		                	'<li>'+"Favorite?: "+ columns[8] + '<br />' + '</li>'+
+     		    	    			     		                '</ul>'
+     		    	        									 ));
+     		    	}
+     		    	$('#xhrdata').listview();
+     		    	$('#xhrdata').listview('refresh');
+     		    },
+     		    
+     		});
+     });
+     
 });	

@@ -4,14 +4,6 @@ $('#home').on('pageinit', function() {
 
 $('#addmem').on('pageinit', function() {
 
-    //        var mform = $('#addmemform');
-    //            mform.validate({
-    //            invalidHandler: function(form, validator) {},
-    //            submitHandler: function() {
-    //        var data = mform.serializeArray();
-    //            storeData(this.key);
-    //        }
-    //    });
     //    Set Link & Submit Click Events
     var displayLink = $('#displayLink');
     displayLink.on("click", getData);
@@ -33,19 +25,6 @@ $('#addmem').on('pageinit', function() {
         });
     };
 
-
-    //    Find value of selected radio button.
-    //    function getSelectedRadio() {
-    //        var radios = document.forms[0].sex;
-    //        for(var i = 0; i<radios.length; i++){
-    //            if (radios[i].checked){
-    //                sexValue = radios[i].value;
-    //            }
-    //        }
-    //    }
-    //    Find value of favorite button.
-
-
     function getCheckboxValue() {
         if ($('fav').checked) {
             favValue = $('fav').value;
@@ -62,8 +41,6 @@ $('#addmem').on('pageinit', function() {
         } else {
             id = key;
         }
-        //getSelectedRadio();
-        //getCheckboxValue();
         var item = {};
         item.title = ["Title: ", $('#title').val()];
         item.fname = ["First Name: ", $('#fname').val()];
@@ -71,7 +48,6 @@ $('#addmem').on('pageinit', function() {
         item.bday = ["Birthday: ", $('#bday').val()];
         item.ddate = ["Death date: ", $('#ddate').val()];
         item.age = ["Age: ", $('#age').value];
-        //              item.sex = ["Gender: " , sexValue];
         item.notes = ["Notes: ", $('#notes').value];
         item.fav = ["Save as Favorite: ", favValue];
         item.key = id;
@@ -87,35 +63,23 @@ $('#addmem').on('pageinit', function() {
             alert("No Data Available in Local Storage so default data was added.");
             autoFillData();
         };
-
-        //Write Data from Local Storage to the browser
-        //        var makeDiv = $("#data" )
-        //        var makeList = $("ul");
-        //        makeDiv.append(makeList);
+        
         for (var i = 0, j = localStorage.length; i < j; i++) {
             var member = $("li").appendTo("#familyMembers");
-            //makeLi.addClass("makeLi")
-            //var linksLi = $('li');
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             //Convert string from local storage val back to an object using JSON.parse()
             var obj = JSON.parse(value);
-            //var makeSubList = $("ul");
-            //makeSubList.appendTo(makeLi)
-            //getImage(obj.title[1], makeSubList);
             for (var n in obj) {
                 var factInfo = obj[n][0] + " " + obj[n][1];
                 var fact = $("<p>").html(factInfo);
                 fact.appendTo(member);
-                //makeSubList.append(linksLi);
             }
             makeItemLinks(localStorage.key(i), fact); // Create our edit and delete buttons/link for each item in local storage.
         }
     }
 
     //Get the image for the right catagory
-
-
     function getImage(catName, makeSubList) {
         var imageLi = $('li');
         makeSubList.append(imageLi);
@@ -127,26 +91,16 @@ $('#addmem').on('pageinit', function() {
     //JSON Object which will auto populate local storage
 
 
-    function autoFillData() { /*var json = {*/
-
+    function autoFillData() { 
         //Store the JSON Object into Local Storage
         for (var n in json) {
             var id = Math.floor(Math.random() * 1000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
         }
     }
-
-    //    function name(){
-    //        if($("#idInput").val() === "yes"){
-    //            $('#slider').show();
-    //        }else{
-    //            $('#slider').hide();
-    //        }
-    //    };
+    
     //Make Item Links:
     // Create the edit and delete links for each stored item when displayed
-
-
     function makeItemLinks(key, linksLi) {
         //add edit single item link
         var editLink = $('a');
@@ -172,8 +126,6 @@ $('#addmem').on('pageinit', function() {
         //grab the data from our local storage
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
-        //show the form        
-        //        toggleControls('off');
         //populate the form fields with current localStorage values
         $('#title').val(item.title[1]);
         $('#fname').val(item.fname[1]);
@@ -182,14 +134,7 @@ $('#addmem').on('pageinit', function() {
         $('#ddate').val(item.ddate[1]);
         $('#age').val(item.age[1]);
         $('#notes').val(item.notes[1]);
-        //    ge("number").innerHTML = item.age[1] + " yrs";
-        //        var radios = document.forms[0].sex;
-        //        console.log(radios);
-        //        for(var i=0; i<radios.length; i++){
-        //            if(radios[i].value === item.sex[1]){
-        //                radios[i].setAttribute("checked", "checked");
-        //            }
-        //        }
+
         if (item.fav[1] == "Yes") {
             $('#fav').attr("checked", "checked");
         }
@@ -231,14 +176,6 @@ $('#addmem').on('pageinit', function() {
     favValue = "No";
     errMsg = $('errors');
 
-    //    Set Link & Submit Click Events
-    //        var displayLink = $('#displayLink');
-    //            displayLink.on("click", getData);
-    //         var clearLink = $ ('#clear');
-    //            clearLink.on("click", clearLocal);
-    //          var save = $('#submit');
-    //            save.on("click", storeData);
-    
 }); // #addmem pageinit
 
 //Fam Data
@@ -286,21 +223,98 @@ $("#xhr").on('pageinit', function() {
         //CSV
 //        $('#csv').on('click', function(){
 //        		$('#xhr').empty();
-//        		$('<p>').html('CSV').appendTo('#xhr');
+//        		$('<p>').html('').appendTo('#xhr');
 //        		
 //        		$.ajax({
 //        		    url      : "xhr/csvdata.csv",
 //        		    type     : "GET",
 //        		    dataType : "text",
-//        		    success  : function() {
-//        		        console.log('ERROR', data);
+//        		    success  : function(status, csv) {
+//        		    	console.log(status, csv);
+//        		    	 Assume that your entire CSV file is in the data variable.
+//        		    	 The "\n" is the string escape for the end-of-line character.
+//        		    	var lines = csv.split("\n");
+//        		    	 The lines variable is now an array of lines of text.
+//        		    	for (var lineNum = 0; lineNum < lines.length; lineNum++) {
+//        		    	     Get the current line/row
+//        		    	    var row = lines[lineNum];
+//        		    	    var columns = row.split(",");
+//        		    	     The columns variable is now an array.
+//        		    	    console.log(columns);
+//        		    	}; // for lineNum
+//        		    
+//        		    	$(''+
+//        		    					'<li>'+
+//        		    	 				'<p>'+"Title: "+ member.title + '<br />' + '</p>'+
+//        		    	 				'<p>'+"First Name: "+ member.fname + '<br />' + '</p>'+
+//        		    	 				'<p>'+"Last Name: "+ member.lname + '<br />' + '</p>'+
+//        		    	 				'<p>'+"Birthday: "+ member.bday + '<br />' + '</p>'+
+//        		    	 				'<p>'+"Death Date: "+ member.ddate + '<br />' + '</p>'+
+//        		    	 				'<p>'+"Age: "+ member.age + '<br />' + '</p>'+
+//        		    	 				'<p>'+"Gender: "+ member.sex + '<br />' + '</p>'+
+//        		    	 				'<p >'+"Notes: "+ member.notes+ '<br />' + '</p>'+
+//        		    	 				'<p>'+"Favorite?: "+ member.fav + '<br />' + '</p>'+
+//        		    	 				'</li>'
+//        		    			
+//        		    			).appendTo("#xhrdata");
+//        		    		
+//        		    	}
+//        		    	
+//        		    	$('#xhrdata').listview('refresh');
+//        		    	
+//        		    },
+//        		    error: function(data) {
+//        		    	console.log(result);
 //        		    }
 //        		});
-//        
-//        
-//        )};
-//        
+//                
+//        });
         
+    // XML
+     $('#xml').on('click', function () {
+     		$('#xhrdata').empty();
+     		
+     		$.ajax({
+     		    url      : "xhr/xmldata.xml",
+     		    type     : "GET",
+     		    dataType : "xml",
+     		    success  : function (xml,data) {
+     		    		console.log(xml);
+	     		    // assume that the XML above is in a string named "xml"
+//	     		    var data = $.parseXML();
+	     		    // wrap the XML in a jQuery object to make it easier to work with
+//	     		    var xml = $(data);
+	     		    $(data).find("member").each(function () {
+	     		        var title 	 = $(this).find('title').text(),
+	     		        	  fname = $(this).find('fname').text(),
+	     		        	  lname = $(this).find('lname').text(),
+	     		        	  bday  	 = $(this).find('bday').text(),
+	     		        	  ddate  = $(this).find('ddate').text(),
+	     		        	  age 	 = $(this).find('age').text(),
+	     		        	  sex   	 = $(this).find('sex').text(),
+	     		        	  notes  = $(this).find('notes').text(),
+	     		        	  fav    	 = $(this).find('fav').text();
+	     		 
+	     		       $("#xhrdata").append($(
+									     		                	'<li>'+"Title: "+ title + '<br />' + '</li>'+
+									     		                	'<li>'+"First Name: "+ fname + '<br />' + '</li>'+
+									     		                	'<li>'+"Last Name: "+ lname + '<br />' + '</li>'+
+									     		                	'<li>'+"Birthday: "+ bday + '<br />' + '</li>'+
+									     		                	'<li>'+"Death Date: "+ ddate + '<br />' + '</li>'+
+									     		                	'<li>'+"Age: "+ age + '<br />' + '</li>'+
+									     		                	'<li>'+"Gender: "+ sex + '<br />' + '</li>'+
+									     		                	'<li>'+"Notes: "+ notes+ '<br />' + '</li>'+
+									     		                	'<li>'+"Favorite?: "+ fav + '<br />' + '</li>'
+	     		           									 ));
+	     		           //.append("#xhrdata");
+	     		        
+//	     		        console.log("Title: ", item.find("title"));
+	     		    });
+	     		    $('#xhrdata').listview();
+     		    	$('#xhrdata').listview('refresh');
+     		    },
+     		    error: function (data) {}
+        	});
+     });
         
 });
-    

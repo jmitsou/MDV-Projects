@@ -1,0 +1,12 @@
+Master link:
+
+https://github.com/tenju88/MDV-Projects/tree/master/ASD
+
+Git Links:
+
+http://tenju88.github.com/MDV-Projects/ASD/Week 2/Gold/index.html
+
+http://tenju88.github.com/MDV-Projects/ASD/Week 2/Bronze/index.html
+
+Cloudant Link:
+

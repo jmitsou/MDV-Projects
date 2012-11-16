@@ -10,7 +10,7 @@ $('#addmem').on('pageinit', function() {
     var clearLink = $('#clear');
     clearLink.on("click", clearLocal);
     var save = $('#submit');
-    save.on("click", storeData);
+    save.on("click", validate);
 
     //any other code needed for addItem page goes here
     var validate = function() {
@@ -24,6 +24,7 @@ $('#addmem').on('pageinit', function() {
             }
         });
     };
+
 
     function storeData(data) {
         console.log('storeData');
@@ -67,6 +68,7 @@ $('#addmem').on('pageinit', function() {
             dataType: "json",
             success: function(result) {
             		console.log(result);
+            		$('<h3>').html("JSON List").appendTo('#data');
             				$.each(result.rows, function(index, member){
             				
                 				$(''+

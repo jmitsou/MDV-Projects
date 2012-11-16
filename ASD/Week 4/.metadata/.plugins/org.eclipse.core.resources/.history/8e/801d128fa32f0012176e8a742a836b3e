@@ -10,7 +10,7 @@ $('#addmem').on('pageinit', function() {
     var clearLink = $('#clear');
     clearLink.on("click", clearLocal);
     var save = $('#submit');
-    save.on("click", storeData);
+    save.on("click", validate);
 
     //any other code needed for addItem page goes here
     var validate = function() {
@@ -25,13 +25,14 @@ $('#addmem').on('pageinit', function() {
         });
     };
 
+
     function storeData(data) {
         console.log('storeData');
 		var id = Math.floor(Math.random() * 1000001);
-        if (!data.key) {
-        } else {
-            id = key;
-        }
+//        if (!data.key) {
+//        } else {
+//            id = key;
+//        }
         var item = {};
         item.title = ["Title: ", $('#title').val()];
         item.fname = ["First Name: ", $('#fname').val()];
@@ -43,7 +44,8 @@ $('#addmem').on('pageinit', function() {
         item.fav = ["Save as Favorite: ", favValue];
         item.key = id;
         
-        $.couch.db("asdproject").saveDoc(item, {
+        var doc = {};
+        $.couch.db("asdproject").saveDoc(doc, {
             success: function(item) {
                 console.log(item);
             },
@@ -67,6 +69,7 @@ $('#addmem').on('pageinit', function() {
             dataType: "json",
             success: function(result) {
             		console.log(result);
+            		$('<h3>').html("JSON List").appendTo('#data');
             				$.each(result.rows, function(index, member){
             				
                 				$(''+
@@ -185,6 +188,19 @@ $('#addmem').on('pageinit', function() {
         }
     }
 
+    var doc = {
+    	    _id: "d12ee5ea1df6baa2b06451f44a019ab9",
+    	    _rev: "2-13839535feb250d3d8290998b8af17c3"
+    	};
+    	$.couch.db("asdproject").removeDoc(doc, {
+    	     success: function(data) {
+    	         console.log(data);
+    	    },
+    	    error: function(status) {
+    	        console.log(status);
+    	    }
+    	});
+    	
     	
     function clearLocal() {
         if (localStorage.length === 0) {

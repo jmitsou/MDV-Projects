@@ -4,13 +4,21 @@ $('#home').on('pageinit', function() {
 
 $('#addmem').on('pageinit', function() {
 
+    //        var mform = $('#addmemform');
+    //            mform.validate({
+    //            invalidHandler: function(form, validator) {},
+    //            submitHandler: function() {
+    //        var data = mform.serializeArray();
+    //            storeData(this.key);
+    //        }
+    //    });
     //    Set Link & Submit Click Events
     var displayLink = $('#displayLink');
     displayLink.on("click", getData);
     var clearLink = $('#clear');
     clearLink.on("click", clearLocal);
     var save = $('#submit');
-    save.on("click", storeData);
+    save.on("click", validate);
 
     //any other code needed for addItem page goes here
     var validate = function() {
@@ -25,13 +33,36 @@ $('#addmem').on('pageinit', function() {
         });
     };
 
+
+    //    Find value of selected radio button.
+    //    function getSelectedRadio() {
+    //        var radios = document.forms[0].sex;
+    //        for(var i = 0; i<radios.length; i++){
+    //            if (radios[i].checked){
+    //                sexValue = radios[i].value;
+    //            }
+    //        }
+    //    }
+    //    Find value of favorite button.
+
+
+//    function getCheckboxValue() {
+//        if ($('fav').checked) {
+//            favValue = $('fav').value;
+//        } else {
+//            favValue = "No";
+//        }
+//    }
+
     function storeData(data) {
         console.log('storeData');
 		var id = Math.floor(Math.random() * 1000001);
-        if (!data.key) {
-        } else {
-            id = key;
-        }
+//        if (!data.key) {
+//        } else {
+//            id = key;
+//        }
+        //getSelectedRadio();
+        //getCheckboxValue();
         var item = {};
         item.title = ["Title: ", $('#title').val()];
         item.fname = ["First Name: ", $('#fname').val()];
@@ -39,22 +70,17 @@ $('#addmem').on('pageinit', function() {
         item.bday = ["Birthday: ", $('#bday').val()];
         item.ddate = ["Death date: ", $('#ddate').val()];
         item.age = ["Age: ", $('#age').value];
+        //              item.sex = ["Gender: " , sexValue];
         item.notes = ["Notes: ", $('#notes').value];
         item.fav = ["Save as Favorite: ", favValue];
         item.key = id;
-        
-        $.couch.db("asdproject").saveDoc(item, {
-            success: function(item) {
-                console.log(item);
-            },
-            error: function(status) {
-                console.log(status);
-            }
-        });
         //Save data into Local Storage: Use stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Contact Saved!");
-
+      	changePage("showdata");
+      	console.log('changePage');
+      	getData();
+      	console.log('getData');
       	
     }
 
@@ -67,6 +93,7 @@ $('#addmem').on('pageinit', function() {
             dataType: "json",
             success: function(result) {
             		console.log(result);
+            		$('<h3>').html("JSON List").appendTo('#data');
             				$.each(result.rows, function(index, member){
             				
                 				$(''+
@@ -92,6 +119,8 @@ $('#addmem').on('pageinit', function() {
     }
 
     //Get the image for the right catagory
+
+
     function getImage(catName, makeSubList) {
         var imageLi = $('li');
         makeSubList.append(imageLi);
@@ -112,9 +141,17 @@ $('#addmem').on('pageinit', function() {
         }
     }
 
-
+    //    function name(){
+    //        if($("#idInput").val() === "yes"){
+    //            $('#slider').show();
+    //        }else{
+    //            $('#slider').hide();
+    //        }
+    //    };
     //Make Item Links:
     // Create the edit and delete links for each stored item when displayed
+
+
     function makeItemLinks(key, linksLi) {
         //add edit single item link
         var editLink = $('a');
@@ -185,7 +222,6 @@ $('#addmem').on('pageinit', function() {
         }
     }
 
-    	
     function clearLocal() {
         if (localStorage.length === 0) {
             alert("There is no data to clear!");
@@ -196,24 +232,17 @@ $('#addmem').on('pageinit', function() {
             return false;
         }
     }
-
+    //        sexValue,
     favValue = "No";
     errMsg = $('errors');
 
-    //url functions
-    var urlVar = function() {
-    	var urlData=$($.mobile.activePage).data("url");
-    	var urlParts = urlData.split('?');
-    	var urlPairs = urlParts[1].split('&');
-    	var urlValues = {};
-    	for (var pair in urlPairs) {
-    		var keyValue = urlPairs[pair].split('=');
-    		var key = decodeURIComponent(keyValue[0]);
-    		var value = decodeURIComponent(keyValue[1]);
-    		urlValue[key] = value;
-    	}
-    	return urlValues;
-    }
+    //    Set Link & Submit Click Events
+    //        var displayLink = $('#displayLink');
+    //            displayLink.on("click", getData);
+    //         var clearLink = $ ('#clear');
+    //            clearLink.on("click", clearLocal);
+    //          var save = $('#submit');
+    //            save.on("click", storeData);
     
     var changePage = function(pageID){
     			$('#' + pageID).trigger('pageinit');

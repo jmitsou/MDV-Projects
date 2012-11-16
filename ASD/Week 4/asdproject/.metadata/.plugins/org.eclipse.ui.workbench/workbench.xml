@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="3" version="2.0">
 <workbenchAdvisor/>
-<window height="768" width="1024" x="21" y="56">
+<window height="768" width="1024" x="424" y="35">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.ui.navigator.ProjectExplorer"/>
 </fastViewData>
+<intro standby="false"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
@@ -52,11 +53,17 @@
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
+<view id="org.eclipse.ui.internal.introview" partName="Android IDE">
+<viewState>
+<presentation currentPage="file:///Users/jmitsou/Downloads/adt-bundle-mac/eclipse/plugins/com.android.ide.eclipse.adt.package_21.0.0.2012-10-31-0-17/index.html" restore="true"/>
+<standbyPart/>
+</viewState>
+</view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="&lt;JavaScript&gt;">
+<perspectives activePart="org.eclipse.ui.internal.introview" activePerspective="&lt;JavaScript&gt;">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor descriptor="org.eclipse.wst.jsdt.ui.JavaPerspective" id="&lt;JavaScript&gt;" label="&lt;JavaScript&gt;"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -97,6 +104,7 @@
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.internal.introview"/>
 <fastViews>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" ratio="0.2992126"/>
 </fastViews>
@@ -113,11 +121,13 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1ccad9c" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="left">
-<folder appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="1">
+<page content="org.eclipse.ui.internal.introview" label="Android IDE"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="254" ratioRight="762" relationship="2" relative="left"/>
@@ -158,9 +168,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="128">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
-</trimArea>
 <trimArea IMemento.internal.id="1024">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>

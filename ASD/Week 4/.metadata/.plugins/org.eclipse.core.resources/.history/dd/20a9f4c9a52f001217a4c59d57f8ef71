@@ -25,6 +25,7 @@ $('#addmem').on('pageinit', function() {
         });
     };
 
+
     function storeData(data) {
         console.log('storeData');
 		var id = Math.floor(Math.random() * 1000001);
@@ -67,6 +68,7 @@ $('#addmem').on('pageinit', function() {
             dataType: "json",
             success: function(result) {
             		console.log(result);
+            		$('<h3>').html("JSON List").appendTo('#data');
             				$.each(result.rows, function(index, member){
             				
                 				$(''+

@@ -54,6 +54,7 @@ $('#addmem').on('pageinit', function() {
         //Save data into Local Storage: Use stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Contact Saved!");
+
       	
     }
 
@@ -122,8 +123,10 @@ $('#addmem').on('pageinit', function() {
         var editText = "Edit Member";
         editLink.addClass("editLink").on("click", editItem).html(editText);
         linksLi.append(editLink);
+
         var space = $('<br/>');
         linksLi.append(space);
+
         //add delete single item link
         var deleteLink = $('a');
         deleteLink.attr("href", "#");
@@ -172,18 +175,14 @@ $('#addmem').on('pageinit', function() {
     }
 
     function deleteItem() {
-    	var doc = {
-    		    _id: "d12ee5ea1df6baa2b06451f44a019ab9",
-    		    _rev: "2-13839535feb250d3d8290998b8af17c3"
-    		};
-    		$.couch.db("asdproject").removeDoc(doc, {
-    		     success: function(data) {
-    		         console.log(data);
-    		    },
-    		    error: function(status) {
-    		        console.log(status);
-    		    }
-    		});
+        var ask = confirm("Are you sure you want to delete this member?");
+        if (ask) {
+            localStorage.removeItem(this.key);
+            alert("Member has been deleted.");
+            window.location.reload();
+        } else {
+            alert("Member not deleted.");
+        }
     }
 
     	

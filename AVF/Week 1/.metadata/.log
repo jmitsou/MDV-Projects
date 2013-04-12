@@ -1,0 +1,218 @@
+!SESSION 2013-04-09 00:33:36.890 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_43
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.ui 4 4 2013-04-09 00:34:11.595
+!MESSAGE Part already exists in page layout: org.eclipse.ui.navigator.ProjectExplorer.
+
+!ENTRY org.eclipse.core.net 1 0 2013-04-09 00:34:19.698
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 00:34:25.034
+!MESSAGE An Android SDK is already being loaded. Please try again later.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2013-04-09 00:34:36.937
+!MESSAGE No repository found at file:/Users/jmitsou/Downloads/eclipse/configuration/org.eclipse.osgi/bundles/111/data/listener_1925729951/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2013-04-09 00:34:36.939
+!MESSAGE No repository found at file:/Users/jmitsou/Downloads/eclipse/.eclipseextension.
+!SESSION 2013-04-09 00:35:51.479 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_43
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-04-09 00:36:01.798
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-04-09 00:51:14.092 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_43
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-04-09 00:51:29.537
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:02:13.154
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:02:13.154
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.154
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.154
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.154
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.154
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.154
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.154
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:02:13.167
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:02:13.167
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.167
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.167
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.167
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.167
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.167
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:13.167
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:02:51.811
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:02:51.811
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.811
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.811
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.811
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.811
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.811
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.811
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:02:51.814
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:02:51.814
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.814
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.814
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.814
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.814
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.814
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:02:51.814
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:03:18.952
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:03:18.952
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.953
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.953
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.953
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.953
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.953
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:03:18.960
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:03:18.960
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.960
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.960
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.960
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.960
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:03:18.960
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SESSION 2013-04-09 01:04:52.762 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_43
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.javascript.product -keyring /Users/jmitsou/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-04-09 01:05:01.749
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:05:24.730
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:05:24.730
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.730
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.730
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.730
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.730
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.730
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.730
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:05:24.737
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:05:24.737
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.737
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.737
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.737
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.737
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.737
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:05:24.737
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:06:19.101
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:06:19.101
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.101
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.101
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.101
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.101
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.102
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.102
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-09 01:06:19.104
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2013-04-09 01:06:19.104
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.104
+!MESSAGE "Tracer for OpenGL ES" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.104
+!MESSAGE "Android DDMS" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.104
+!MESSAGE "Android Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.104
+!MESSAGE "Android Traceview" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.104
+!MESSAGE "Android Hierarchy Viewer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2013-04-09 01:06:19.104
+!MESSAGE "Android Native Development Tools" will be ignored because it is already installed.

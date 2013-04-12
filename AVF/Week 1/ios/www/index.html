@@ -1,0 +1,175 @@
+<!doctype html>  
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta content="Second step to a full working app!" name="description">
+		<meta content="html5, mobile developement, Full Sail University" name="keywords">
+		
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="index, follow" name="robots">
+		
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+		<title>AVF Demo Application</title>
+	
+<!-- StyleSheets under here -->
+		<link rel="stylesheet" href="themes/Ice.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		
+<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	</head>
+	<body>
+	
+		<div data-role="page" id="home" data-theme="a">
+			<div data-role="header" data-position="fixed">
+				<h1 class="headers"> Demo Application  </h1>
+		
+		</div><!-- /header -->
+		 
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#feat">
+				<img src="img/feat.jpg" />
+				<h3>Native Features</h3>
+				<p>The features I intended to work with</p>
+				</a></li>
+				<li><a href="#api">
+				<img src="img/api.jpeg" />
+				<h3>API Data</h3>
+				<p>The Api's I want to use</p>
+				</a></li>
+				<li><a href="#res">
+				<img src="img/research.jpg" />
+				<h3>Research Discussions</h3>
+				<p>Discussions for weeks 1-4</p>
+				</a></li>
+			</ul>	
+		</div><!-- /content -->
+		
+		<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+	
+	<!--Start of Native Features page-->
+	<div data-role="page" id="feat" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<a href="#home" data-icon="back">Back</a>
+		<h1>Native Features</h1>
+	</div>
+	
+	<div data-role="content" id="data">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#feat">
+			<img src="img/feat.jpg" />
+			<h3>Native Features</h3>
+			<p>The features I intended to work with</p>
+			</a></li>
+			<li><a href="#api">
+			<img src="img/api.jpeg" />
+			<h3>API Data</h3>
+			<p>The Api's I want to use</p>
+			</a></li>
+			<li><a href="#res">
+			<img src="img/research.jpg" />
+			<h3>Research Discussions</h3>
+			<p>Discussions for weeks 1-4</p>
+			</a></li>
+		</ul>
+	</div>
+	
+		<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#home" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#about" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#feed" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+	
+		</div><!-- /footer -->
+	</div><!-- /page -->
+	
+	<!--Start of API Data page-->
+	<div data-role="page" id="api" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<a href="#home" data-icon="back">Back</a>
+		<h1>API Data</h1>
+	</div>
+	
+	<div data-role="content" id="data">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#feat">
+			<img src="img/feat.jpg" />
+			<h3>Native Features</h3>
+			<p>The features I intended to work with</p>
+			</a></li>
+			<li><a href="#api">
+			<img src="img/api.jpeg" />
+			<h3>API Data</h3>
+			<p>The Api's I want to use</p>
+			</a></li>
+			<li><a href="#res">
+			<img src="img/research.jpg" />
+			<h3>Research Discussions</h3>
+			<p>Discussions for weeks 1-4</p>
+			</a></li>
+		</ul>
+	</div>
+	
+	<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+			</div><!-- /footer -->
+	</div><!-- /page -->
+	
+	<!--Start of Research page-->
+	<div data-role="page" id="res" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<a href="#home" data-icon="back">Back</a>
+		<h1>Discussion Research</h1>
+	</div>
+	
+	<div data-role="content" id="data">
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 1 Discussion</h3>
+			<p>The features I intended to work with</p>
+		</div>
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 2 Discussion</h3>
+			<p>The features I intended to work with</p>
+		</div>
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 3 Discussion</h3>
+			<p>The features I intended to work with</p>
+		</div>
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 4 Discussion</h3>
+			<p>The features I intended to work with</p>
+		</div>
+	
+	<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+			</div><!-- /footer -->
+	</div><!-- /page -->
+       
+<!-- JavaScript under here -->
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>  
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta content="Second step to a full working app!" name="description">
+		<meta content="html5, mobile developement, Full Sail University" name="keywords">
+		
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="index, follow" name="robots">
+		
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+		<title>AVF Demo Application</title>
+	
+<!-- StyleSheets under here -->
+		<link rel="stylesheet" href="themes/Ice.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		
+<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	</head>
+	<body>
+	
+		<div data-role="page" id="home" data-theme="a">
+			<div data-role="header" data-position="fixed">
+				<h1 class="headers"> Demo Application  </h1>
+		
+		</div><!-- /header -->
+		 
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#feat">
+				<img src="img/feat.jpg" />
+				<h3>Native Features</h3>
+				<p>The features I intended to work with</p>
+				</a></li>
+				<li><a href="#api">
+				<img src="img/api.jpeg" id="AD"/>
+				<h3>API Data</h3>
+				<p>The Api's I want to use</p>
+				</a></li>
+				<li><a href="#res">
+				<img src="img/research.jpg" />
+				<h3>Research Discussions</h3>
+				<p>Discussions for weeks 1-4</p>
+				</a></li>
+			</ul>	
+		</div><!-- /content -->
+		
+		<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+	
+	<!--Start of Native Features page-->
+	<div data-role="page" id="feat" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+		<h1>Native Features</h1>
+	</div>
+	
+	<div data-role="content" id="data">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#">
+			<img src="img/Nat-img/Camera-Icon.jpg" />
+			<h3>Camera</h3>
+			<p>Activates phones camera</p>
+			</a></li>
+			<li><a href="#">
+			<img src="img/push-icon.png" />
+			<h3>Push Notification</h3>
+			<p>Sends notifications</p>
+			</a></li>
+			<li><a href="#">
+			<img src="img/location.jpg" />
+			<h3>GeoLocation</h3>
+			<p>Grabs current location</p>
+			</a></li>
+			<li><a href="#">
+			<img src="img/sdCard.png" />
+			<h3>Storage</h3>
+			<p>Uses SD card/internal</p>
+			</a></li>
+		</ul>
+	</div>
+	
+		<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+	
+		</div><!-- /footer -->
+	</div><!-- /page -->
+	
+	<!--Start of API Data page-->
+	<div data-role="page" id="api" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+		<h1>API Data</h1>
+	</div>
+	
+	<div data-role="content" id="data">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#twit">
+			<img src="img/twite.png" class="t"/>
+			<h3>Twitter</h3>
+			<p>Connects and allows you to post on your Twitter account</p>
+			</a></li>
+			<li><a href="#">
+			<img src="img/gog.png" />
+			<h3>Google+</h3>
+			<p>Connects and allows you to post on your Google+ account</p>
+			</a></li>
+			<li><a href="#">
+			<img src="img/faceb.png" />
+			<h3>Facebook</h3>
+			<p>Connects and allows you to post on your Facebook account</p>
+			</a></li>
+			<li><a href="#">
+			<img src="img/wordpress.png" />
+			<h3>WordPress</h3>
+			<p>Connects and allows you to post to your Wordpress blog</p>
+			</a></li>
+		</ul>
+	</div>
+	
+	<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+			</div><!-- /footer -->
+	</div><!-- /page -->
+
+<!--Twitter Page	-->
+	<div data-role="page" id="twit" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+				<h1>Twitter Feed</h1>
+		</div>
+		
+		<div data-role="content" id="">
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/OtakuJeff" data-widget-id="324048892809314304">Tweets by @OtakuJeff</a>
+		</div>
+		
+		<div data-role="navbar" data-position="fixed" data-theme="a">
+			<ul>
+				<li><a href="#home" data-ajax="false" data-icon="home" >Home</a></li>
+			</ul>	
+		</div>
+	</div>
+	
+	<!--Start of Research page-->
+	<div data-role="page" id="res" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+		<h1>Discussion Research</h1>
+	</div>
+	
+	<div data-role="content" id="data">
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 1 Discussion</h3>
+			<p id="q">Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</p>
+			<p id="a">Twitter uses o auth to authenticate purchases and logins without using the users personal information such as their username and password. </p>
+			<p id="q">Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</p>
+			<p id="a">We need JSONP to translate the information received from other sites into data that can be read for your application</p>
+			<p id="q">Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</p>
+			<p id="a">JSON-P data resources give us access to multiple forms of data. With    that data we can use the notification bar. We can access the camera, and the other feats as well.</p>
+			<p id="q">Please describe any design and functionality intentions you may have for your Demo app components this month.</p>
+			<p id="a">I would like my application to pull from the live data APIs I listed and then nicely display them in the notification bar or at least that’s my goal.</p>
+			<p id="q">Briefly describe some past 'lessons learned' regarding workflow      as it relates to research, design, development, etc.</p>
+			<p id="a">Well the best way to explain this is MIU when I incorporated each of these ideas. We had to research and each of the functions I used on the JQuery site and then add them to my design. With these two together when you design what you learn when researching, that’s call development.</p>
+			</p>
+		</div>
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 2 Discussion</h3>
+			<p>The features I intended to work with</p>
+		</div>
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 3 Discussion</h3>
+			<p>The features I intended to work with</p>
+		</div>
+		<div data-role="collapsible" data-inset="true">
+			<h3>Week 4 Discussion</h3>
+			<p>The features I intended to work with</p>
+		</div>
+	
+	<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
+			<ul>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+			</ul>
+			</div><!-- /footer -->
+	</div><!-- /page -->
+       
+<!-- JavaScript under here -->
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -39,7 +39,7 @@
 				<p>The features I intended to work with</p>
 				</a></li>
 				<li><a href="#api">
-				<img src="img/api.jpeg" />
+				<img src="img/api.jpeg" id="AD"/>
 				<h3>API Data</h3>
 				<p>The Api's I want to use</p>
 				</a></li>
@@ -63,14 +63,14 @@
 	<!--Start of Native Features page-->
 	<div data-role="page" id="feat" data-theme="a" >
 		<div data-role="header" data-position="fixed" data-theme="a">
-		<a href="#home" data-icon="back">Back</a>
+		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
 		<h1>Native Features</h1>
 	</div>
 	
 	<div data-role="content" id="data">
 		<ul data-role="listview" data-inset="true">
 			<li><a href="#">
-			<img src="img/Camera-Icon.jpg" />
+			<img src="img/Nat-img/Camera-Icon.jpg" />
 			<h3>Camera</h3>
 			<p>Activates phones camera</p>
 			</a></li>
@@ -94,9 +94,9 @@
 	
 		<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
 			<ul>
-				<li><a href="#home" data-ajax="false" data-icon="gear">Native Features</a></li>
-				<li><a href="#about" data-ajax="false" data-icon="info">API Data</a></li>
-				<li><a href="#feed" data-ajax="false" data-icon="info" >Research</a></li>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
 			</ul>
 	
 		</div><!-- /footer -->
@@ -105,14 +105,14 @@
 	<!--Start of API Data page-->
 	<div data-role="page" id="api" data-theme="a" >
 		<div data-role="header" data-position="fixed" data-theme="a">
-		<a href="#home" data-icon="back">Back</a>
+		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
 		<h1>API Data</h1>
 	</div>
 	
 	<div data-role="content" id="data">
 		<ul data-role="listview" data-inset="true">
-			<li><a href="#">
-			<img src="img/twite.png" />
+			<li><a href="#twit">
+			<img src="img/twite.png" class="t"/>
 			<h3>Twitter</h3>
 			<p>Connects and allows you to post on your Twitter account</p>
 			</a></li>
@@ -142,18 +142,46 @@
 			</ul>
 			</div><!-- /footer -->
 	</div><!-- /page -->
+
+<!--Twitter Page	-->
+	<div data-role="page" id="twit" data-theme="a" >
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+				<h1>Twitter Feed</h1>
+		</div>
+		
+		<div data-role="content" id="">
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/OtakuJeff" data-widget-id="324048892809314304">Tweets by @OtakuJeff</a>
+		</div>
+		
+		<div data-role="navbar" data-position="fixed" data-theme="a">
+			<ul>
+				<li><a href="#home" data-ajax="false" data-icon="home" >Home</a></li>
+			</ul>	
+		</div>
+	</div>
 	
 	<!--Start of Research page-->
 	<div data-role="page" id="res" data-theme="a" >
 		<div data-role="header" data-position="fixed" data-theme="a">
-		<a href="#home" data-icon="back">Back</a>
+		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
 		<h1>Discussion Research</h1>
 	</div>
 	
 	<div data-role="content" id="data">
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 1 Discussion</h3>
-			<p>The features I intended to work with</p>
+			<p id="q">Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</p>
+			<p id="a">Twitter uses o auth to authenticate purchases and logins without using the users personal information such as their username and password. </p>
+			<p id="q">Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</p>
+			<p id="a">We need JSONP to translate the information received from other sites into data that can be read for your application</p>
+			<p id="q">Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</p>
+			<p id="a">JSON-P data resources give us access to multiple forms of data. With    that data we can use the notification bar. We can access the camera, and the other feats as well.</p>
+			<p id="q">Please describe any design and functionality intentions you may have for your Demo app components this month.</p>
+			<p id="a">I would like my application to pull from the live data APIs I listed and then nicely display them in the notification bar or at least that’s my goal.</p>
+			<p id="q">Briefly describe some past 'lessons learned' regarding workflow      as it relates to research, design, development, etc.</p>
+			<p id="a">Well the best way to explain this is MIU when I incorporated each of these ideas. We had to research and each of the functions I used on the JQuery site and then add them to my design. With these two together when you design what you learn when researching, that’s call development.</p>
+			</p>
 		</div>
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 2 Discussion</h3>
@@ -181,5 +209,6 @@
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 <script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

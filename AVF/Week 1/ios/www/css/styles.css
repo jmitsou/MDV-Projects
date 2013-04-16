@@ -40,7 +40,7 @@ a:link {
 }
 
 a:hover {
-	color: #5375e3;
+	color: #0b7aa6;
 
 }
 
@@ -99,11 +99,29 @@ title{
 	font-size: 16px;
 }
 
-#ucon p {
-	color: #b41d1d;
-	font-size: 20px;
-}
-
 #link{
 	color: #073e7e;
+}
+
+img#AD.ui-li-thumb{
+	padding-top: 15px;
+}
+
+#q{
+	color: #e0e0df;
+	font-weight: normal;
+	font-style: normal;
+	text-shadow: 0 0 1px #ffffff;
+}
+
+#a{
+	color: #ffffff;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-shadow: 0 0 1px #d1d1bb;
+}
+
+div.ui-collapsible-content{
+	background-color: #5cb4bd;
 }

@@ -1,3 +1,4 @@
 com.android.ide.eclipse.adt.fixLegacyEditors=1
 com.android.ide.eclipse.adt.sdk=/Users/jmitsou/Desktop/android-sdk-macosx/sdk
+com.android.ide.eclipse.adt.xmlEditor=true
 eclipse.preferences.version=1

@@ -6,19 +6,14 @@ h1 {
 }
 
 p {
-	color: #429ca5;
-	font-weight: bold;
-	font-style: italic;
-	font-size: 7;
+	color: #35a8ac;
+	font-size: 12px;
+	text-align: left;
+	text-shadow: 0 0 1px #ffffff;
 }
 
 #home ul li p {
 	font-size: 7;
-}
-
-.logo{
-	float: left;
-	display: inline;
 }
 
 .back{
@@ -27,12 +22,6 @@ p {
 
 h2 {
 	color: #58bef8;
-}
-
-label.error{
-	display: block;
-	margin: 10px 0;
-	color: #cc0000;
 }
 
 a:link {
@@ -48,22 +37,8 @@ body {
 background-image: url(../img/tokyo-background.jpg);
 background-repeat: no-repeat;
 background-color: #000;
-	
+max-width: 100%;	
 }
-
-/*fieldset {
-	color: #3942b4;
-	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
-	background-color: #a7f7f1;
-	opacity: 1;
-	border-color: #2023a7;
-	border-style: solid;
-	font-style: italic;
-	line-height: 20px;
-	width: 300px;
-	margin-bottom: 20px;
-	margin-top: 10px;
-}*/
 
 legend {
 	font-style: italic;
@@ -91,9 +66,6 @@ label#read{
 	color: #000000;
 }
 
-li{
-	list-style: none;
-}
 
 title{
 	font-size: 16px;
@@ -125,3 +97,49 @@ img#AD.ui-li-thumb{
 div.ui-collapsible-content{
 	background-color: #5cb4bd;
 }
+
+label{
+	color: #ffffff;
+}
+
+#res-Data h1{
+	color: #ffffff;
+	text-shadow: 0 0 1px #000000;
+	font-size: large;
+	margin-left: 100px;
+}
+
+input#tquery{
+	color: #ffffff;
+}
+
+h1.ui-li-heading p.ui-li-desc{
+	color: #ffffff;
+}
+
+#res-Data img.ui-li-thumb{
+	margin-top: 13px;
+	width: 69px;
+	margin-left: 15px;
+}
+
+#res-Data li {
+	border: none;
+	font-size: 15px;
+	text-shadow: 0 0 1px #ffffff;
+	-moz-box-shadow: 0 0 1px #ffffff;
+	-webkit-box-shadow: 0 0 1px #ffffff;
+	box-shadow: 0 0 1px #ffffff;
+	opacity: 1;
+	border: 6px groove;
+	visibility: visible;
+	border-color: #2ca298;
+	background-color: #02044e;
+	padding: 10px;
+	overflow: auto;
+	margin-top: 30px;
+}
+
+/*Widget CSS*/
+
+

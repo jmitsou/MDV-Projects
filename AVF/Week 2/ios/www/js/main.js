@@ -1,3 +1,32 @@
-$("#twit").on("pageinit", function () {
-	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+<!-- Twitter API -->
+
+var getData = function() {
+ var tquery = $('#tquery').val();
+ $.getJSON('http://search.twitter.com/search.json?q=' + tquery + '&rpp=10&lang=en&include_entities=true&result_type=mixed&callback=?',
+  function(data) {
+  console.log(data);
+  for (i=0, j=data.results.length; i<j; i++) {
+  $("#res-Data")
+  .append(
+  "<li>" +
+  "<img src='" +
+  data.results[i].profile_image_url + "' />" +
+  "<h1>" +
+  data.results[i].from_user_name +
+  "<br />" +
+  "<br />" +
+  "<p>" +
+  data.results[i].text
+  );
+  }
+  $("#res-Data").listview("refresh");
+  });
+  };
+
+$('#getData').on('click', function() {
+ getData();
+});
+  
+$('#clear').on('click', function() {
+ location.reload();
 });

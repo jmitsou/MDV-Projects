@@ -14,7 +14,7 @@
 		<!-- Mobile IE needs ClearType for smoothing fonts -->
 		<meta http-equiv="cleartype" content="on">
 		<title>AVF Demo Application</title>
-	
+		
 <!-- StyleSheets under here -->
 		<link rel="stylesheet" href="themes/Ice.min.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
@@ -22,6 +22,7 @@
 		
 <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 		<script src="js/libs/modernizr.custom.min.js"></script>
+		
 	</head>
 	<body>
 	
@@ -54,7 +55,7 @@
 		<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
 			<ul>
 				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
-				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#api" data-icon="info">API Data</a></li>
 				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
 			</ul>
 		</div><!-- /footer -->
@@ -94,7 +95,7 @@
 	
 		<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
 			<ul>
-				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
 				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
 			</ul>
@@ -126,10 +127,10 @@
 			<h3>Facebook</h3>
 			<p>Connects and allows you to post on your Facebook account</p>
 			</a></li>
-			<li><a href="#">
-			<img src="img/wordpress.png" />
-			<h3>WordPress</h3>
-			<p>Connects and allows you to post to your Wordpress blog</p>
+			<li><a href="index2.html" data-ajax="false">
+			<img src="img/weather.png" />
+			<h3>Weather</h3>
+			<p>Allows you to pull the weather from your area</p>
 			</a></li>
 		</ul>
 	</div>
@@ -137,31 +138,35 @@
 	<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
 			<ul>
 				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
-				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
+				<li><a href="#home" data-ajax="false" data-icon="home">Home</a></li>
 				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
 			</ul>
 			</div><!-- /footer -->
 	</div><!-- /page -->
 
-<!--Twitter Page	-->
-	<div data-role="page" id="twit" data-theme="a" >
-		<div data-role="header" data-position="fixed" data-theme="a">
-			<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
-				<h1>Twitter Feed</h1>
-		</div>
-		
-		<div data-role="content" id="">
-			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/OtakuJeff" data-widget-id="324048892809314304">Tweets by @OtakuJeff</a>
-		</div>
-		
-		<div data-role="navbar" data-position="fixed" data-theme="a">
-			<ul>
-				<li><a href="#home" data-ajax="false" data-icon="home" >Home</a></li>
-			</ul>	
-		</div>
-	</div>
+<!--Twitter Page	-->				
+<div data-role="page" id="twit" data-theme="a">
+   <div data-role="header" data-theme="a">
+   		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+  			<h1>Twitter Feed</h1>
+   </div>
+   
+  <div data-role="content" id="data" data-theme="a" data-transition="pop">
+   		<label for="tquery">Look For Tweets</label>
+  		<input type="search" id="tquery" value="" placeholder="...."/>
+  		<input type="submit" id="getData" data-inline="true" value="Search" />
+  		<input type="reset" id="clear"  data-inline="true" value="Clear Results" />
+  		<ul data-role="listview" id="res-Data" ></ul>
+  </div>
+  
+  <div data-role="navbar" data-position="fixed" data-theme="a">
+  	<ul>
+  		<li><a href="#home" data-ajax="false" data-icon="home" >Home</a></li>
+  	</ul>	
+  </div><!-- /footer -->
+</div><!-- /page -->
 	
-	<!--Start of Research page-->
+<!--Start of Research page-->
 	<div data-role="page" id="res" data-theme="a" >
 		<div data-role="header" data-position="fixed" data-theme="a">
 		<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
@@ -185,7 +190,19 @@
 		</div>
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 2 Discussion</h3>
-			<p>The features I intended to work with</p>
+			<p id="q">What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</p>
+			<p id="a">One thing I could do is go back and add ALT ids to all my images making is easy to find out what my image is incase the image isn’t working. Another thing would be to add a voice command feature.</p>
+			<p id="q">Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</p>
+			<p id="a">One this that I noticed right away is the fact that all of them speak way to fast. They have to be adjusted and tweaked before the user can even use them, which adds more complication then necessary. After looking up the videos I looked up what developers have been doing to correct this and most led to the fact that voice command with correct this deficiencies. </p> 
+			<p id="q">Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</p>
+			<p id="a">My two devices are the IPAD and any android phone. Each of them have Accessibility features but support them differently. The IPAD has them built right into the settings allowing quick access to them. The Android also has them in settings but they are sourced from application called TalkBack.</p> 
+			<p id="q">Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</p>
+			<p id="a">So the two applications I chose are both android.
+			<br /> 
+			1)	The first is Mobile Accessibility Demo US, it is an application on the market that allows the blind to interact with all features on the phone by adding voice to vocalize all of your actions.
+			<br/>
+			2)	The second app is TalkBack, this app is part of the OS for all Android phones. It uses voice, and vibration to interact with the user. And also as the applications name states talks back letting the user know what they are touching.</p>
+			</p>
 		</div>
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 3 Discussion</h3>
@@ -198,9 +215,9 @@
 	
 	<div data-role="navbar" data-position="fixed" data-id="nav" data-iconpos="right">
 			<ul>
-				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Features</a></li>
+				<li><a href="#feat" data-ajax="false" data-icon="gear">Native Feature</a></li>
 				<li><a href="#api" data-ajax="false" data-icon="info">API Data</a></li>
-				<li><a href="#res" data-ajax="false" data-icon="info" >Research</a></li>
+				<li><a href="#home" data-ajax="false" data-icon="home" >Home</a></li>
 			</ul>
 			</div><!-- /footer -->
 	</div><!-- /page -->

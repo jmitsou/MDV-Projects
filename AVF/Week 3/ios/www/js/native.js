@@ -1,14 +1,17 @@
-
+function onBodyLoad() {
+	alert("it loaded");
+	document.addEventListener("deviceready",onDeviceReady,false);
+}
 	var pictureSource;   // picture source
     var destinationType; // sets the format of returned value 
 
     // Wait for PhoneGap to connect with the device
     //
-    document.addEventListener("deviceready",onDeviceReady,false);
+//    document.addEventListener("deviceready",onDeviceReady,false);
     
-    $('#cambtn').on('click', function () {
+    $('#cambtn').click(function () {
     		
-//    		capturePhoto();
+    		capturePhoto();
     		alert('button pressed');
     		
     });

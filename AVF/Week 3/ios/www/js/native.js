@@ -1,15 +1,17 @@
-$('#camera').on('click', function () {
-	
-	capturePhoto();
-	alert('Pic Taken');
-	
-});
+
 	var pictureSource;   // picture source
     var destinationType; // sets the format of returned value 
 
     // Wait for PhoneGap to connect with the device
     //
     document.addEventListener("deviceready",onDeviceReady,false);
+    
+    $('#cambtn').on('click', function () {
+    		
+//    		capturePhoto();
+    		alert('button pressed');
+    		
+    });
 
     // PhoneGap is ready to be used!
     //

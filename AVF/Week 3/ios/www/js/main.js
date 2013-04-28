@@ -30,3 +30,4 @@ $('#getData').on('click', function() {
 $('#clear').on('click', function() {
  location.reload();
 });
+

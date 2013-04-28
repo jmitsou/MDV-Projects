@@ -1,6 +1,19 @@
 body {
   font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  background: #0091c2;
+}
+
+#weather ul li {
+	margin-top: 10px;
+	-moz-box-shadow: 0 0 10px #040404;
+	-webkit-box-shadow: 0 0 10px #040404;
+	box-shadow: 0 0 10px #040404;
+	
+}
+
+#weather h2 {
+	-moz-box-shadow: 0 0 10px #070707;
+	-webkit-box-shadow: 0 0 10px #070707;
+	box-shadow: 0 0 10px #070707;
 }
 
 #weather {
@@ -36,13 +49,23 @@ body {
   margin: 0 20px;
 }
 
-#ref {
-	width: 160px;
-	margin-top: 30px;
-	margin-left: 150px;
-	position: relative;
+#weather img {
+	width: 200px;
+	height: 160px;
+	margin-top: 10px;
 }
 
+@media screen and (max-width: 480px) { #weather li{
+	display: block;
+	width: 250px;
+	margin: 10px 50px;
+}
+}
 
-
+@media screen and (max-width: 480px) { #weather li.currently{
+	display: block;
+	width: 250px;
+	margin: 10px 50px;
+}
+}
 

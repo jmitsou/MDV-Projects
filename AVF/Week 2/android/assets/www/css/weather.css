@@ -3,6 +3,19 @@ body {
   background: #0091c2;
 }
 
+#weather ul li {
+	margin-top: 10px;
+	-moz-box-shadow: 0 0 10px #040404;
+	-webkit-box-shadow: 0 0 10px #040404;
+	box-shadow: 0 0 10px #040404;
+}
+
+#weather h2 {
+	-moz-box-shadow: 0 0 10px #070707;
+	-webkit-box-shadow: 0 0 10px #070707;
+	box-shadow: 0 0 10px #070707;
+}
+
 #weather {
   width: 425px;
   margin: 0px auto;
@@ -41,6 +54,13 @@ body {
 	margin-top: 30px;
 	margin-left: 150px;
 	position: relative;
+	margin-bottom: 20px;
+}
+
+#weather img {
+	width: 200px;
+	height: 160px;
+	margin-top: 10px;
 }
 
 

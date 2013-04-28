@@ -1,6 +1,13 @@
 body {
   font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  background: #0091c2;
+}
+
+#weather ul li {
+	margin-top: 10px;
+	-moz-box-shadow: 0 0 10px #040404;
+	-webkit-box-shadow: 0 0 10px #040404;
+	box-shadow: 0 0 10px #040404;
+	
 }
 
 #weather {
@@ -17,6 +24,9 @@ body {
   font-weight: 300;
   text-align: center;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 10px #070707;
+  -webkit-box-shadow: 0 0 10px #070707;
+  box-shadow: 0 0 10px #070707;
 }
 
 #weather ul {
@@ -36,13 +46,38 @@ body {
   margin: 0 20px;
 }
 
-#ref {
-	width: 160px;
-	margin-top: 30px;
-	margin-left: 150px;
-	position: relative;
+#weather img {
+	width: 200px;
+	height: 160px;
+	margin-top: 10px;
 }
 
+@media screen and (max-width: 480px) { #weather li{
+	display: block;
+	width: 250px;
+	margin: 10px 40px;
+}
+}
 
+@media screen and (max-width: 480px) { #weather li.currently{
+	display: block;
+	width: 250px;
+	margin: 10px 40px;
+}
+}
 
+@media screen and (max-width: 480px) {#weather h2 {
+		margin-right: 10px;
+		margin-left: 20px;
+		width: 325px;
+	}
+}
+
+@media screen and (max-width: 480px) {#weather img {
+		width: 150px;
+		height: 150px;
+		margin-right: 50px;
+		margin-top: 20px;
+	}
+}
 

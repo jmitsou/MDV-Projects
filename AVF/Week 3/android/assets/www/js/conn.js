@@ -5,7 +5,7 @@ $('#status').click(function () {
 		checkConnection();
 });
 
-//    $(document).on("deviceready", onDeviceReady, false);
+    $(document).on("deviceready", onDeviceReady, false);
 
 //     PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     

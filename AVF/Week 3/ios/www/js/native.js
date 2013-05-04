@@ -1,12 +1,12 @@
-function onBodyLoad() {
-	document.addEventListener("deviceready",onDeviceReady,false);
-}
+//function onBodyLoad() {
+//	document.addEventListener("deviceready",onDeviceReady,false);
+//}
 	var pictureSource;   // picture source
     var destinationType; // sets the format of returned value 
 
     // Wait for PhoneGap to connect with the device
     //
-//    document.addEventListener("deviceready",onDeviceReady,false);
+    document.addEventListener("deviceready",onDeviceReady,false);
     
     $('#cambtn').click(function () {
     		
@@ -83,7 +83,7 @@ $('#status').click(function () {
 		checkConnection();
 });
 
-//    $(document).on("deviceready", onDeviceReady, false);
+    $(document).on("deviceready", onDeviceReady, false);
 
 //     PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     
@@ -121,6 +121,9 @@ $('#push').click(function () {
 		);
 });
 
+//Mashup
+
+
 //Geo
 
 $('#grabGeo').click(function () {
@@ -146,4 +149,55 @@ function onError(error) {
 
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
+});
+
+// Device
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+				                            'Device Cordova: '  + device.cordova + '<br />' + 
+				                            'Device Platform: ' + device.platform + '<br />' + 
+				                            'Device UUID: '     + device.uuid     + '<br />' + 
+				                            'Device Model: '    + device.model     + '<br />' + 
+				                            'Device Version: '  + device.version  + '<br />';
+    }
+
+//Geo Maps
+
+$("#geoM").on("pageinit", function () {
+
+function success(position) {
+  var mapcanvas = document.createElement('div');
+	  mapcanvas.id = 'map';
+	  mapcanvas.style.height = '500px';
+	  mapcanvas.style.width = '700px';
+	  document.querySelector('article').appendChild(mapcanvas);
+  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  var options = {
+	  zoom: 15,
+	  center: coords,
+	  mapTypeControl: true,
+	  navigationControlOptions: {
+	  style: google.maps.NavigationControlStyle.Large
+  },
+  mapTypeId: google.maps.MapTypeId.HYBRID
+  };
+  var map = new google.maps.Map(document.getElementById("map"), options);
+  var marker = new google.maps.Marker({
+  position: coords,
+  map: map,
+  title:"This is your Location"
+  });
+}
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success);
+} else {
+  error('Geo Location is not working');
+}
 });

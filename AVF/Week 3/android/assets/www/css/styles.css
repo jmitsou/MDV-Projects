@@ -21,7 +21,8 @@ p {
 }
 
 h2 {
-	color: #58bef8;
+	color: #055786;
+	font-size: 20px;
 }
 
 a:link {
@@ -31,6 +32,11 @@ a:link {
 a:hover {
 	color: #0b7aa6;
 
+}
+
+h4{
+	color: #ffffff;
+	text-shadow: 0 0 3px #191918;
 }
 
 body {
@@ -79,14 +85,14 @@ img#AD.ui-li-thumb{
 	padding-top: 15px;
 }
 
-#q{
+dt{
 	color: #e0e0df;
 	font-weight: normal;
 	font-style: normal;
 	text-shadow: 0 0 1px #ffffff;
 }
 
-#a{
+dd{
 	color: #ffffff;
 	font-weight: normal;
 	font-style: normal;
@@ -140,6 +146,27 @@ h1.ui-li-heading p.ui-li-desc{
 	margin-top: 30px;
 }
 
-/*Widget CSS*/
+h3#g{
+	color: #ffffff;
+	text-align: center;
+}
 
+#map{
+	margin: 10px;
+	position: absolute;
+}
 
+@media screen and (max-width: 480px) {#map {
+		width: 375px;
+		height: 500px;
+		margin: 10px;
+	}
+}
+
+li{
+	list-style: none;
+}
+
+img.ui-li-thumb.ui-corner-bl {
+	padding-left: 17px;
+}

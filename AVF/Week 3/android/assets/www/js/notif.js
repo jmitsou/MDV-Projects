@@ -7,6 +7,9 @@ $('#push').click(function () {
 	 
 });
 
+$('#weather.html').click(function () {
+	weatherAlert();
+});
 
     // Cordova is ready
     //
@@ -27,5 +30,14 @@ $('#push').click(function () {
 		 alertDismissed,         // callback
 		 'Winner',            // title
 		 'Done'                  // buttonName
+        );
+    }
+    
+    function weatherAlert() {
+        navigator.notification.alert(
+    	 'Congrads you just pushed the button, Vanna Tell them what they won!!',  // message
+    	 alertDismissed,         // callback
+    	 'Current Weather',            // title
+    	 'Done'                  // buttonName
         );
     }

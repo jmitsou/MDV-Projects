@@ -1,4 +1,4 @@
-<!doctype html>  
+<!DOCTYPE HTML>  
 <html lang="en">
 	<head>
 
@@ -20,11 +20,12 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 		
+		
 <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 		
 	</head>
-	<body onload="onBodyLoad()">
+	<body >
 	
 		<div data-role="page" id="home" data-theme="a">
 			<div data-role="header" data-position="fixed">
@@ -49,6 +50,7 @@
 				<h3>Research Discussions</h3>
 				<p>Discussions for weeks 1-4</p>
 				</a></li>
+				
 			</ul>	
 		</div><!-- /content -->
 		
@@ -89,6 +91,11 @@
 			<img src="img/location.jpg" />
 			<h3>GeoLocation</h3>
 			<p>Grabs current location</p>
+			</a></li>
+			<li><a href="#dev">
+			<img src="img/anDevice.png" />
+			<h3>Device</h3>
+			<p>Grabs device Info</p>
 			</a></li>
 		</ul>
 	</div>
@@ -155,6 +162,26 @@
 </section>
 <!-- end page -->
 
+<!-- Device page -->
+<section id="dev" data-role="page" data-theme="a">
+	<header data-role="header" data-position="fixed" data-theme="a">
+	<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+	<h1>Device Info Page</h1>
+	</header>
+	
+	
+<div data-role="content" class="content">
+<p id="deviceProperties">Loading device properties...</p>
+</div>
+
+<footer data-role="navbar" data-position="fixed" data-theme="a">
+	<ul>
+		<li><a href="#home" data-ajax="false" data-icon="home" >Home</a></li>
+	</ul>	
+</footer>
+</section>
+<!-- end page -->
+
 	<!--Start of API Data page-->
 	<div data-role="page" id="api" data-theme="a" >
 		<div data-role="header" data-position="fixed" data-theme="a">
@@ -169,20 +196,15 @@
 			<h3>Twitter</h3>
 			<p>Connects and allows you to post on your Twitter account</p>
 			</a></li>
-			<li><a href="#">
-			<img src="img/gog.png" />
-			<h3>Google+</h3>
-			<p>Connects and allows you to post on your Google+ account</p>
-			</a></li>
-			<li><a href="#">
-			<img src="img/faceb.png" />
-			<h3>Facebook</h3>
-			<p>Connects and allows you to post on your Facebook account</p>
-			</a></li>
 			<li><a href="weather.html" data-ajax="false">
 			<img src="img/weather.png" />
 			<h3>Weather</h3>
 			<p>Allows you to pull the weather from your area</p>
+			</a></li>
+			<li><a href="#geoM">
+			<img src="img/Maps-icon.png" />
+			<h3>Maps / Geo</h3>
+			<p>Pull up your current location w/ geoLocation</p>
 			</a></li>
 		</ul>
 	</div>
@@ -217,6 +239,27 @@
   	</ul>	
   </div><!-- /footer -->
 </div><!-- /page -->
+
+<div data-role="page" id="geoM" data-theme="a" >
+ 	<div data-role="header" data-position="fixed" data-theme="a">
+	 	<a data-rel="back" data-icon="back" class="back, ui-btn-left">Back</a>
+	 	<h1>Maps API</h1>
+ 	</div>
+
+ 
+<section id="wrapper">
+  <h3 id="g">This is you current location:</h3>
+  <article id="m"></article>
+  </section>
+
+ 	 
+ 	<div data-role="navbar" data-position="fixed" data-theme="a">
+ 		<ul>
+ 			<li><a href="index.html" data-ajax="false" data-icon="home" >Home</a></li>
+ 		</ul>	
+ 	</div><!-- /footer -->
+ </div>
+
 	
 <!--Start of Research page-->
 	<div data-role="page" id="res" data-theme="a">
@@ -228,74 +271,95 @@
 	<div data-role="content" id="data">
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 1 Discussion</h3>
-			<p id="q">Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</p>
-			<p id="a">Twitter uses o auth to authenticate purchases and logins without using the users personal information such as their username and password. </p>
-			<p id="q">Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</p>
-			<p id="a">We need JSONP to translate the information received from other sites into data that can be read for your application</p>
-			<p id="q">Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</p>
-			<p id="a">JSON-P data resources give us access to multiple forms of data. With    that data we can use the notification bar. We can access the camera, and the other feats as well.</p>
-			<p id="q">Please describe any design and functionality intentions you may have for your Demo app components this month.</p>
-			<p id="a">I would like my application to pull from the live data APIs I listed and then nicely display them in the notification bar or at least that’s my goal.</p>
-			<p id="q">Briefly describe some past 'lessons learned' regarding workflow      as it relates to research, design, development, etc.</p>
-			<p id="a">Well the best way to explain this is MIU when I incorporated each of these ideas. We had to research and each of the functions I used on the JQuery site and then add them to my design. With these two together when you design what you learn when researching, that’s call development.</p>
-			</p>
+			<dl>
+				<dt>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</dt>
+				
+				<dd>Twitter uses o auth to authenticate purchases and logins without using the users personal information such as their username and password. </dd>
+				
+				<dt>Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</dt>
+				
+				<dd>We need JSONP to translate the information received from other sites into data that can be read for your application</dd>
+				
+				<dt>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</dt>
+				
+				<dd>JSON-P data resources give us access to multiple forms of data. With    that data we can use the notification bar. We can access the camera, and the other feats as well.</dd>
+				
+				<dt>Please describe any design and functionality intentions you may have for your Demo app components this month.</dt>
+				
+				<dd>I would like my application to pull from the live data APIs I listed and then nicely display them in the notification bar or at least that’s my goal.</dd>
+				
+				<dt>Briefly describe some past 'lessons learned' regarding workflow      as it relates to research, design, development, etc.</dt>
+				
+				<dd>Well the best way to explain this is MIU when I incorporated each of these ideas. We had to research and each of the functions I used on the JQuery site and then add them to my design. With these two together when you design what you learn when researching, that’s call development.</dd>
+			</dl>
 		</div>
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 2 Discussion</h3>
-			<p id="q">What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</p>
-			<p id="a">One thing I could do is go back and add ALT ids to all my images making is easy to find out what my image is incase the image isn’t working. Another thing would be to add a voice command feature.</p>
-			<p id="q">Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</p>
-			<p id="a">One this that I noticed right away is the fact that all of them speak way to fast. They have to be adjusted and tweaked before the user can even use them, which adds more complication then necessary. After looking up the videos I looked up what developers have been doing to correct this and most led to the fact that voice command with correct this deficiencies. </p> 
-			<p id="q">Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</p>
-			<p id="a">My two devices are the IPAD and any android phone. Each of them have Accessibility features but support them differently. The IPAD has them built right into the settings allowing quick access to them. The Android also has them in settings but they are sourced from application called TalkBack.</p> 
-			<p id="q">Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</p>
-			<p id="a">So the two applications I chose are both android.
-			<br /> 
-			1)	The first is Mobile Accessibility Demo US, it is an application on the market that allows the blind to interact with all features on the phone by adding voice to vocalize all of your actions.
-			<br/>
-			2)	The second app is TalkBack, this app is part of the OS for all Android phones. It uses voice, and vibration to interact with the user. And also as the applications name states talks back letting the user know what they are touching.</p>
+			<dl>
+				<dt>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</dt>
+				
+				<dd>One thing I could do is go back and add ALT ids to all my images making is easy to find out what my image is incase the image isn’t working. Another thing would be to add a voice command feature.</dd>
+				
+				<dt>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</dt>
+				
+				<dd>One this that I noticed right away is the fact that all of them speak way to fast. They have to be adjusted and tweaked before the user can even use them, which adds more complication then necessary. After looking up the videos I looked up what developers have been doing to correct this and most led to the fact that voice command with correct this deficiencies. </dd>
+				 
+				<dt>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</dt>
+				
+				<dd>My two devices are the IPAD and any android phone. Each of them have Accessibility features but support them differently. The IPAD has them built right into the settings allowing quick access to them. The Android also has them in settings but they are sourced from application called TalkBack.</dd>
+				 
+				<dt>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</dt>
+				
+				<dd>So the two applications I chose are both android.
+				<br /> 
+				1)	The first is Mobile Accessibility Demo US, it is an application on the market that allows the blind to interact with all features on the phone by adding voice to vocalize all of your actions.
+				<br/>
+				2)	The second app is TalkBack, this app is part of the OS for all Android phones. It uses voice, and vibration to interact with the user. And also as the applications name states talks back letting the user know what they are touching.</dd>
+			</dl>
 		</div>
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 3 Discussion</h3>
-			<p id="q">What are the 'top selling' app categories in the U.S.? Japan? Great Britain?</p>
+			<dl>
+			<dt>What are the 'top selling' app categories in the U.S.? Japan? Great Britain?</dt>
 			 
-			<p id="a">In the US the top selling categories for apps are Productivity and Social Networking
+			<dd>In the US the top selling categories for apps are Productivity and Social Networking
 			In Japan the top selling categories are Social Networking and Voice and messaging.
-			In the UK the top categories seem to be the same with the exception of their third being navigation.</p>
+			In the UK the top categories seem to be the same with the exception of their third being navigation.</dd>
 			 
-			<p id="q">Based on your three answers above, what might you infer about each of the markets listed?</p>
+			<dt>Based on your three answers above, what might you infer about each of the markets listed?</dt>
 			 
-			<p id="a">It seems that recently Social networking has jumped up the list taking second only to games.</p>
+			<dd>It seems that recently Social networking has jumped up the list taking second only to games.</dd>
 			 
-			<p id="q">What is the average cost and bandwidth limits per user (in general) in each of the three markets?</p>
+			<dt>What is the average cost and bandwidth limits per user (in general) in each of the three markets?</dt>
 			 
-			<p id="a">The Average cost in the US is about 2 to 5 cents per GB or $1 per a month per customer. And the cap is usually set around 250 GB a month per customer. The article I read shared that most company make good money off of broadband and bandwidth resell. Companies keep the price just low enough to make the most money with out looking too expensive to the customer. (This last part I learn from my last job)
+			<dd>The Average cost in the US is about 2 to 5 cents per GB or $1 per a month per customer. And the cap is usually set around 250 GB a month per customer. The article I read shared that most company make good money off of broadband and bandwidth resell. Companies keep the price just low enough to make the most money with out looking too expensive to the customer. (This last part I learn from my last job)
 			
 			In Japan there is no bandwidth cap and the prices range from $30 a month to $60, which is about the same in the US about a dollar or two a day.
 			
-			Great Britain also known as UK joins Japan with the no bandwidth caps and their prices range from $29 a month to $73 dollars a month. While they’re a bit more in price they has unlimited bandwidth. And the extra price constitutes a higher download speed.</p>
+			Great Britain also known as UK joins Japan with the no bandwidth caps and their prices range from $29 a month to $73 dollars a month. While they’re a bit more in price they has unlimited bandwidth. And the extra price constitutes a higher download speed.</dd>
 			 
-			<p id="q">How may this impact development?</p>
+			<dt>How may this impact development?</dt>
 			 
-			<p id="a">This impacts us because as developers we have to think of the users and how much data our app consumes (if any) and make the app in a way that uses little to no bandwidth.</p>
+			<dd>This impacts us because as developers we have to think of the users and how much data our app consumes (if any) and make the app in a way that uses little to no bandwidth.</dd>
 			 
-			<p id="q">And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice.</p>
+			<dt>And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice.</dt>
 			 
-			<p id="a">If I had to choose I would design apps in for the social networking but in any other country then the US simply for the fact that these apps require constant connection to the internet eating away at the users bandwidth.</p>
+			<dd>If I had to choose I would design apps in for the social networking but in any other country then the US simply for the fact that these apps require constant connection to the internet eating away at the users bandwidth.</dd>
 			 
 			<h5>*Top apps info sites:</h5>
 			 
-			<a href="http://blog.appannie.com/app-annie-index-social-networking/">http://blog.appannie.com</a>
+			<li><a href="http://blog.appannie.com/app-annie-index-social-networking/">http://blog.appannie.com</a></li>
 			 
 			<h5>*Bandwidth sites:</h5>
-						 
-			<a href="http://www.dslprime.com/dslprime/42-d/4148-costs-and-caps">http://www.dslprime.com</a>
-			<a href="http://newamerica.net/publications/policy/bandwidth_caps_high_speed_internet_u_s_and_japan">http://newamerica.net</a>
-			<a href="http://www.maximumpc.com/article/features/how_bad_do_we_really_have_it_bandwidth_caps_around_world">http://www.maximumpc.com</a>
+				 
+				<li><a href="http://www.dslprime.com/dslprime/42-d/4148-costs-and-caps">http://www.dslprime.com</a></li>
+				<li><a href="http://newamerica.net/publications/policy/bandwidth_caps_high_speed_internet_u_s_and_japan">http://newamerica.net</a></li>
+				<li><a href="http://www.maximumpc.com/article/features/how_bad_do_we_really_have_it_bandwidth_caps_around_world">http://www.maximumpc.com</a></li>
+			</dl>
 		</div>
 		<div data-role="collapsible" data-inset="true">
 			<h3>Week 1-3 Videos</h3>
-			<p id="q">The features my discussion videos</p>
+			<h2>The features my discussion videos</h2>
 			<iframe width="340" height="315" src="http://www.youtube.com/embed/TzixlAaMXBI"></iframe>
 			<iframe width="340" height="315" src="http://www.youtube.com/embed/OmXe42jkcCg"></iframe>
 			<iframe width="340" height="315" src="http://www.youtube.com/embed/j9ZhasFfdsU"></iframe>
@@ -315,10 +379,13 @@
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 		<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
-		<script src="js/camera.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 		<script src="js/main.js" type="text/javascript"></script>
+		<script src="js/camera.js" type="text/javascript"></script>
 		<script src="js/conn.js" type="text/javascript"></script>
 		<script src="js/geo.js" type="text/javascript"></script>
 		<script src="js/notif.js" type="text/javascript"></script>
+		<script src="js/device.js" type="text/javascript"></script>
+	
     </body>
 </html>

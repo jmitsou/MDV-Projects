@@ -21,9 +21,9 @@ p {
 }
 
 h2 {
-	color: #58bef8;
+	color: #055786;
+	font-size: 20px;
 }
-
 a:link {
 	color: #0cc1af;
 }
@@ -79,14 +79,14 @@ img#AD.ui-li-thumb{
 	padding-top: 15px;
 }
 
-#q{
+dt{
 	color: #e0e0df;
 	font-weight: normal;
 	font-style: normal;
 	text-shadow: 0 0 1px #ffffff;
 }
 
-#a{
+dd{
 	color: #ffffff;
 	font-weight: normal;
 	font-style: normal;
@@ -140,4 +140,25 @@ h1.ui-li-heading p.ui-li-desc{
 	margin-top: 30px;
 }
 
+h3#g{
+	color: #ffffff;
+	text-align: center;
+}
+
+#map{
+	margin-top: 10px;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+@media screen and (max-width: 480px) {#map {
+		width: 375px;
+		height: 500px;
+		margin: 10px;
+	}
+}
+
+li{
+	list-style: none;
+}
 

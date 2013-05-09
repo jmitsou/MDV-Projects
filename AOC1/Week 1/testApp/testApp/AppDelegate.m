@@ -17,6 +17,15 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //type code here
+    
+    //Story Start
+    
+    // variables and the float to int cast
+    float crispy = 5.5;
+    int baconDone = (int) crispy;
+    NSLog(@"The bacon is done after %i mins",baconDone);
+    NSLog(@"At %f mins the bacon is crispy",crispy);
+    
     return YES;
 }
 

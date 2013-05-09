@@ -26,6 +26,18 @@
     NSLog(@"The bacon is done after %i mins",baconDone);
     NSLog(@"At %f mins the bacon is crispy",crispy);
     
+    // if statement
+    int underCook = 3;
+    
+    if (baconDone>6) {
+        NSLog(@"The bacon is burnt");
+    } else if (baconDone<underCook) {
+        NSLog(@"Bacon is under cooked");
+    }
+    else {
+        NSLog(@"Bacon is good to go.");
+    }
+    
     return YES;
 }
 

@@ -51,6 +51,16 @@
         NSLog(@"blah");
     }
     
+    //while loop
+    int minLeft = 5;
+    
+    while ( minLeft > 0) {
+        NSLog(@"%i mins left till bacon is done",minLeft);
+        minLeft--;
+    }
+    NSLog(@"Bacon is now ready");
+    
+    
     return YES;
 }
 

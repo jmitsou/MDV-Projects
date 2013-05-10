@@ -35,7 +35,20 @@
         NSLog(@"Bacon is under cooked");
     }
     else {
-        NSLog(@"Bacon is good to go.");
+        NSLog(@"Bacon ready to eat.");
+    }
+    
+    //AND OR Comparison
+    bool panClean = YES;
+    int bacon = 2;
+    float oil = 1.5;
+    
+    if ((panClean == YES) && (oil == 1.5)) {
+        NSLog(@"Ready to make bacon");
+    } else if ((panClean == NO) || (bacon == 1)) {
+        NSLog(@"Can't make bacon");
+    } else{
+        NSLog(@"blah");
     }
     
     return YES;

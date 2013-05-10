@@ -18,25 +18,15 @@
     [self.window makeKeyAndVisible];
     //type code here
     
-    //Story Start
+    //Start of Story
+    NSLog(@"Starting to make bacon.");
+    NSLog(@"Start doing dishes");
     
-    // variables and the float to int cast
-    float crispy = 5.5;
-    int baconDone = (int) crispy;
-    NSLog(@"The bacon is done after %i mins",baconDone);
-    NSLog(@"At %f mins the bacon is crispy",crispy);
-    
-    // if statement
-    int underCook = 3;
-    
-    if (baconDone>6) {
-        NSLog(@"The bacon is burnt");
-    } else if (baconDone<underCook) {
-        NSLog(@"Bacon is under cooked");
+    // For Loop
+    for (int timeTill = 1; timeTill < 5; timeTill++) {
+        NSLog(@"Doing Dishes.");
     }
-    else {
-        NSLog(@"Bacon ready to eat.");
-    }
+    NSLog(@"Done with Dishes.");
     
     //AND OR Comparison
     bool panClean = YES;
@@ -44,22 +34,49 @@
     float oil = 1.5;
     
     if ((panClean == YES) && (oil == 1.5)) {
-        NSLog(@"Ready to make bacon");
+        NSLog(@"Ready to make bacon.");
     } else if ((panClean == NO) || (bacon == 1)) {
-        NSLog(@"Can't make bacon");
+        NSLog(@"Can't make bacon.");
     } else{
         NSLog(@"blah");
     }
     
-    //while loop
-    int minLeft = 5;
+    //Nested Loop
     
-    while ( minLeft > 0) {
-        NSLog(@"%i mins left till bacon is done",minLeft);
-        minLeft--;
+    for (int piece = 1; piece<5; piece++) {
+        NSLog(@"Put piece of bacon in pan.");
+        for (int minLeft = 5; minLeft > 0; minLeft--) {
+            NSLog(@"%i mins left till bacon is done.",minLeft);
+        }
     }
-    NSLog(@"Bacon is now ready");
     
+    // variables and the float to int cast
+    float crispy = 5.5;
+    int baconDone = (int) crispy;
+    NSLog(@"The bacon is done after %i mins.",baconDone);
+    NSLog(@"At %.1f mins the bacon is crispy.",crispy);
+    
+    // if statement
+    int underCook = 3;
+    
+    if (baconDone>6) {
+        NSLog(@"The bacon is burnt.");
+    } else if (baconDone<underCook) {
+        NSLog(@"Bacon is under cooked.");
+    }
+    else {
+        NSLog(@"Bacon ready to eat.");
+    }
+    
+    //while loop
+    int piecesLeft = 5;
+    
+    while ( piecesLeft > 0) {
+        NSLog(@"%i piece(s) of bacon left to eat.",piecesLeft);
+        piecesLeft--;
+    }
+    NSLog(@"Bacon is all gone, time to make more bacon.");
+
     
     return YES;
 }

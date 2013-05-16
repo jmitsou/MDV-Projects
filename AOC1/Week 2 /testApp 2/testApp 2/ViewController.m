@@ -74,6 +74,28 @@
     }
     [self.view addSubview:publisherDate];
     
+    //Summary Label for book
+    summaryBlock = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 75.0f, 100.0f, 20.0f)];
+    
+    if (summaryBlock !=nil) {
+        summaryBlock.backgroundColor = [UIColor colorWithRed:0.475 green:0.153 blue:0.165 alpha:1] /*#79272a*/;
+        summaryBlock.text = @"Summary:";
+        summaryBlock.textAlignment = NSTextAlignmentLeft;
+        summaryBlock.textColor = [UIColor whiteColor];
+    }
+    [self.view addSubview:summaryBlock];
+    
+    //Summary Paragraph for book
+    summaryP = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, 200.0f)];
+    
+    if (summaryP !=nil) {
+        summaryP.backgroundColor = [UIColor colorWithRed:0.475 green:0.153 blue:0.165 alpha:1] /*#79272a*/;
+        summaryP.text = @"The girl on Fire and her partner Pete have won the tournament. Their defiance against the rules of the annual game and rules in Capital city seems to be catching up to them. The promise of a save life and food for them and their families seems to be in danger. The Capital is angry and a rumor of rebellion puts The Capital of a road to revenge.";
+        summaryP.textAlignment = NSTextAlignmentCenter;
+        summaryP.textColor = [UIColor whiteColor];
+        summaryP.numberOfLines = 10;
+    }
+    [self.view addSubview:summaryP];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

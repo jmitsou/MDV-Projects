@@ -15,6 +15,8 @@
     UILabel * authorName;
     UILabel * publisherBlock;
     UILabel * publisherDate;
+    UILabel * summaryBlock;
+    UILabel * summaryP;
 }
 
 @end

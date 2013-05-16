@@ -13,6 +13,8 @@
     UILabel * bookTitle;
     UILabel * authorBlock;
     UILabel * authorName;
+    UILabel * publisherBlock;
+    UILabel * publisherDate;
 }
 
 @end

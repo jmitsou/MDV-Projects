@@ -46,11 +46,33 @@
     
     if (authorName !=nil) {
         authorName.backgroundColor = [UIColor colorWithRed:0.475 green:0.153 blue:0.165 alpha:1] /*#79272a*/;
-        authorName.text = @"Suzanne Collins";
+        authorName.text = @" Suzanne Collins";
         authorName.textAlignment = NSTextAlignmentLeft;
         authorName.textColor = [UIColor whiteColor];
     }
     [self.view addSubview:authorName];
+    
+    //Publisher Label for book
+    publisherBlock = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 50.0f, 100.0f, 20.0f)];
+    
+    if (publisherBlock !=nil) {
+        publisherBlock.backgroundColor = [UIColor colorWithRed:0.475 green:0.153 blue:0.165 alpha:1] /*#79272a*/;
+        publisherBlock.text = @"Published:";
+        publisherBlock.textAlignment = NSTextAlignmentRight;
+        publisherBlock.textColor = [UIColor whiteColor];
+    }
+    [self.view addSubview:publisherBlock];
+    
+    //Publisher Date for book
+    publisherDate = [[UILabel alloc] initWithFrame:CGRectMake(100.0f, 50.0f, 220.0f, 20.0f)];
+    
+    if (publisherDate !=nil) {
+        publisherDate.backgroundColor = [UIColor colorWithRed:0.475 green:0.153 blue:0.165 alpha:1] /*#79272a*/;
+        publisherDate.text = @" June 2010";
+        publisherDate.textAlignment = NSTextAlignmentLeft;
+        publisherDate.textColor = [UIColor whiteColor];
+    }
+    [self.view addSubview:publisherDate];
     
     
     [super viewDidLoad];

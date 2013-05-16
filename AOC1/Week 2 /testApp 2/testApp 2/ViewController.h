@@ -11,7 +11,8 @@
 @interface ViewController : UIViewController
 {
     UILabel * bookTitle;
-
+    UILabel * authorBlock;
+    UILabel * authorName;
 }
 
 @end

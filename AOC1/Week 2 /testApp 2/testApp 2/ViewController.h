@@ -17,6 +17,22 @@
     UILabel * publisherDate;
     UILabel * summaryBlock;
     UILabel * summaryP;
+    UILabel * listBlock;
+    UILabel * listArray;
+    
+    //String items
+    NSString * item1;
+    NSString * item2;
+    NSString * item3;
+    NSString * item4;
+    NSString * item5;
+    
+    //NS Array
+    NSArray * arrayItems;
+    
+    //Mutable String
+    NSMutableString * array;
 }
+
 
 @end

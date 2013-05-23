@@ -21,6 +21,16 @@
 }
 
 //Compare Function: that takes two NSInteger values. Return YES or NO based on whether the values are equal.
+-(BOOL)compare:(NSInteger)valOne compTwo:(NSInteger)valTwo
+{
+    
+    if (valOne == valTwo){
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
 
 //Create a function called Append. This function will take two NSStrings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
  
@@ -48,6 +58,9 @@
     int addSum = [self add:2 secAdd:3];
     NSLog(@"it is working %d times",addSum);
     
+    //call for Compare Function
+    BOOL valSum = [self compare:5 compTwo:5];
+    NSLog(@"Is the sky blue %@",valSum ?  @"YES" :@"NO");
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

@@ -15,4 +15,6 @@
 
 //Add Function
 -(int)add:(NSInteger)numOne secAdd:(NSInteger)numTwo;
+//Compare Function
+-(BOOL)compare:(NSInteger)valOne compTwo:(NSInteger)valTwo;
 @end

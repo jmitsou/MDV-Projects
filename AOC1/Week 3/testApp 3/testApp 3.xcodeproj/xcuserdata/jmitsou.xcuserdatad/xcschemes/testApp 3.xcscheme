@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19D284C6174879CD00EE376F"
+               BlueprintIdentifier = "191287FF174DC24D00A738DE"
                BuildableName = "testApp 3.app"
                BlueprintName = "testApp 3"
                ReferencedContainer = "container:testApp 3.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19D284EF174879CD00EE376F"
+               BlueprintIdentifier = "19128828174DC24D00A738DE"
                BuildableName = "testApp 3Tests.octest"
                BlueprintName = "testApp 3Tests"
                ReferencedContainer = "container:testApp 3.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19D284C6174879CD00EE376F"
+            BlueprintIdentifier = "191287FF174DC24D00A738DE"
             BuildableName = "testApp 3.app"
             BlueprintName = "testApp 3"
             ReferencedContainer = "container:testApp 3.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19D284C6174879CD00EE376F"
+            BlueprintIdentifier = "191287FF174DC24D00A738DE"
             BuildableName = "testApp 3.app"
             BlueprintName = "testApp 3"
             ReferencedContainer = "container:testApp 3.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19D284C6174879CD00EE376F"
+            BlueprintIdentifier = "191287FF174DC24D00A738DE"
             BuildableName = "testApp 3.app"
             BlueprintName = "testApp 3"
             ReferencedContainer = "container:testApp 3.xcodeproj">

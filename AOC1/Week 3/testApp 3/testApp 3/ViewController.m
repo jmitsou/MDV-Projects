@@ -20,7 +20,7 @@
     return (numOne + numTwo);
 }
 
-//Compare Function: that takes two NSInteger values. Return YES or NO based on whether the values are equal.
+//Compare Function: takes two NSInteger values. Return YES or NO based on whether the values are equal.
 -(BOOL)compare:(NSInteger)valOne compTwo:(NSInteger)valTwo
 {
     
@@ -32,8 +32,14 @@
     }
 }
 
-//Create a function called Append. This function will take two NSStrings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
- 
+//Append Function: This function will take two Strings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
+-(NSString*)append:(NSString*)thingOne secApp:(NSString*)thingTwo
+{
+    NSMutableString *newString = [[NSMutableString alloc] initWithString:thingOne];
+    NSString *jointString = [newString stringByAppendingString:thingTwo];
+    return jointString;
+}
+
 //Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
  
 //Create a function called DisplayAlertWithString. This function will take as a parameter an NSString.
@@ -61,6 +67,11 @@
     //call for Compare Function
     BOOL valSum = [self compare:5 compTwo:5];
     NSLog(@"Is the sky blue %@",valSum ?  @"YES" :@"NO");
+    
+    //call for Append Function
+    NSString *stringValue =[self append:@"The first part" secApp:@" and second part"];
+    NSLog(@"%@",stringValue);
+    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

@@ -19,4 +19,6 @@
 -(BOOL)compare:(NSInteger)valOne compTwo:(NSInteger)valTwo;
 //Append Function
 -(NSString*)append:(NSString*)thingOne secApp:(NSString*)thingTwo;
+// DisplayAlertWithString function
+-(void)displayAlertWithString:(NSString*)stringOne;
 @end

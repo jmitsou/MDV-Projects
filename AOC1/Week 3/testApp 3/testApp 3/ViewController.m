@@ -32,7 +32,8 @@
     }
 }
 
-//Append Function: This function will take two Strings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
+//Append Function: This function will takes two Strings and returns a new string
+
 -(NSString*)append:(NSString*)thingOne secApp:(NSString*)thingTwo
 {
     NSMutableString *newString = [[NSMutableString alloc] initWithString:thingOne];
@@ -40,7 +41,7 @@
     return jointString;
 }
 
-//Create a function called DisplayAlertWithString. This function will take as a parameter an NSString.
+//DisplayAlertWithString Function: This function takes an NSString as a parameter.
 -(void)displayAlertWithString:(NSString*)msgString
 {
     //Create an UIAlertView
@@ -50,8 +51,6 @@
     }
     
 }
- 
-//Bundle the returned integer into an NSNumber and then convert it to a NSString and pass it to the DisplayAlertWithString function.
 
 
 - (void)viewDidLoad
@@ -60,19 +59,24 @@
     int addSum = [self add:2 secAdd:3];
     NSLog(@"it is working %d times",addSum);
     
-    //NSNumber* numb = addSum;
+    //NSNumber conversion
+    NSNumber* numb = [NSNumber numberWithInteger:addSum];
+    NSNumberFormatter * formNum = [[NSNumberFormatter alloc] init];
+    [formNum setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSString *conNum = [formNum stringForObjectValue:numb];
     
-    //Give it some text for the title. The message will read, "The number is 00". Replace the 00 with the integer passed into the function.
-    NSString* sumString = [NSString stringWithFormat:@"The number is %d",addSum];
+    //Converts to string
+    NSString* sumString = [NSString stringWithFormat:@"The number is %@",conNum];
+    //shows in string in alert
     [self displayAlertWithString:sumString];
-    
+        
     //call for Compare Function
     int comX = 5;
     int comY = 5;
     BOOL valSum = [self compare:comX compTwo:comY];
     NSLog(@"Is the sky blue %@",valSum ?  @"YES" :@"NO");
     
-    //Call the Compare function with two integer values. If Compare returns YES, display an UIAlertView both with the input values and the result using the DisplayAlertWithString function
+    //Call for Compare function:
     NSString* compString;
     if (valSum == YES) {
         compString = [NSString stringWithFormat:@"%@, the values %i and %i are equal",valSum ? @"YES":@"NO",comX,comY];
